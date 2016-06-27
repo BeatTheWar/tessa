@@ -1,0 +1,192 @@
+@import "fonts-config.css";
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.wrapper {
+    /*border: solid thin #E0E0E0;*/
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+    margin: 30px;
+    background: white;
+    max-width: 100%;
+    padding-bottom: 25px;
+    padding-top:0px;
+}
+
+.row_title {
+    width: 100%;
+    text-transform: uppercase;
+    color: #BDBDBD;
+    font-family: bold;
+    font-size: 14px
+
+}
+
+/**paddings**/
+.padding_10 {
+    padding: 10px;
+}
+
+/**end of paddings**/
+
+/**fonts config**/
+.font_14 {
+    font-size: 14px
+}
+
+.font_12 {
+    font-size: 12px
+}
+
+.font_24 {
+    font-size: 24px
+}
+
+.font_regular {
+    font-family: regular;
+}
+
+.font_medium {
+    font-family: medium;
+}
+
+.font_bold {
+    font-family: bold;
+}
+
+.font_black {
+    font-family: black;
+}
+.font_light {
+    font-family: light;
+}
+
+.grey1 {
+    color: #212121;
+}
+
+.blue1 {
+    color: #3B7FF0 ;
+}
+
+/**end of fonts config**/
+
+/**browse by industries**/
+#sec-browse-industry{
+  padding: 15px;
+  border-bottom: solid thin #E0E0E0;
+}
+
+#sec-success-stories {
+  padding: 15px;
+}
+
+
+#browse-industry {
+    margin: 0;
+    padding: 10px;
+    padding-top: 0;
+}
+
+#browse-industry li {
+    display: inline-block;
+}
+
+#browse-industry a {
+    display: block;
+    padding: 5px 15px;
+    border-radius: 30px;
+    background: #3b7ff0;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/**end browse by industry**/
+
+/**success stories**/
+
+#masonry-item {/* Masonry container */
+    padding:5px 25px;
+    box-sizing: border-box;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+}
+
+#masonry-item .panel{ /*reset*/
+    margin: 0;
+}
+
+.item_experience { /* Masonry bricks or child elements */
+    display: inline-block;
+    background: #fff;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.img_holder{
+    height: auto;
+
+}
+#masonry-item .img_holder img{
+    max-width: 100%;
+}
+
+#masonry_body .label_light{
+    margin-top: 15px;
+}
+
+/**end of success stories**/
+
+/**Font Plugins**/
+.label_light{
+    font-family: light;
+    color: #424242;
+    font-size: 14px;
+}
+.label_medium{
+    font-family: medium;
+    color: #212121;
+    font-size: 14px;
+}
+/**End of Font Plugins**/
+
+
+
+
+
+/**View Ports for masonry**/
+@media only screen and (min-width: 400px) {
+    #masonry-item {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    #masonry-item {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #masonry-item {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    #masonry-item {
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
+    }
+}
+
+/**End : View Ports for masonry**/

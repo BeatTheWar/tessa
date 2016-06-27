@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="wrapper">
+        <!--browse by industry section-->
+        <div id="sec-browse-industry">
+            <div class="row_title padding_10 ">
+                Browse by industries
+            </div>
+
+            <ul id="browse-industry">
+                <li><a href="#" class="tag_list">TELCO</a></li>
+                <li><a href="#" class="tag_list">QSR</a></li>
+                <li><a href="#" class="tag_list">REAL ESTATE</a></li>
+                <li><a href="#" class="tag_list">BANKING</a></li>
+                <li><a href="#" class="tag_list">RETAIL</a></li>
+                <li><a href="#" class="tag_list">TRAVEL</a></li>
+                <li><a href="#" class="tag_list">INSURANCE</a></li>
+            </ul>
+
+        </div>
+        <!--end browse by industry section-->
+
+        <!--success stories section-->
+        <div id="sec-success-stories">
+            <div class="row_title padding_10 ">
+                {{message}}
+            </div>
+        </div>
+
+        <div id="masonry-item">
+            <div class="item_experience" ng-repeat="article in articlesList">
+                <div class="panel panel-default">
+                    <div class="img_holder">
+                        <img src="{{article.img_path}}"/>
+                    </div>
+                    <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
+                        <a href="#">{{article.title}}</a>
+                        <div id="featured_solution" class="label_light">
+                            Featured Solution
+                        </div><!--Label Featured Solution-->
+                        <div id="featured_solution" class="label_medium">
+                            {{article.description}}
+                        </div><!--Label Featured Solution-->
+                    </div><!--Masonry Body-->
+
+                </div><!--Masonry-->
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

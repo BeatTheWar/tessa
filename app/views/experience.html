@@ -31,7 +31,7 @@
             <div class="item_experience" ng-repeat="article in articlesList">
                 <div class="panel panel-default">
                     <div class="img_holder" >
-                        <img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1">
+                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#">{{article.title}}</a>
@@ -50,3 +50,174 @@
     </div>
 </div>
 </div>
+
+
+<!--Modal-->
+<div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+            </div>
+
+            <div class="modal-body">
+                <!--Modal Body-->
+                <div class="row_title">
+                    <a href="#" class=" btn btn-label btn-social btn-flickr">
+                        <i class="padding_10 fa fa-share-square"></i> Share
+                    </a>
+                </div>
+
+                <div id="sec-xd-article">
+                    <div class="img_holder">
+                        <img src="../assets/img/is5.jpg"/>
+                    </div>
+                    <div class="font_24 blue1 font_medium">
+                        7-Eleven Digital Signage Success
+                    </div>
+                    <div class="article-primary">
+                        On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover
+                        property we he kindness greatest be oh striking laughter. In me he at collecting affronting
+                        principles apartments. Has visitor law attacks pretend you calling own excited painted.
+                        Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer
+                        should if waited common person little oh. Improved civility graceful sex few smallest screened
+                        settling. Likely active her warmly has. Considered an invitation do introduced sufficient
+                        understood instrument it. Of decisively friendship in as collecting at. No affixed be husband ye
+                        females brother garrets proceed. Least child who seven happy yet balls young. Discovery
+                        sweetness principle discourse shameless bed one excellent. Sentiments of surrounded friendship
+                        dispatched connection is he. Me or produce besides hastily up as pleased. Bore less when had and
+                        john shed hope. On it differed repeated wandered required in. Then girl neat why yet knew rose
+                        spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting
+                        affronting principles apartments. Has visitor law attacks pretend you calling own excited
+                        painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers.
+                        Suffer should if waited common person little oh. Improved civility graceful sex few smallest
+                        screened settling. Likely active her warmly has. Considered an invitation do introduced
+                        sufficient understood instrument it. Of decisively friendship in as collecting at. No affixed be
+                        husband ye females brother garrets proceed. Least child who seven happy yet balls young.
+                        Discovery sweetness principle discourse shameless bed one excellent. Sentiments of surrounded
+                        friendship dispatched connection is he. Me or produce besides hastily up as pleased. Bore less
+                        when had and john shed hope. On it differed repeated wandered required in.
+
+                        <div class="panel-body pad20top">
+                            <blockquote>
+                                <p>"There is only one thing in the world worse than being talked about, and that is not being talked about"</p>
+                                <small>
+                                    "Oscar Wilde in
+                                    <cite title="Source Title">The Picture of Dorian Grey"</cite>
+                                </small>
+                            </blockquote>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div id="sec-xd-fs">
+                    <div class="row_title">
+                        FEATURED SOLUTION
+                    </div>
+                    <div class="row">
+                        <!--Dummy Featured Solutions-->
+                        <div class="col-sm-3">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is5.jpg"/>
+                                    </div>
+                                    <div class="label_medium_black cap-box-item">
+                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is5.jpg"/>
+                                    </div>
+                                    <div class="label_medium_black cap-box-item">
+                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is5.jpg"/>
+                                    </div>
+                                    <div class="label_medium_black cap-box-item">
+                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is5.jpg"/>
+                                    </div>
+                                    <div class="label_medium_black cap-box-item">
+                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+
+
+                        <!--End: Dummy Featured Solutions-->
+                    </div>
+
+
+                </div>
+                <div id="sec-xd-rx">
+                    <div class="row_title">
+                        Related experience
+                    </div>
+                    <div class="row">
+                        <!--Dummy Related Experience-->
+                        <div class="col-sm-3">
+                            <div class="panel panel-default box-item">
+                                <div class="img_holder">
+                                    <img src="../assets/img/is4.jpg"/>
+                                </div>
+                                <div class="cap-box-item">
+                                    <div class="label_medium_blue">
+                                        <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
+                                    </div>
+                                    <div class="label_light">
+                                        Featured Solution
+                                    </div>
+
+                                    <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--End: Dummy Related Experience-->
+                    </div>
+
+
+                </div>
+
+                <!--End: Modal Body-->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<!--End: Modal-->

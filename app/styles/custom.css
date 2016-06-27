@@ -23,6 +23,50 @@ body {
 
 }
 
+/**Filter Section**/
+#pc-wrap{
+    margin-left: 80px;
+}
+#sec-filter-pc{
+    width: 56px;
+    height: 100%;
+    position: absolute;
+    background: white;
+    top: 0;
+    clear: both;
+    text-align: center;
+    border-right: solid thin #EEEEEE;
+}
+
+#slidingDiv {
+    display: none;
+}
+
+
+
+.filter-head{
+    display: block;
+    background: white;
+    padding: 15px;
+}
+
+.filter-head, .filter-title{
+    color: #BDBDBD;
+}
+
+#filter-show{
+    border-bottom: solid thin #EEEEEE;
+}
+
+.filter-title{
+    display: block;
+    padding: 10px 0;
+    transform: rotate(-90deg);
+    margin:0;
+}
+
+/**End: Filter Section**/
+
 /**paddings**/
 .padding_10 {
     padding: 10px;
@@ -297,8 +341,6 @@ body {
     padding: 10px;
     background: #3B7FF0;
     color: white;
-    border-radius: 10px;
-    border-top-left-radius: 0;
     margin-top: 5px;
 }
 

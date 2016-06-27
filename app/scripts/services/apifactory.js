@@ -1,25 +1,21 @@
 'use strict';
 
-var APIFactory = function($http, _, API_URL) {
+var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
 	var apifactory = {};
-
-	apifactory.articlesItem = [];
+	apifactory.articleItems = [];
 
 	apifactory.getArticles = function (callback){
-		$http.get(API_URL + '/articleinfo').success(function(data) {
-            apifactory.articlesItem = data;
-            console.log(apifactory.articlesItem);
+        Restangular.all('articleinfo').customGET().then(function(results){
+            callback(results);
         });
 	};
 
 	apifactory.getAllArticles = function(callback) {
-        callback(apifactory.articlesItem);
+        callback(apifactory.articleItems);
     };
 
 	return apifactory;
 };
-
-
 
 
 var underscore = function() {
@@ -27,4 +23,4 @@ var underscore = function() {
 };
 
 Application.Services.factory('_', [underscore]);
-Application.Services.factory('APIFactory', ['$http', '_', APIFactory]); 
+Application.Services.factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]); 

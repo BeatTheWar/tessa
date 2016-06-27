@@ -23,23 +23,23 @@
         <!--success stories section-->
         <div id="sec-success-stories">
             <div class="row_title padding_10 ">
-                {{message}}
+                Success Stories
             </div>
         </div>
 
         <div id="masonry-item">
             <div class="item_experience" ng-repeat="article in articlesList">
                 <div class="panel panel-default">
-                    <div class="img_holder">
-                        <img src="{{article.img_path}}"/>
+                    <div class="img_holder" >
+                        <img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1">
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#">{{article.title}}</a>
-                        <div id="featured_solution" class="label_light">
-                            Featured Solution
-                        </div><!--Label Featured Solution-->
+<!--                         <div id="featured_solution" class="label_light">
+                            Summary
+                        </div> -->
                         <div id="featured_solution" class="label_medium">
-                            {{article.description}}
+                            <p ng-bind-html="article.article"></p>
                         </div><!--Label Featured Solution-->
                     </div><!--Masonry Body-->
 

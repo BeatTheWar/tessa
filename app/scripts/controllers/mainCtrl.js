@@ -5,9 +5,16 @@ var MainCtrl = function($scope, APIFactory) {
 
 	APIFactory.getArticles(function(data){
 		$scope.articlesList = data.response.result;
-		$scope.myMedia = $scope.articlesList.mediaFiles;
+		// $scope.myMedia = $scope.articlesList.mediaFiles;
 		console.log($scope.articlesList);
+
+	  	$scope.select = function(selected) {
+	      $scope.selected = selected;
+	      console.log($scope.selected, 'selected');
+	  	}
 	}); 
+
+
 
 };
 

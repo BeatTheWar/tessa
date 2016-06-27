@@ -5,7 +5,7 @@ var Application = Application || {};
 Application.Controllers = angular.module('tessaApp.controllers', []);
 Application.Services = angular.module('tessaApp.services', []);
 
-angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router'])
+angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular'])
   
 .run(['$location', function ($location) {
     // APIFactory.getArticles();

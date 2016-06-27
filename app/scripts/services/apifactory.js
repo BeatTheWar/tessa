@@ -8,8 +8,6 @@ var APIFactory = function($http, _, API_URL) {
 	apifactory.getArticles = function (callback){
 		$http.get(API_URL + '/articleinfo').success(function(data) {
             apifactory.articlesItem = data;
-            // _.each(apifactory.articlesItem, function(eachitem) { eachitem.inCompare = false;
-            //     eachitem.inWishlist = false; })
             console.log(apifactory.articlesItem);
         });
 	};
@@ -20,6 +18,9 @@ var APIFactory = function($http, _, API_URL) {
 
 	return apifactory;
 };
+
+
+
 
 var underscore = function() {
     return window._;

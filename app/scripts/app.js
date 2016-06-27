@@ -11,13 +11,15 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
     // APIFactory.getArticles();
 }])
 
-.constant('API_URL', 'http://52.64.27.145:5001/api/1.0')
-.constant('baseURL', 'http://52.64.27.145:5001/')
+.constant('API_URL', 'http://52.64.27.145:5001')
+.constant('API_VERSION', '/api/1.0/')
 
-.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/experience');
+
+
+.config(function ($stateProvider, $urlRouterProvider, RestangularProvider, $httpProvider, $provide,API_VERSION, API_URL) {
+    // $httpProvider.interceptors.push('httpInterceptor');
+
     $stateProvider
-
     .state('experience', {
         url: '/experience',
         templateUrl: 'views/experience.html',
@@ -38,22 +40,7 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
         url: '/productCatalogue',
         templateUrl: 'views/productCatalogue.html'
     })
+
+    $urlRouterProvider.otherwise('/experience');
+
 });
-
-
-  // .config(function ($routeProvider) {
-  //   $routeProvider
-  //     .when('/', {
-  //       templateUrl: 'views/main.html',
-  //       controller: 'MainCtrl',
-  //       controllerAs: 'main'
-  //     })
-  //     .when('/about', {
-  //       templateUrl: 'views/about.html',
-  //       controller: 'AboutCtrl',
-  //       controllerAs: 'about'
-  //     })
-  //     .otherwise({
-  //       redirectTo: '/'
-  //     });
-  // });

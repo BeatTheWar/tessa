@@ -42,6 +42,16 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
         templateUrl: 'views/productCatalogue.html'
     })
 
+    .state('search', {
+        url: '/search',
+        templateUrl: 'views/search.html'
+    })
+
+    .state('productDetailsSolution', {
+        url: '/productCatalogue/productDetailsSolution',
+        templateUrl: 'views/productDetailsSolution.html'
+    })
+
     $urlRouterProvider.otherwise('/experience');
 
 });

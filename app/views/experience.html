@@ -74,7 +74,7 @@
 <!--Modal-->
 <div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
      style="display: none;">
-    <div class="modal-backdrop fade in" style="height: 2080px;"></div>
+    <div class="modal-backdrop fade in" style="height: 100%;" data-dismiss="modal"></div>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -101,11 +101,7 @@
                         <p ng-bind-html="selected.description"></p>
                         <div class="panel-body pad20top">
                             <blockquote>
-                                <p>"There is only one thing in the world worse than being talked about, and that is not being talked about"</p>
-                                <small>
-                                    "Oscar Wilde in
-                                    <cite title="Source Title">The Picture of Dorian Grey"</cite>
-                                </small>
+                                <p ng-bind-html="selected.article">""</p>
                             </blockquote>
                         </div>
                     </div>

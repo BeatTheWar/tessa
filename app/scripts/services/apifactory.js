@@ -1,24 +1,34 @@
 'use strict';
 
 var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
-	var apifactory = {};
-	apifactory.articleItems = [];
+    var apifactory = {};
+    apifactory.articleItems = [];
 
-	apifactory.getArticles = function (callback){
-        Restangular.all('articleinfo').customGET().then(function(results){
+    apifactory.getArticles = function(callback) {
+        Restangular.all('articleinfo').customGET().then(function(results) {
             callback(results);
         });
-	},
-	apifactory.getProductBundle = function(callback){
-		Restangular.all('product-bundle').customGET().then(function(results){
-			callback(results);
-		});
-	},
-	apifactory.getAllArticles = function(callback) {
+    };
+
+    apifactory.getProductBundle = function(callback) {
+        Restangular.all('product-bundle').customGET().then(function(results) {
+            callback(results);
+        });
+    };
+
+    apifactory.getDetailSolution = function(id,callback) {
+        Restangular.all('product-bundle/' + id).customGET().then(function(results) {
+            callback(null,results);
+        },function(err){
+        	callback(err,null);
+        });
+    };
+
+    apifactory.getAllArticles = function(callback) {
         callback(apifactory.articleItems);
     };
 
-	return apifactory;
+    return apifactory;
 };
 
 
@@ -27,4 +37,4 @@ var underscore = function() {
 };
 
 Application.Services.factory('_', [underscore]);
-Application.Services.factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]); 
+Application.Services.factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]);

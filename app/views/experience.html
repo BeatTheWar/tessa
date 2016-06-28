@@ -7,11 +7,11 @@
             </div>
 
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt active">
+                <label class="btn btn-primary-alt" ng-repeat="tag in tags">
                     <input type="checkbox"/>
-                    Telco
+                    {{tag.tags}}
                 </label>
-                <label class="btn btn-primary-alt">
+                <!-- <label class="btn btn-primary-alt">
                     <input type="checkbox"/>
                     QSR
                 </label>
@@ -34,7 +34,7 @@
                 <label class="btn btn-primary-alt">
                     <input type="checkbox"/>
                     Insurance
-                </label>
+                </label> -->
             </div>
 
         </div>

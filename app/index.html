@@ -33,7 +33,7 @@
                     <span class="input-group-btn"><button ng-click="goToSearch" class="btn" type="button"><i
                         class="fa fa-search"></i></button></span>
                     <ui-select ng-model="lists.bundle_name">
-                        <ui-select-match>
+                        <ui-select-match placeholder="Search..">
                             {{$select.selected.bundle_name}}
                         </ui-select-match>
                         <ui-select-choices infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in (lists | filter: $select.search) track by list.pb_id">

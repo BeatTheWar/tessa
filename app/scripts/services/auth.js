@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('tessaApp')
-    .factory('authInterceptor', authInterceptor);
+        .factory('authInterceptor', authInterceptor);
 
     authInterceptor.$inject = ['$rootScope', '$q', '$location', '$injector'];
 

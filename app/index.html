@@ -5,14 +5,10 @@
     <title>TESSA</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
-    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
-
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/custom.css">
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css"/>
-    <!-- <link rel="stylesheet" href="bower_components/nanoscroller/bin/css/nanoscroller.css"/> -->
     <link rel="stylesheet" href="styles/custom.css">
     <!-- <link rel="stylesheet" href="styles/main.css"> -->
 </head>
@@ -148,13 +144,10 @@
                     <div class="widget stay-on-collapse" id="widget-sidebar">
                         <nav role="navigation" class="widget-body">
                             <ul class="acc-menu">
-                                <li><a ui-sref="experience"><i class="fa fa-comment"></i><span>Experience</span></a>
-                                </li>
-                                <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a>
-                                </li>
-                                <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li>
-                                <li><a href="#/productCatalogue"><i
-                                        class="fa fa-desktop"></i><span>Product Catalogue</span></a></li>
+                                <li><a href="#/experience"><i class="fa fa-comment"></i><span>Experience</span></a></li>
+                                <!-- <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a></li>
+                                <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li> -->
+                                <li><a href="#/productCatalogue"><i class="fa fa-desktop"></i><span>Product Catalogue</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -189,6 +182,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/enquire/dist/enquire.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -197,12 +191,14 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/restangular/dist/restangular.js"></script>
 <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+
 <script src="scripts/application.js"></script>
 <script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
 <script src="scripts/underscore/underscore.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/mainCtrl.js"></script>
+<script src="scripts/controllers/productCtrl.js"></script>
 <script src="scripts/services/apifactory.js"></script>
 <script src="scripts/services/auth.js"></script>
 </body>

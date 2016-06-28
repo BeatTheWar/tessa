@@ -1,6 +1,5 @@
 <div class="row">
-
-	<!--<div id="sec-filter-pc">
+    <!--<div id="sec-filter-pc">
 		<a href="#" id="filter-show" class="filter-head blue1">
 			<span class="ti ti-angle-double-right"></span>
 		</a>
@@ -13,103 +12,162 @@
 		<div id="sec-filter-content">
 
 		</div>-->
-
-
-
-<div id="pc-wrap" class="wrapper">
-
-	<div id="sec-pc-category" class="row_title padding_10">
-		<div  class="btn-group font_14" data-toggle="buttons">
-			<label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio">
-				<input type="radio" name="catalogue_selector" id="option1"/>
-				SOLUTIONS
-			</label>
-			<label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio">
-				<input type="radio" name="catalogue_selector" id="option2"/>
-				HARDWARE
-			</label>
-		</div>
-	</div><!--select category-->
-
-	<div>
-		<div class="pc_tabs text14_medium ">
-			<a class="tab_items" ng-class="{active: solutiontype == 'EzeImpress'}" ng-click="solutiontype = 'EzeImpress'">Eze Impress</a>
-			<a class="tab_items" ng-class="{active: solutiontype == 'EzeFind'}" ng-click="solutiontype = 'EzeFind'">Eze Find</a>
-			<a class="tab_items" ng-class="{active: solutiontype == 'EzeOrda'}" ng-click="solutiontype = 'EzeOrda'">Eze Orda</a>
-			<a class="tab_items" ng-class="{active: solutiontype == 'EzeWiFi'}" ng-click="solutiontype = 'EzeWiFi'">Eze Wifi</a>
-			<a class="tab_items" ng-class="{active: solutiontype == 'EzeComms'}" ng-click="solutiontype = 'EzeComms'">Eze Comms</a>
-		</div>
-	</div>
-
-	<div class="row sec-pc-items">
-	
-	<div ng-show="solutiontype == 'EzeImpress'">
-		<div class="col-lg-3">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<a href="#/productCatalogue/productDetailsSolution" class="img_holder">
-						<img src="images/img-sample-1.jpg"/>
-					</a><!--Img Preview-->
-					<div class="item_text">
-						<a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
-							Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
-						</a><!--Title-->
-						<div class="font_14 grey1 font_light pad20top">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</div>
-						<div class="font_14 grey2 font_medium pad20top">
-							For as low as
-						</div>
-						<div class="box_price font_24 font_black">
-							<sup class="">$</sup>55<span class="font_light">/wk</span>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-		<div class="col-lg-3">
-			<div class="panel panel-default" >
-				<div class="panel-body">
-					<a href="#/productCatalogue/productDetailsSolution" class="img_holder">
-						<img src="images/img-sample-1.jpg"/>
-					</a><!--Img Preview-->
-					<div class="item_text">
-						<a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
-							Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
-						</a><!--Title-->
-						<div class="font_14 grey1 font_light pad20top">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						</div>
-						<div class="font_14 grey2 font_medium pad20top">
-							For as low as
-						</div>
-						<div class="box_price font_24 font_black">
-							<sup class="">$</sup>55<span class="font_light">/wk</span>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div ng-show="solutiontype == 'EzeFind'">
-		EzeFind
-	</div>
-
-	<div ng-show="solutiontype == 'EzeOrda'">
-		EzeOrda
-	</div>
-
-	<div ng-show="solutiontype == 'EzeWifi'">
-		EzeWifi
-	</div>
-
-	<div ng-show="solutiontype == 'EzeComms'">
-		EzeComms
-	</div>
-	</div>
-</div>
+    <div id="pc-wrap" class="wrapper">
+        <div id="sec-pc-category" class="row_title padding_10">
+            <div class="btn-group font_14" data-toggle="buttons">
+                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio">
+                    <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
+                </label>
+                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio">
+                    <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
+                </label>
+            </div>
+        </div>
+        <!--select category-->
+        <div>
+            <div class="pc_tabs text14_medium ">
+                <a class="tab_items" ng-class="{active: apply == 'EzeImpress'}" ng-click="solutionTypes('EzeImpress')">Eze Impress</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeFind'}" ng-click="solutionTypes('EzeFind')">Eze Find</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeOrda'}" ng-click="solutionTypes('EzeOrda')">Eze Orda</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeWifi'}" ng-click="solutionTypes('EzeWifi')">Eze Wifi</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
+            </div>
+        </div>
+        <div class="row sec-pc-items">
+            <div ng-show="apply == 'EzeImpress'">
+                <div class="col-lg-3" ng-repeat="item in product">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="#/productCatalogue/productDetailsSolution" class="img_holder">
+                                <img src="images/img-sample-1.jpg" />
+                            </a>
+                            <!--Img Preview-->
+                            <div class="item_text">
+                                <a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
+							{{item.bundle_name}}
+						</a>
+                                <!--Title-->
+                                <div class="font_14 grey1 font_light pad20top">
+                                    <span data-ng-bind-html="item.bundle_description"></span>
+                                </div>
+                                <div class="font_14 grey2 font_medium pad20top">
+                                    For as low as
+                                </div>
+                                <div class="box_price font_24 font_black">
+                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="apply == 'EzeFind'">
+                <div class="col-lg-3" ng-repeat="item in product">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="#/productCatalogue/productDetailsSolution" class="img_holder">
+                                <img src="images/img-sample-1.jpg" />
+                            </a>
+                            <!--Img Preview-->
+                            <div class="item_text">
+                                <a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
+							{{item.bundle_name}}
+						</a>
+                                <!--Title-->
+                                <div class="font_14 grey1 font_light pad20top">
+                                    <span data-ng-bind-html="item.bundle_description"></span>
+                                </div>
+                                <div class="font_14 grey2 font_medium pad20top">
+                                    For as low as
+                                </div>
+                                <div class="box_price font_24 font_black">
+                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="apply == 'EzeOrda'">
+                <div class="col-lg-3" ng-repeat="item in product">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="#/productCatalogue/productDetailsSolution" class="img_holder">
+                                <img src="images/img-sample-1.jpg" />
+                            </a>
+                            <!--Img Preview-->
+                            <div class="item_text">
+                                <a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
+							{{item.bundle_name}}
+						</a>
+                                <!--Title-->
+                                <div class="font_14 grey1 font_light pad20top">
+                                    <span data-ng-bind-html="item.bundle_description"></span>
+                                </div>
+                                <div class="font_14 grey2 font_medium pad20top">
+                                    For as low as
+                                </div>
+                                <div class="box_price font_24 font_black">
+                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="apply == 'EzeWifi'">
+                <div class="col-lg-3" ng-repeat="item in product">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="#/productCatalogue/productDetailsSolution" class="img_holder">
+                                <img src="images/img-sample-1.jpg" />
+                            </a>
+                            <!--Img Preview-->
+                            <div class="item_text">
+                                <a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
+							{{item.bundle_name}}
+						</a>
+                                <!--Title-->
+                                <div class="font_14 grey1 font_light pad20top">
+                                   <span data-ng-bind-html="item.bundle_description"></span>
+                                </div>
+                                <div class="font_14 grey2 font_medium pad20top">
+                                    For as low as
+                                </div>
+                                <div class="box_price font_24 font_black">
+                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="apply == 'EzeComms'">
+                <div class="col-lg-3" ng-repeat="item in product">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a href="#/productCatalogue/productDetailsSolution" class="img_holder">
+                                <img src="images/img-sample-1.jpg" />
+                            </a>
+                            <!--Img Preview-->
+                            <div class="item_text">
+                                <a href="#/productCatalogue/productDetailsSolution" class=" blue1 font_bold">
+							{{item.bundle_name}}
+						</a>
+                                <!--Title-->
+                                <div class="font_14 grey1 font_light pad20top">
+                                    <span data-ng-bind-html="item.bundle_description"></span>
+                                </div>
+                                <div class="font_14 grey2 font_medium pad20top">
+                                    For as low as
+                                </div>
+                                <div class="box_price font_24 font_black">
+                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

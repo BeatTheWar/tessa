@@ -5,13 +5,15 @@ var Application = Application || {};
 Application.Controllers = angular.module('tessaApp.controllers', []);
 Application.Services = angular.module('tessaApp.services', []);
 
-angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize'])
+angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap'])
   
 .run(['$location', 'APIFactory', function ($location, APIFactory) {
     // APIFactory.getArticles();
 }])
 
+// .constant('API_URL', 'http://52.64.27.145:5001')
 .constant('API_URL', 'http://52.64.27.145:5001')
+
 .constant('API_VERSION', '/api/1.0/')
 
 .config(function($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {
@@ -39,7 +41,8 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
 
     .state('productCatalogue', {
         url: '/productCatalogue',
-        templateUrl: 'views/productCatalogue.html'
+        templateUrl: 'views/productCatalogue.html',
+        controller: 'productCtrl'
     })
 
     .state('search', {
@@ -50,7 +53,7 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
     .state('productDetailsSolution', {
         url: '/productCatalogue/productDetailsSolution',
         templateUrl: 'views/productDetailsSolution.html'
-    })
+    });
 
     $urlRouterProvider.otherwise('/experience');
 

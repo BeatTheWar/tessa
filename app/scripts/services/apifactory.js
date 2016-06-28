@@ -8,8 +8,12 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
         Restangular.all('articleinfo').customGET().then(function(results){
             callback(results);
         });
-	};
-
+	},
+	apifactory.getProductBundle = function(callback){
+		Restangular.all('product-bundle').customGET().then(function(results){
+			callback(results);
+		});
+	},
 	apifactory.getAllArticles = function(callback) {
         callback(apifactory.articleItems);
     };

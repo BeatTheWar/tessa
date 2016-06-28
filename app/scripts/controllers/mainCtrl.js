@@ -1,23 +1,24 @@
 'use strict';
 
 var MainCtrl = function($scope, APIFactory, $location) {
-	$scope.message="Success Stor adfasdfdy";
+    APIFactory.getArticles(function(data) {
+        $scope.articlesList = data.response.result;
+        // $scope.myMedia = $scope.articlesList.mediaFiles;
+        console.log('Aricle List:',$scope.articlesList);
 
-	APIFactory.getArticles(function(data){
-		$scope.articlesList = data.response.result;
-		// $scope.myMedia = $scope.articlesList.mediaFiles;
-		console.log($scope.articlesList);
 
-	  	$scope.select = function(selected) {
-	      $scope.selected = selected;
-	      console.log($scope.selected, 'selected');
-	  	}
-	}); 
+    });
+    $scope.select = function(selected) {
+        $scope.selected = [];
+        $scope.selected = selected;
+        console.log('selected:', $scope.selected);
+        console.log('selected id:', $scope.selected.article_id);
+    }
 
-	$scope.goToSearch = function(){
-		$location.path = '/search';
-	}
+    $scope.goToSearch = function() {
+        $location.path = '/search';
+    }
 
 };
 
-Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory','$location', MainCtrl]);
+Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);

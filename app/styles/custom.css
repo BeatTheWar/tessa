@@ -22,6 +22,10 @@ body {
 
 }
 
+.user_dp{
+    padding: 10px 10px 9px 10px;
+}
+
 /**Filter Section**/
 
 #sec-filter-pc {
@@ -220,6 +224,8 @@ body {
         max-width: 100%;
     }
 
+
+
 }
 
 /**END: EXPERIENCE DETAILS MODAL**/
@@ -304,6 +310,14 @@ body {
         padding-bottom: 0;
         padding-top: 0;
     }
+    .filter_options .btn-group, .filter_options li,.filter_options .btn{
+        width: 100%;
+    }
+    .sec-option-set a{
+        width: 100%;
+    }
+
+
 }
 @media only screen and (min-width: 200px) {
     #masonry-item {
@@ -319,6 +333,12 @@ body {
         padding-top: 0;
         margin: 10px;
     }
+    .sec-sd-inclusions .dis_cell{
+        display: block;
+        width: 100%;
+        border-bottom:solid 3px #E0E0E0;
+    }
+
 
 
 }
@@ -339,6 +359,7 @@ body {
     }
 
 
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -349,9 +370,6 @@ body {
     }
     .sec-pc-items {
         padding: 20px 50px;
-    }
-    .wrapper{
-        padding-bottom: 0;
     }
     .wrapper{
         padding-bottom: 25px;
@@ -376,7 +394,10 @@ body {
         padding-top: 0px;
         margin: 30px;
     }
-
+    .sec-sd-inclusions .dis_cell{
+        display: table-cell;
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -389,6 +410,10 @@ body {
         padding-bottom: 20px;
         padding-top: 0px;
         margin: 30px;
+    }
+    .sec-sd-inclusions .dis_cell{
+        display: table-cell;
+        width: 100%;
     }
 }
 
@@ -407,6 +432,12 @@ body {
     background: #3B7FF0;
     color: white;
     margin-top: 5px;
+    border: soldi thin #3678e5;
+}
+
+.box_price:hover{
+    background: #3678e5;
+    color: white;
 }
 
 /**End of Padding Presets**/
@@ -524,13 +555,16 @@ body {
 .filter_options {
     box-sizing: border-box;
     padding: 10px;
+
 }
 
 .filter_options li {
     box-sizing: border-box;
-    display: inline-block;
     text-align: center;
     padding: 5px;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .filter_items{
@@ -546,6 +580,8 @@ body {
     text-align: left;
     display: table;
     width: 100%;
+    list-style: none;
+    text-decoration: none;
 }
 
 .filter_options .dropdown-menu{
@@ -569,3 +605,57 @@ body {
 }
 
 /** End of Search Results**/
+
+
+/**Solution Details: Software**/
+
+.parent-sd{
+    padding: 40px 40px 20px 40px;
+}
+.sec-sd-psd .row_title{
+    padding-bottom: 20px;
+}
+
+.sec-option-set a{
+    margin-right: 10px;
+    text-align: center;
+}
+
+
+
+.inc_head{
+    padding: 20px 0;
+    text-align: center;
+    border-top: solid thin #E0E0E0;
+    border-bottom: solid thin #E0E0E0;
+}
+.inc_head .img_holder img{
+    max-height: 50px;
+}
+.inc_body{
+    padding: 20px;
+}
+
+
+
+.inc_body a:hover{
+    color:inherit;
+}
+.sec-sd-inclusions{
+    margin:0;
+    border: solid thin #E0E0E0;
+    border-top:0;
+    border-right:0;
+}
+.sec-sd-inclusions .dis_cell{
+    vertical-align: top;
+    width: 100%;
+    padding: 0;
+    border-right: solid thin #E0E0E0;
+}
+
+.inc_content{
+    margin-bottom: 10px;
+}
+
+/** End: Solution Details: Software**/

@@ -1,6 +1,6 @@
 'use strict';
 
-var MainCtrl = function($scope, APIFactory) {
+var MainCtrl = function($scope, APIFactory, $location) {
 	$scope.message="Success Stor adfasdfdy";
 
 	APIFactory.getArticles(function(data){
@@ -14,8 +14,10 @@ var MainCtrl = function($scope, APIFactory) {
 	  	}
 	}); 
 
-
+	$scope.goToSearch = function(){
+		$location.path = '/search';
+	}
 
 };
 
-Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', MainCtrl]);
+Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory','$location', MainCtrl]);

@@ -283,6 +283,7 @@ body {
 
 /**View Ports for masonry**/
 
+
 @media only screen and (max-width: 700px) {
 
     .pc_tabs .tab_items {
@@ -517,6 +518,54 @@ body {
 .box_details:hover {
     color: white;
     background: #3678e5;
+}
+
+
+.filter_options {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.filter_options li {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+
+.filter_items{
+    padding: 10px;
+}
+
+.filter_items input[type="checkbox"]{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filter_items li{
+    text-align: left;
+    display: table;
+    width: 100%;
+}
+
+.filter_options .dropdown-menu{
+    min-width: 200px;
+}
+.filter_options .btn-group{
+    padding: 5px 0;
+}
+.filter_items .cell_1{
+
+    width: 90%;
+}
+.filter_items .cell_2{
+    width: 15%;
+    text-align: right;
+}
+
+.sec-search-filter{
+    text-align: center;
+    padding-top: 30px;
 }
 
 /** End of Search Results**/

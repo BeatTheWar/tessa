@@ -12,27 +12,27 @@
                     Telco
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     QSR
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     Real State
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     Banking
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     Retail
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     Travel
                 </label>
                 <label class="btn btn-primary">
-                    <input  type="checkbox"  />
+                    <input type="checkbox"/>
                     Insurance
                 </label>
             </div>
@@ -41,23 +41,24 @@
         <!--end browse by industry section-->
 
         <!--success stories section-->
-        <div id="sec-success-stories">
-            <div class="row_title padding_10 ">
-                Success Stories
-            </div>
+
+        <div class="row_title xd-success-stories">
+            Success Stories
         </div>
 
+
         <div id="masonry-item">
-            <div class="item_experience" ng-repeat="article in articlesList" >
+            <div class="item_experience" ng-repeat="article in articlesList">
                 <div class="panel panel-default" ng-click="select(article)">
-                    <div class="img_holder" >
-                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
+                    <div class="img_holder">
+                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
+                                                                     ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#">{{article.title}}</a>
-<!--                         <div id="featured_solution" class="label_light">
-                            Summary
-                        </div> -->
+                        <!--                         <div id="featured_solution" class="label_light">
+                                                    Summary
+                                                </div> -->
                         <div id="featured_solution" class="label_medium">
                             <p ng-bind-html="article.article"></p>
                         </div>
@@ -71,7 +72,8 @@
 
 
 <!--Modal-->
-<div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     style="display: none;">
     <div class="modal-backdrop fade in" style="height: 100%;" data-dismiss="modal"></div>
     <div class="modal-dialog">
         <div class="modal-content">
@@ -82,34 +84,45 @@
 
             <div class="modal-body">
                 <!--Modal Body-->
-                <div class="row_title">
+                <div class="row_title pad20top">
                     <a href="#" class=" btn btn-label btn-social btn-flickr">
                         <i class="padding_10 fa fa-share-square"></i> Share
                     </a>
                 </div>
 
                 <div id="sec-xd-article">
-                    <div class="img_holder">
-                        <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles"></a>
-                    </div>
-                    <div class="font_24 blue1 font_medium">
-                        {{selected.title}}
-                    </div>
-                    <div class="article-primary">
-                        <p ng-bind-html="selected.description"></p>
-                        <div class="panel-body pad20top">
-                            <blockquote>
-                                <p ng-bind-html="selected.article">""</p>
-                            </blockquote>
+
+                    <div class="sec-xd-items">
+                        <div class="xd-img">
+                            <div class="img_holder">
+                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles"></a>
+                            </div>
+                        </div>
+                        <div class="xd-content">
+                            <div class="font_24 blue1 font_medium">
+                                {{selected.title}}
+                            </div>
+                            <div class="article-primary">
+                                <p ng-bind-html="selected.description"></p>
+                                <div class="panel-body">
+                                    <blockquote>
+                                        <p ng-bind-html="selected.article">""</p>
+                                    </blockquote>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
+
+
                 <div id="sec-xd-fs">
                     <div class="row_title">
                         FEATURED SOLUTION
                     </div>
-                    <div class="row">
-                        <div class="col-sm-3">
+                    <div class="row pad20top">
+                        <div class="col-lg-4">
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
@@ -119,75 +132,98 @@
                                         Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
                                     </div>
                                 </a>
-
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="panel panel-default box-item">
-                                <a href="#">
-                                    <div class="img_holder">
-                                        <img src="../assets/img/is5.jpg"/>
-                                    </div>
-                                    <div class="label_medium_black cap-box-item">
-                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
-                                    </div>
-                                </a>
 
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="panel panel-default box-item">
-                                <a href="#">
-                                    <div class="img_holder">
-                                        <img src="../assets/img/is5.jpg"/>
-                                    </div>
-                                    <div class="label_medium_black cap-box-item">
-                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="panel panel-default box-item">
-                                <a href="#">
-                                    <div class="img_holder">
-                                        <img src="../assets/img/is5.jpg"/>
-                                    </div>
-                                    <div class="label_medium_black cap-box-item">
-                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
                     </div>
                 </div>
+
                 <div id="sec-xd-rx">
                     <div class="row_title">
                         Related experience
                     </div>
-                    <div class="row">
+                    <div class="row pad20top">
                         <!--Dummy Related Experience-->
-                        <div class="col-sm-3">
+                        <div class="col-lg-4">
                             <div class="panel panel-default box-item">
-                                <div class="img_holder">
-                                    <img src="../assets/img/is4.jpg"/>
-                                </div>
-                                <div class="cap-box-item">
-                                    <div class="label_medium_blue">
-                                        <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is4.jpg"/>
                                     </div>
-                                    <div class="label_light">
-                                        Featured Solution
+                                    <div class="cap-box-item">
+                                        <div class="label_medium_blue">
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential
+                                                Media Player</a>
+                                        </div>
+                                        <div class="label_light pad20top">
+                                            Featured Solution
+                                        </div>
+                                        <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display
+                                            DB55E with Essential Media Player</a>
                                     </div>
-
-                                    <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
-
-                                </div>
+                                </a>
                             </div>
                         </div>
-
+                        <div class="col-lg-4">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is4.jpg"/>
+                                    </div>
+                                    <div class="cap-box-item">
+                                        <div class="label_medium_blue">
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential
+                                                Media Player</a>
+                                        </div>
+                                        <div class="label_light pad20top">
+                                            Featured Solution
+                                        </div>
+                                        <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display
+                                            DB55E with Essential Media Player</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is4.jpg"/>
+                                    </div>
+                                    <div class="cap-box-item">
+                                        <div class="label_medium_blue">
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential
+                                                Media Player</a>
+                                        </div>
+                                        <div class="label_light pad20top">
+                                            Featured Solution
+                                        </div>
+                                        <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display
+                                            DB55E with Essential Media Player</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default box-item">
+                                <a href="#">
+                                    <div class="img_holder">
+                                        <img src="../assets/img/is4.jpg"/>
+                                    </div>
+                                    <div class="cap-box-item">
+                                        <div class="label_medium_blue">
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential
+                                                Media Player</a>
+                                        </div>
+                                        <div class="label_light pad20top">
+                                            Featured Solution
+                                        </div>
+                                        <a href="#" class="label_medium_black">Eze Impress 55" Wall Mounted Digital Display
+                                            DB55E with Essential Media Player</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

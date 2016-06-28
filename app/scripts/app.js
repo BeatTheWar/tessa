@@ -51,9 +51,13 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
     })
 
     .state('productDetailsSolution', {
-        url: '/productCatalogue/productDetailsSolution/:selected_id',
-        templateUrl: 'views/productDetailsSolution.html',
-        controller: 'detailSolutionCtrl'
+        url: '/productCatalogue/productDetailsSolution',
+        templateUrl: 'views/productDetailsSolution.html'
+    })
+
+    .state('productDetailsHardware', {
+        url: '/productDetailsSolution',
+        templateUrl: 'views/productDetailsHardware.html'
     });
 
     $urlRouterProvider.otherwise('/experience');

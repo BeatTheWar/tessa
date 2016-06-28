@@ -664,3 +664,21 @@ body {
 }
 
 /** End: Solution Details: Software**/
+
+/** Hardware Details **/
+#hd-wrap .row_title{
+    padding: 30px;
+    border: solid thin green;
+}
+
+#sec-hd-preview{
+    padding: 30px;
+    border: solid thin red;
+}
+#sec-hd-preview .col-lg-6{
+    padding: 20px;
+    border: solid thin pink;
+}
+
+
+/** End of Hardware Details **/

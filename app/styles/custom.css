@@ -131,9 +131,7 @@ body {
     border-bottom: solid thin #E0E0E0;
 }
 
-#sec-success-stories {
-    padding: 15px;
-}
+
 
 #browse-industry {
     margin: 0;
@@ -152,8 +150,10 @@ body {
 
 /**end browse by industry**/
 
-/**success stories**/
-
+/**success storis**/
+.xd-success-stories{
+    padding: 25px 25px 0 25px;
+}
 #masonry-item { /* Masonry container */
     padding: 5px 25px;
     box-sizing: border-box;
@@ -175,7 +175,6 @@ body {
 
 .img_holder {
     height: auto;
-
 }
 
 #masonry-item .img_holder img {
@@ -190,29 +189,35 @@ body {
 
 /**EXPERIENCE DETAILS MODAL**/
 #sec-xd-article {
-    margin: 10px 0;
-    float: left;
+    padding:0;
+    margin-top: 20px;
     width: 100%;
 }
+/**.xd-content{
+    padding: 0 20px;
+}**/
 
-#sec-xd-article .img_holder {
-    max-width: 400px;
-
-    float: left;
-    margin-right: 10px;
+.modal-body{
+    padding:0 20px;
 }
 
+
+#sec-xd-article .img_holder {
+    max-width: 100%;
+}
+
+#xd-modal .panel{
+    margin: 0 0 20px 0;
+}
 #sec-xd-article .img_holder img {
     max-width: 100%;
+    max
 }
 
 #xd-modal .modal-footer {
     clear: both;
 }
 
-#xd-modal .modal-header {
-    border: 0;
-}
 
 @media (min-width: 992px) {
     .modal-lg {
@@ -228,43 +233,35 @@ body {
 
 }
 
+#sec-xd-article .dis_cell{
+    margin: 0;
+    vertical-align: top;
+}
+
+.xd-img{
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+}
+.xd-content blockquote{
+    clear: both;
+}
+
+
 /**END: EXPERIENCE DETAILS MODAL**/
 
 /**XD Featured SOlution**/
-#sec-xd-fs {
-    margin: 10px 0;
-    float: left;
-}
 
-#sec-xd-fs .img_holder {
+
+
+.img_holder {
     width: 100%;
 }
 
-#sec-xd-fs .img_holder img {
+.img_holder img {
     width: 100%;
 }
 
-#sec-xd-rx .img_holder {
-    width: 100%;
-}
-
-#sec-xd-rx .img_holder img {
-    width: 100%;
-}
-
-#sec-xd-rx .label_light {
-    margin-top: 10px;
-}
-
-#sec-xd-rx .panel, #sec-xd-fs .panel { /*reset*/
-    padding: 0;
-    margin: 10px;
-}
-
-#sec-xd-rx .row, #sec-xd-fs .row {
-    padding: 5px;
-
-}
 
 .cap-box-item {
     padding: 20px;
@@ -337,6 +334,10 @@ body {
         display: block;
         width: 100%;
         border-bottom:solid 3px #E0E0E0;
+    }
+    .sec-xd-items .xd-img{
+        display: block;
+        width: 100%;
     }
 
 
@@ -414,6 +415,10 @@ body {
     .sec-sd-inclusions .dis_cell{
         display: table-cell;
         width: 100%;
+    }
+    .sec-xd-items .xd-img{
+        float: left;
+        max-width: 50%;
     }
 }
 

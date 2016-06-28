@@ -7,8 +7,6 @@ var MainCtrl = function($scope, APIFactory, $location) {
         $scope.articlesList = data.response.result;
         // $scope.myMedia = $scope.articlesList.mediaFiles;
         console.log('$scope.articlesList:', $scope.articlesList);
-
-
     });
 
     $scope.select = function(selected) {
@@ -21,13 +19,16 @@ var MainCtrl = function($scope, APIFactory, $location) {
     $scope.goToSearch = function() {
         $location.path = '/search';
     }
-    APIFactory.getProductBundle(function(data) {
-        $scope.lists = data.response.result;
-        console.log('$scope.lists:', $scope.lists);
-    });
+
+    // APIFactory.getProductBundle(function(data) {
+    //     $scope.lists = data.response.result;
+    //     console.log('$scope.lists:', $scope.lists);
+    // });
 
     APIFactory.getAllTags(function(err,data){
         $scope.tags = data.response.result;
+
+        console.log('tags', $scope.tags);
     });
 
 };

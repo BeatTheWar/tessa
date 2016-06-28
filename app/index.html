@@ -27,12 +27,12 @@
             </span>
             </a>
             </span>
-            <a class="navbar-brand" href="#/experience">Tessa</a>
+            <a class="navbar-brand" ui-sref="experience">Tessa</a>
             <div class="toolbar-icon-bg hidden-xs" id="toolbar-search">
                 <div class="input-group">
                     <span class="input-group-btn"><button ng-click="goToSearch" class="btn" type="button"><i
                         class="fa fa-search"></i></button></span>
-                    <ui-select ng-model="lists.bundle_name">
+                        <ui-select ng-model="lists.bundle_name">
                         <ui-select-match placeholder="Search..">
                             {{$select.selected.bundle_name}}
                         </ui-select-match>
@@ -49,7 +49,7 @@
                 <a href="#"><span class="icon-bg"><i class="ti ti-search"></i></span></a>
             </li>
             <li class="dropdown toolbar-icon-bg">
-                <a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i
+                <a class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i
                     class="fa fa-shopping-cart"></i></span><span class="badge badge-deeporange">2</span></a>
                 <div class="dropdown-menu notifications arrow">
                     <div class="topnav-dropdown-header">
@@ -147,11 +147,10 @@
                                 <ul class="acc-menu">
                                     <li><a ui-sref="experience"><i class="fa fa-comment"></i><span>Experience</span></a>
                                     </li>
-                                    <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a>
+                                    <!-- <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a> -->
                                     </li>
-                                    <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li>
-                                    <li><a href="#/productCatalogue"><i
-                                        class="fa fa-desktop"></i><span>Product Catalogue</span></a></li>
+                                    <!-- <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li> -->
+                                    <li><a ui-sref="productCatalogue"><i class="fa fa-desktop"></i><span>Product Catalogue</span></a></li>
                                 </ul>
                             </nav>
                         </div>

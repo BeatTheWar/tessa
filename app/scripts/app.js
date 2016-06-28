@@ -13,7 +13,6 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
 
 // .constant('API_URL', 'http://52.64.27.145:5001')
 .constant('API_URL', 'http://52.64.27.145:5001')
-
 .constant('API_VERSION', '/api/1.0/')
 
 .config(function($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {

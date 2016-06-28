@@ -15,159 +15,166 @@
     <div id="pc-wrap" class="wrapper">
         <div id="sec-pc-category" class="row_title padding_10">
             <div class="btn-group font_14" data-toggle="buttons">
-                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio">
+                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
                     <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
                 </label>
-                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio">
+                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
                     <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
                 </label>
             </div>
         </div>
-        <!--select category-->
-        <div>
-            <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-class="{active: apply == 'EzeImpress'}" ng-click="solutionTypes('EzeImpress')">Eze Impress</a>
-                <a class="tab_items" ng-class="{active: apply == 'EzeFind'}" ng-click="solutionTypes('EzeFind')">Eze Find</a>
-                <a class="tab_items" ng-class="{active: apply == 'EzeOrda'}" ng-click="solutionTypes('EzeOrda')">Eze Orda</a>
-                <a class="tab_items" ng-class="{active: apply == 'EzeWifi'}" ng-click="solutionTypes('EzeWifi')">Eze Wifi</a>
-                <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
-            </div>
-        </div>
-        <div class="row sec-pc-items">
-            <div ng-show="apply == 'EzeImpress'">
-                <div class="col-lg-3" ng-repeat="item in product">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                <img src="images/img-sample-1.jpg" />
-                            </a>
-                            <!--Img Preview-->
-                            <div class="item_text">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-							{{item.bundle_name}}
-						</a>
-                                <!--Title-->
-                                <div class="font_14 grey1 font_light pad20top">
-                                    <span data-ng-bind-html="item.bundle_description"></span>
-                                </div>
-                                <div class="font_14 grey2 font_medium pad20top">
-                                    For as low as
-                                </div>
-                                <div class="box_price font_24 font_black">
-                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="apply == 'EzeFind'">
-                <div class="col-lg-3" ng-repeat="item in product">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                <img src="images/img-sample-1.jpg" />
-                            </a>
-                            <!--Img Preview-->
-                            <div class="item_text">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-							{{item.bundle_name}}
-						</a>
-                                <!--Title-->
-                                <div class="font_14 grey1 font_light pad20top">
-                                    <span data-ng-bind-html="item.bundle_description"></span>
-                                </div>
-                                <div class="font_14 grey2 font_medium pad20top">
-                                    For as low as
-                                </div>
-                                <div class="box_price font_24 font_black">
-                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="apply == 'EzeOrda'">
-                <div class="col-lg-3" ng-repeat="item in product">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                <img src="images/img-sample-1.jpg" />
-                            </a>
-                            <!--Img Preview-->
-                            <div class="item_text">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-							{{item.bundle_name}}
-						</a>
-                                <!--Title-->
-                                <div class="font_14 grey1 font_light pad20top">
-                                    <span data-ng-bind-html="item.bundle_description"></span>
-                                </div>
-                                <div class="font_14 grey2 font_medium pad20top">
-                                    For as low as
-                                </div>
-                                <div class="box_price font_24 font_black">
-                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="apply == 'EzeWifi'">
-                <div class="col-lg-3" ng-repeat="item in product">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                <img src="images/img-sample-1.jpg" />
-                            </a>
-                            <!--Img Preview-->
-                            <div class="item_text">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-							{{item.bundle_name}}
-						</a>
-                                <!--Title-->
-                                <div class="font_14 grey1 font_light pad20top">
-                                   <span data-ng-bind-html="item.bundle_description"></span>
-                                </div>
-                                <div class="font_14 grey2 font_medium pad20top">
-                                    For as low as
-                                </div>
-                                <div class="box_price font_24 font_black">
-                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-show="apply == 'EzeComms'">
-                <div class="col-lg-3" ng-repeat="item in product">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                <img src="images/img-sample-1.jpg" />
-                            </a>
-                            <!--Img Preview-->
-                            <div class="item_text">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-							{{item.bundle_name}}
-						</a>
-                                <!--Title-->
-                                <div class="font_14 grey1 font_light pad20top">
-                                    <span data-ng-bind-html="item.bundle_description"></span>
-                                </div>
-                                <div class="font_14 grey2 font_medium pad20top">
-                                    For as low as
-                                </div>
-                                <div class="box_price font_24 font_black">
-                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+		<div ng-show="prodType == 'Solution'">
+	        <div>
+	            <div class="pc_tabs text14_medium ">
+	                <a class="tab_items" ng-class="{active: apply == 'EzeImpress'}" ng-click="solutionTypes('EzeImpress')">Eze Impress</a>
+	                <a class="tab_items" ng-class="{active: apply == 'EzeFind'}" ng-click="solutionTypes('EzeFind')">Eze Find</a>
+	                <a class="tab_items" ng-class="{active: apply == 'EzeOrda'}" ng-click="solutionTypes('EzeOrda')">Eze Orda</a>
+	                <a class="tab_items" ng-class="{active: apply == 'EzeWifi'}" ng-click="solutionTypes('EzeWifi')">Eze Wifi</a>
+	                <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
+	            </div>
+	        </div>
+	        <div class="row sec-pc-items">
+	            <div ng-show="apply == 'EzeImpress'">
+	                <div class="col-lg-3" ng-repeat="item in product">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+								{{item.bundle_name}}
+							</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                    <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div ng-show="apply == 'EzeFind'">
+	                <div class="col-lg-3" ng-repeat="item in product">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+								{{item.bundle_name}}
+							</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                    <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div ng-show="apply == 'EzeOrda'">
+	                <div class="col-lg-3" ng-repeat="item in product">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+								{{item.bundle_name}}
+							</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                    <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div ng-show="apply == 'EzeWifi'">
+	                <div class="col-lg-3" ng-repeat="item in product">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+								{{item.bundle_name}}
+							</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                   <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div ng-show="apply == 'EzeComms'">
+	                <div class="col-lg-3" ng-repeat="item in product">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+								{{item.bundle_name}}
+							</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                    <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+
+		<div ng-show="prodType == 'Hardware'">
+			hardware
+		</div>
+
     </div>

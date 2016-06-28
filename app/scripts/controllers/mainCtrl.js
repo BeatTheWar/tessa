@@ -5,9 +5,9 @@ var MainCtrl = function($scope, APIFactory, $location) {
         $scope.articlesList = data.response.result;
         // $scope.myMedia = $scope.articlesList.mediaFiles;
         console.log('Aricle List:',$scope.articlesList);
-
-
     });
+
+    
     $scope.select = function(selected) {
         $scope.selected = [];
         $scope.selected = selected;

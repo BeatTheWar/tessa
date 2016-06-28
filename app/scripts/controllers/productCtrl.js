@@ -1,6 +1,9 @@
 'use strict';
 
+var solutionTypes = 'EzeImpress';
+
 var productCtrl = function($scope, APIFactory, $location, $filter) {
+    $scope.solutionTypes = solutionTypes;
 
     $scope.apply = '';
 

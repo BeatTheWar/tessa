@@ -1,16 +1,33 @@
 {
-  "bitwise": true,
-  "browser": true,
-  "curly": true,
-  "eqeqeq": true,
-  "esnext": true,
-  "latedef": true,
-  "noarg": true,
-  "node": true,
-  "strict": true,
-  "undef": true,
-  "unused": true,
-  "globals": {
-    "angular": false
-  }
+    "curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "sub": true,
+    "undef": true,
+    "boss": true,
+    "eqnull": true,
+    "browser": true,
+    "smarttabs": true,
+    "globals": {
+        "jQuery": true,
+        "angular": true,
+        "console": true,
+        "async": true,
+        "jsPDF": true,
+        "$": true,
+        "_": true,
+        "moment": true,
+        "describe": true,
+        "beforeEach": true,
+        "module": true,
+        "inject": true,
+        "it": true,
+        "expect": true,
+        "xdescribe": true,
+        "xit": true,
+        "spyOn": true
+    }
 }

@@ -95,7 +95,7 @@
                     <div class="sec-xd-items">
                         <div class="xd-img">
                             <div class="img_holder">
-                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles"></a>
+                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles | limitTo: 1"></a>
                             </div>
                         </div>
                         <div class="xd-content">
@@ -112,24 +112,22 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
 
                 <div id="sec-xd-fs">
-                    <div class="row_title">
+                    <div class="row_title" ng-hide="selected.article_features.length == 0">
                         FEATURED SOLUTION
                     </div>
                     <div class="row pad20top">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" ng-repeat="featured in selected.article_features">
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="../assets/img/is5.jpg"/>
+                                        <img src="images/is5.jpg"/>
                                     </div>
                                     <div class="font_bold grey2 cap-box-item">
-                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                        {{featured.product_details.item_name}}
                                     </div>
                                 </a>
                             </div>
@@ -148,7 +146,7 @@
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="../assets/img/is4.jpg"/>
+                                        <img src="images/is4.jpg"/>
                                     </div>
                                     <div class="cap-box-item">
                                         <div class="font_bold blue1">
@@ -175,4 +173,3 @@
         </div>
     </div>
 </div>
-<!--End: Modal-->

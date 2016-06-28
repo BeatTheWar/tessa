@@ -15,7 +15,6 @@
     <!-- <link rel="stylesheet" href="bower_components/nanoscroller/bin/css/nanoscroller.css"/> -->
     <link rel="stylesheet" href="styles/custom.css">
     <!-- <link rel="stylesheet" href="styles/main.css"> -->
-
 </head>
 <body class="animated-content" ng-controller="MainCtrl">
 
@@ -122,7 +121,11 @@
 
         <li class="dropdown toolbar-icon-bg">
             <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
-                <img class="img-circle" alt=""/>
+                <div class="user_dp">
+                    <span class="ti ti-user"></span>
+                </div>
+
+
             </a>
             <ul class="dropdown-menu userinfo arrow">
                 <li><a href="#/"><i class="ti ti-user"></i><span>Profile</span><span
@@ -194,6 +197,7 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/restangular/dist/restangular.js"></script>
+<script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
 
 <script src="scripts/application.js"></script>
 <script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>

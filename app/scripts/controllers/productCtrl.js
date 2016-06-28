@@ -28,7 +28,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter) {
         else if (status == 'EzeComms') {
             $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeComms' });
         }
-        
     };
 
 

@@ -25,15 +25,13 @@
         </div>
 
 		<div ng-show="prodType == 'Solution'">
-	        <div>
-	            <div class="pc_tabs text14_medium ">
-	                <a class="tab_items" ng-class="{active: apply == 'EzeImpress'}" ng-click="solutionTypes('EzeImpress')">Eze Impress</a>
-	                <a class="tab_items" ng-class="{active: apply == 'EzeFind'}" ng-click="solutionTypes('EzeFind')">Eze Find</a>
-	                <a class="tab_items" ng-class="{active: apply == 'EzeOrda'}" ng-click="solutionTypes('EzeOrda')">Eze Orda</a>
-	                <a class="tab_items" ng-class="{active: apply == 'EzeWifi'}" ng-click="solutionTypes('EzeWifi')">Eze Wifi</a>
-	                <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
-	            </div>
-	        </div>
+            <div class="pc_tabs text14_medium ">
+                <a class="tab_items" ng-class="{active: apply == 'EzeImpress'}" ng-click="solutionTypes('EzeImpress')" ng-init="apply = 'EzeImpress'">Eze Impress</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeFind'}" ng-click="solutionTypes('EzeFind')">Eze Find</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeOrda'}" ng-click="solutionTypes('EzeOrda')">Eze Orda</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeWifi'}" ng-click="solutionTypes('EzeWifi')">Eze Wifi</a>
+                <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
+            </div>
 	        <div class="row sec-pc-items">
 	            <div ng-show="apply == 'EzeImpress'">
 	                <div class="col-lg-3" ng-repeat="item in product">
@@ -45,8 +43,8 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-								{{item.bundle_name}}
-							</a>
+										{{item.bundle_name}}
+									</a>
 	                                <!--Title-->
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                    <span data-ng-bind-html="item.bundle_description"></span>
@@ -72,8 +70,8 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-								{{item.bundle_name}}
-							</a>
+										{{item.bundle_name}}
+									</a>
 	                                <!--Title-->
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                    <span data-ng-bind-html="item.bundle_description"></span>
@@ -99,8 +97,8 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-								{{item.bundle_name}}
-							</a>
+										{{item.bundle_name}}
+									</a>
 	                                <!--Title-->
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                    <span data-ng-bind-html="item.bundle_description"></span>
@@ -126,8 +124,8 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-								{{item.bundle_name}}
-							</a>
+										{{item.bundle_name}}
+									</a>
 	                                <!--Title-->
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                   <span data-ng-bind-html="item.bundle_description"></span>
@@ -153,8 +151,8 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-								{{item.bundle_name}}
-							</a>
+										{{item.bundle_name}}
+									</a>
 	                                <!--Title-->
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                    <span data-ng-bind-html="item.bundle_description"></span>
@@ -174,7 +172,12 @@
 		</div>
 
 		<div ng-show="prodType == 'Hardware'">
-			hardware
+			<div>
+	            <div class="pc_tabs text14_medium ">
+	                <a class="tab_items" ng-class="{active: apply == 'Screens'}" ng-click="solutionTypes('Screens')">Screens</a>
+	                <a class="tab_items" ng-class="{active: apply == 'MediaPlayer'}" ng-click="solutionTypes('MediaPlayer')">Media Player</a>
+	                <a class="tab_items" ng-class="{active: apply == 'MTI'}" ng-click="solutionTypes('MTI')">MTI</a>
+	            </div>
+	        </div>
 		</div>
-
     </div>

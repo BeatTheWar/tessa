@@ -5,62 +5,64 @@ var Application = Application || {};
 Application.Controllers = angular.module('tessaApp.controllers', []);
 Application.Services = angular.module('tessaApp.services', []);
 
-angular.module('tessaApp', ['tessaApp.controllers', 'tessaApp.services', 'ui.router', 'restangular', 'ngSanitize', 'ui.bootstrap', 'ui.select'])
 
-    .run(['$location', 'APIFactory', function ($location, APIFactory) {
-        // APIFactory.getArticles();
-    }])
+angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
 
-    // .constant('API_URL', 'http://52.64.27.145:5001')
-    .constant('API_URL', 'http://52.64.27.145:5001')
-    .constant('API_VERSION', '/api/1.0/')
+.run(['$location', 'APIFactory', function ($location, APIFactory) {
+    // APIFactory.getArticles();
+}])
 
-    .config(function ($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {
-        $httpProvider.interceptors.push('authInterceptor');
+// .constant('API_URL', 'http://52.64.27.145:5001')
+.constant('API_URL', 'http://52.64.27.145:5001')
+.constant('API_VERSION', '/api/1.0/')
 
-        $provide.value('baseURL', API_URL);
-        RestangularProvider.setBaseUrl(API_URL + API_VERSION);
+.config(function($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {
+    $httpProvider.interceptors.push('authInterceptor');
 
-        $stateProvider
-            .state('experience', {
-                url: '/experience',
-                templateUrl: 'views/experience.html',
-                controller: 'MainCtrl'
-            })
+    $provide.value('baseURL', API_URL);
+    RestangularProvider.setBaseUrl(API_URL + API_VERSION);
 
-            .state('builder', {
-                url: '/builder',
-                templateUrl: 'views/builder.html'
-            })
+    $stateProvider
+    .state('experience', {
+        url: '/experience',
+        templateUrl: 'views/experience.html',
+        controller: 'MainCtrl'
+    })
 
-            .state('priceBook', {
-                url: '/priceBook',
-                templateUrl: 'views/priceBook.html'
-            })
+    .state('builder', {
+        url: '/builder',
+        templateUrl: 'views/builder.html'
+    })
 
-            .state('productCatalogue', {
-                url: '/productCatalogue',
-                templateUrl: 'views/productCatalogue.html',
-                controller: 'productCtrl'
-            })
+    .state('priceBook', {
+        url: '/priceBook',
+        templateUrl: 'views/priceBook.html'
+    })
 
-            .state('search', {
-                url: '/search',
-                templateUrl: 'views/search.html',
-                controller: 'searchCtrl'
-            })
+    .state('productCatalogue', {
+        url: '/productCatalogue',
+        templateUrl: 'views/productCatalogue.html',
+        controller: 'productCtrl'
+    })
 
-            .state('productDetailsSolution', {
-                url: '/productCatalogue/productDetailsSolution/:selected_id',
-                templateUrl: 'views/productDetailsSolution.html',
-                controller: 'detailSolutionCtrl'
-            })
+    .state('search', {
+        url: '/search',
+        templateUrl: 'views/search.html',
+        controller: 'searchCtrl'
+    })
 
-            .state('productDetailsHardware', {
-                url: '/productDetailsSolution',
-                templateUrl: 'views/productDetailsHardware.html'
-            });
+    .state('productDetailsSolution', {
+        url: '/productCatalogue/productDetailsSolution/:selected_id',
+        templateUrl: 'views/productDetailsSolution.html',
+        controller: 'detailSolutionCtrl'
+    })
 
-        $urlRouterProvider.otherwise('/experience');
+    .state('productDetailsHardware', {
+        url: '/productCatalogue/productDetailsHardware',
+        templateUrl: 'views/productDetailsHardware.html'
+    });
+
+    $urlRouterProvider.otherwise('/experience');
+
 
     });

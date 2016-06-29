@@ -315,6 +315,7 @@ body {
     }
 
 
+
 }
 @media only screen and (min-width: 200px) {
     #masonry-item {
@@ -773,3 +774,6 @@ body {
 .static-sidebar{
     position: fixed;
 }
+
+
+

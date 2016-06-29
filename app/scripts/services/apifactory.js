@@ -16,12 +16,21 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
         });
     };
 
-    apifactory.getDetailSolution = function(id,callback) {
+    apifactory.getDetailSolution = function(id, callback) {
         Restangular.all('product-bundle/' + id).customGET().then(function(results) {
-            callback(null,results);
-        },function(err){
-        	callback(err,null);
+            callback(null, results);
+        }, function(err) {
+            callback(err, null);
         });
+    };
+
+    apifactory.getAllTags = function(callback) {
+        Restangular.all('tags').customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+               callback(err, null);
+            });
     };
 
     return apifactory;

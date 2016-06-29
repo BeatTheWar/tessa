@@ -27,8 +27,6 @@ body {
 
 /**Filter Section**/
 
-
-
 .min-filter, .min-filter li {
 
     list-style: none;
@@ -40,6 +38,7 @@ body {
 
 #srch-filter-panel {
     background: white;
+
 }
 
 #sec-srch-filter {
@@ -350,20 +349,22 @@ body {
         position: inherit;
         border-bottom: solid thin #E0E0E0;
     }
+
     .min-filter, .min-filter li {
         display: inline-block;
         text-align: center;
     }
+
     #topnav.navbar-default .navbar-brand,
     #topnav.navbar-bluegraylight .navbar-brand,
     #topnav.navbar-graylight .navbar-brand {
         background-size: 68px;
         border: solid thin red;
     }
-    #pc-wrap{
-        margin: 30px 20px ;
-    }
 
+    #pc-wrap {
+        margin: 30px 20px;
+    }
 
 }
 
@@ -383,10 +384,6 @@ body {
         padding-top: 0;
         margin: 30px;
     }
-
-
-
-
 }
 
 @media only screen and (min-width: 700px) {
@@ -417,21 +414,25 @@ body {
         background-size: 60px;
         border: solid thin red;
     }
+
     #srch-filter-panel, #sec-srch-filter {
         position: absolute;
         height: 100%;
         border-right: solid thin #E0E0E0;
     }
-    .rotate{
+
+    .rotate {
         transform: rotate(90deg);
         margin: 20px 0;
     }
+
     .min-filter, .min-filter li {
         display: block;
         text-align: center;
     }
-    #pc-wrap{
-        margin-left: 85px ;
+
+    #pc-wrap {
+        margin-left: 85px;
     }
 
 }
@@ -469,21 +470,25 @@ body {
         background-size: 86px;
         border: solid thin red;
     }
+
     #srch-filter-panel, #sec-srch-filter {
         position: absolute;
         height: 100%;
         border-right: solid thin #E0E0E0;
     }
-    .rotate{
+
+    .rotate {
         transform: rotate(90deg);
         margin: 20px 0;
     }
+
     .min-filter, .min-filter li {
         display: block;
         text-align: center;
     }
-    #pc-wrap{
-        margin-left: 85px ;
+
+    #pc-wrap {
+        margin-left: 85px;
     }
 }
 
@@ -535,19 +540,29 @@ body {
         position: absolute;
         height: 100%;
         border-right: solid thin #E0E0E0;
+        -webkit-box-shadow: 1px 1px 12px 0px rgba(135, 135, 135, 0.73);
+        -moz-box-shadow: 1px 1px 12px 0px rgba(135, 135, 135, 0.73);
+        box-shadow: 1px 1px 12px 0px rgba(135, 135, 135, 0.73);
+        z-index: 3;
     }
-    .rotate{
+
+    .rotate {
         transform: rotate(90deg);
         margin: 20px 0;
     }
+
     .min-filter, .min-filter li {
         display: block;
         text-align: center;
     }
-    #pc-wrap{
-        margin-left: 85px ;
+
+    #pc-wrap {
+        margin-left: 85px;
     }
+
+
 }
+
 
 /**End : View Ports for masonry**/
 
@@ -555,6 +570,14 @@ body {
 
 .pad20top {
     padding-top: 20px;
+}
+
+.pad20all {
+    padding: 20px;
+}
+
+#srch-filter-panel .row_title {
+    padding: 20px 10px;
 }
 
 .box_price {

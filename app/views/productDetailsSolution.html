@@ -62,12 +62,12 @@
                                 SOFTWARE
                             </div>
                         </div>
-                        <div class="inc_body">
-                            <div class="inc_title font_bold grey2">
-                                CMS
+                        <div class="inc_body"  ng-repeat="softwares in software">
+                            <div class="inc_title font_bold grey2" >
+                                {{softwares.brand}}
                             </div>
                             <a href="" class="inc_text font_light grey2">
-                                Engagis Eze Impress Enhanced CMS
+                                {{softwares.item_name}}
                             </a>
                         </div>
                     </div>
@@ -80,13 +80,13 @@
                                 HARDWARE
                             </div>
                         </div>
-                        <div class="inc_body">
+                        <div class="inc_body" ng-repeat="hardwares in hardware">
                             <div class="inc_title font_bold grey2">
-                                CMS
+                                {{hardwares.brand}}
                             </div>
                             <a href="" class="inc_text font_light grey2">
-                                Engagis Eze Impress Enhanced CMS
-                            </a>
+                                {{hardwares.item_name}}
+                            </a>    
                         </div>
                     </div>
                     <div class="dis_cell">
@@ -116,20 +116,9 @@
                                 SUPPORT
                             </div>
                         </div>
-                        <div class="inc_body">
-                            <div class="inc_title font_bold grey2">
-                                CMS
-                            </div>
+                        <div class="inc_body" ng-repeat="service in services">
                             <a href="" class="inc_text font_light grey2">
-                                Engagis Eze Impress Enhanced CMS
-                            </a>
-                        </div>
-                        <div class="inc_body">
-                            <div class="inc_title font_bold grey2">
-                                CMS
-                            </div>
-                            <a href="" class="inc_text font_light grey2">
-                                Engagis Eze Impress Enhanced CMS
+                                {{service.item_name}}
                             </a>
                         </div>
                     </div>

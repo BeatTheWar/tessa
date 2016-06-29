@@ -89,10 +89,32 @@
                     _.each($scope.hardwarecategories, function(row) {
                         _.find($scope.allproduct, function(o) {
                             if (row.product_id == o.p_id) {
-                                row.item_name = o.item_name;
+                                row.products = o;
                             }
                         });
                     });
+
+                    $scope.price = [];
+                    $scope.price = _.map($scope.hardwarecategories, function(value){
+                        return value.products.sell_price;
+                    })        
+
+                    var sum = $scope.price.reduce(add, 0);
+                    function add(a, b) {
+                        return a + b;
+                    }
+
+                    $scope.upfront = _.reduce($scope.price);
+                    console.log('pricing', $scope.price);
+                    console.log('upfront', sum);
+
+
+                    // $scope.totalUpfront = _.map($scope.hardwarecategories, function(row){
+                    //      _.map(row.products, function(d){
+                    //         console.log('price', d.sell_price);
+                    //     });
+                    // })    
+                    // $scope.totalUpfront = $scope.hardwarecategories.products.sell_price;
                     console.log('$scope.hardwarecategories:', $scope.hardwarecategories);
                 }
             });

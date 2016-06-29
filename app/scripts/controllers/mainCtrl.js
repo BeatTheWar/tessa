@@ -11,6 +11,7 @@ var MainCtrl = function($scope, APIFactory, $location) {
                 $scope.tags.push($scope.articlesList[i].tags[d]);
             }
         };
+        
         console.log('tags', $scope.tags);
         $scope.myTags = _.uniqBy($scope.tags, function(row){
             return row.tags;

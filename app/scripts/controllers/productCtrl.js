@@ -5,7 +5,7 @@ var solutionTypes = 'EzeImpress';
 var productCtrl = function($scope, APIFactory, $location, $filter) {
     $scope.solutionTypes = solutionTypes;
 
-    $scope.apply = '';
+    $scope.apply = 'EzeImpress';
 
     APIFactory.getProductBundle(function(data) {
         $scope.products = data.response.result;
@@ -24,8 +24,7 @@ var productCtrl = function($scope, APIFactory, $location, $filter) {
             $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeOrda' });
         } else if (status == 'EzeWifi') {
             $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeWifi' });
-        }
-        else if (status == 'EzeComms') {
+        } else if (status == 'EzeComms') {
             $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeComms' });
         }};
 

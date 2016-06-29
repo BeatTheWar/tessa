@@ -16,11 +16,11 @@
 
         <div id="sec-pc-category" class="row_title padding_10">
             <div class="btn-group font_14" data-toggle="buttons">
-                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
+                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" >
                     <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
                 </label>
 
-                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
+                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio" ng-click="prodType = 'Hardware'" ng-init="prodType = 'Hardware'">
                     <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
 
                 </label>
@@ -36,7 +36,7 @@
                 <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
             </div>
 	        <div class="row sec-pc-items">
-	            <div ng-show="apply == 'EzeImpress'">
+	            <div ng-show="apply">
 	                <div class="col-lg-3" ng-repeat="item in product">
 	                    <div class="panel panel-default">
 	                        <div class="panel-body">

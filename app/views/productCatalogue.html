@@ -14,7 +14,7 @@
                 </li>
                 <li id="rotate-filter">
                     <div class="rotate">
-                        Filter
+                        Filters
                     </div>
                 </li>
             </ul>
@@ -79,6 +79,7 @@
                 </label>
             </div>
         </div>
+        <hr class="border-grey"/>
         <div class="sec-srch-category">
             <div class="row_title padding_10">
                 Mounting Options
@@ -112,16 +113,15 @@
 
 
 <div id="pc-wrap" class="wrapper">
-
     <div id="sec-pc-category" class="row_title padding_10">
         <div class="btn-group font_14" data-toggle="buttons">
-            <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio"
+            <label id="btn-software" class="btn btn-primary-alt btn-pc-radio"
                    ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'"
                    ng-init="prodType = 'Solution'">
                 <input type="radio" name="catalogue_selector" id="option1"/> SOLUTION
             </label>
 
-            <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio"
+            <label id="btn-hardware" class="btn btn-primary-alt btn-pc-radio"
                    ng-click="prodType = 'Hardware'">
                 <input type="radio" name="catalogue_selector" id="option2"/> HARDWARE
 

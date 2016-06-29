@@ -14,10 +14,7 @@ $(document).ready(function () {
                     $("#srch-filter-panel").hide();
                 }
             });
-
-
         }
-
         else {
 
             $("#pc-wrap").css({'margin-left': '85px'});

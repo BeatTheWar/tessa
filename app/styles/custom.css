@@ -61,8 +61,23 @@ body {
 .srch-check:focus,
 .srch-check:active,
 .srch-check.active {
+
     color: #28b463;
     box-shadow: none;
+}
+#sec-pc-category .btn-primary-alt{
+    border:solid thin #3B7FF0;
+    color: #3B7FF0;
+}
+
+
+#sec-pc-category .btn-primary-alt:hover,
+#sec-pc-category .btn-primary-alt:focus,
+#sec-pc-category .btn-primary-alt:active,
+#sec-pc-category .btn-primary-alt.active {
+    background-color: #3B7FF0;
+    box-shadow: none;
+    color: white;
 }
 
 #pc-wrap {
@@ -148,7 +163,7 @@ body {
 
 #browse-industry .btn {
     margin: 5px 4px;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 /**end browse by industry**/
@@ -196,6 +211,20 @@ body {
     padding: 0;
     margin-top: 20px;
     width: 100%;
+}
+
+#browse-industry .btn-primary-alt{
+    border:solid thin #3B7FF0;
+    color: #3B7FF0;
+}
+
+#browse-industry .btn-primary-alt:hover,
+#browse-industry .btn-primary-alt:focus,
+#browse-industry .btn-primary-alt:active,
+#browse-industry .btn-primary-alt.active {
+    background-color: #3B7FF0;
+    box-shadow: none;
+    color: white;
 }
 
 /**.xd-content{
@@ -762,6 +791,25 @@ body {
 /** End of Search Results**/
 
 /**Solution Details: Software**/
+.btn-tessa-back{
+    background:#BDBDBD;
+    font-family: medium;
+    color: white;
+    border-radius: 0;
+}
+
+
+.btn-tessa-back:hover,
+.btn-tessa-back:focus,
+.btn-tessa-back:active,
+.btn-tessa-back.active {
+    background-color: #3B7FF0;
+    box-shadow: none;
+    color: white;
+}
+.sec-sd-psd .img_holder{
+    margin-bottom: 30px;
+}
 
 .parent-sd {
     padding: 40px 40px 20px 40px;
@@ -816,12 +864,12 @@ body {
 /** End: Solution Details: Software**/
 
 /** Hardware Details **/
-#hd-wrap .row_title {
-    padding: 20px 20px 0 20px;
+#sec-hd-preview .row_title {
+    padding: 40px 0 0 5px;
 }
 
 #sec-hd-preview {
-    padding: 0 15px;
+    padding: 0 30px;
 
 }
 
@@ -841,7 +889,7 @@ body {
 }
 
 #sec-hd-specs {
-    padding: 20px 20px;
+    padding: 35px;
 
 }
 
@@ -881,7 +929,6 @@ body {
     color: #616161;
     text-transform: uppercase;
     padding: 10px 0;
-
 }
 
 #hd-wrap {
@@ -912,3 +959,10 @@ body {
     display: inline-block;
 }
 
+.modal-backdrop{
+    background-color: white;
+}
+
+.border-grey{
+    border-top: solid 1px #E0E0E0;
+}

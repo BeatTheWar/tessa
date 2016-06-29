@@ -3777,6 +3777,7 @@ tbody.collapse.in {
   bottom: 0;
   top: 0;
   z-index: 991;
+
 }
 .pull-right > .dropdown-menu,
 .pull-right > .tt-dropdown-menu {
@@ -4596,7 +4597,7 @@ button.close {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #fff;
+  background-color: black;
 }
 .modal-backdrop.fade {
   opacity: 0;

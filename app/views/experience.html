@@ -74,7 +74,7 @@
 <!--Modal-->
 <div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
      style="display: none;">
-    <div class="modal-backdrop fade in" style="height: 100%;" data-dismiss="modal"></div>
+    <div class="modal-backdrop fade in" style="height: 100vh; position: fixed;" data-dismiss="modal"></div>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,9 +94,51 @@
 
                     <div class="sec-xd-items">
                         <div class="xd-img">
-                            <div class="img_holder">
-                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles"></a>
+                            <!--<div class="img_holder">
+                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles | limitTo: 1"></a>
+                            </div>-->
+                            <!--Carousel-->
+                            <div id="carousel-example-captions" class="carousel slide">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-captions" data-slide-to="1" class></li>
+                                    <li data-target="#carousel-example-captions" data-slide-to="2" class></li>
+                                </ol>
+                                <div class="carousl-inner">
+                                    <div class="item active">
+                                        <div class="img_holder">
+                                            <img src="../images/is4.jpg"/>
+
+                                        </div>
+
+                                        <div class="carousel-caption">
+                                            <h3>Test1</h3>
+                                            <p>Test article</p>
+                                        </div>
+                                    </div>
+                                    <div class="item ">
+
+                                        <div class="carousel-caption">
+                                            <h3>Test1</h3>
+                                            <p>Test article</p>
+                                        </div>
+                                    </div>
+                                    <div class="item ">
+
+                                        <div class="carousel-caption">
+                                            <h3>Test1</h3>
+                                            <p>Test article</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+                                    <i class="fa fa-prev icon-prev"></i>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+                                    <i class="fa fa-next icon-next"></i>
+                                </a>
                             </div>
+                            <!--End of Carousel-->
                         </div>
                         <div class="xd-content">
                             <div class="font_24 blue1 font_medium">
@@ -112,24 +154,22 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
 
                 <div id="sec-xd-fs">
-                    <div class="row_title">
+                    <div class="row_title" ng-hide="selected.article_features.length == 0">
                         FEATURED SOLUTION
                     </div>
                     <div class="row pad20top">
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" ng-repeat="featured in selected.article_features">
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="../assets/img/is5.jpg"/>
+                                        <img src="images/is5.jpg"/>
                                     </div>
                                     <div class="font_bold grey2 cap-box-item">
-                                        Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player
+                                        {{featured.product_details.item_name}}
                                     </div>
                                 </a>
                             </div>
@@ -148,11 +188,12 @@
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="../assets/img/is4.jpg"/>
+                                        <img src="images/is4.jpg"/>
                                     </div>
                                     <div class="cap-box-item">
                                         <div class="font_bold blue1">
-                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with
+                                                Essential
                                                 Media Player</a>
                                         </div>
                                         <div class="font_light pad20top">
@@ -175,4 +216,3 @@
         </div>
     </div>
 </div>
-<!--End: Modal-->

@@ -24,10 +24,6 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
         });
     };
 
-    apifactory.getAllArticles = function(callback) {
-        callback(apifactory.articleItems);
-    };
-
     return apifactory;
 };
 

@@ -5,8 +5,8 @@ var Application = Application || {};
 Application.Controllers = angular.module('tessaApp.controllers', []);
 Application.Services = angular.module('tessaApp.services', []);
 
-angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap'])
-  
+angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
+
 .run(['$location', 'APIFactory', function ($location, APIFactory) {
     // APIFactory.getArticles();
 }])
@@ -47,7 +47,8 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
 
     .state('search', {
         url: '/search',
-        templateUrl: 'views/search.html'
+        templateUrl: 'views/search.html',
+        controller: 'searchCtrl'
     })
 
     .state('productDetailsSolution', {

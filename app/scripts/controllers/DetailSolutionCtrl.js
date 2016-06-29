@@ -12,14 +12,7 @@
                     console.log('$scope.details:', $scope.details);
                 }
             });
-
-
-
         }
-
-
-
-
     };
 
     Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', detailSolutionCtrl]);

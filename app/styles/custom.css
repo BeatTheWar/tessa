@@ -330,10 +330,15 @@ body {
         padding-top: 0;
         margin: 10px;
     }
-    .sec-sd-inclusions .dis_cell{
+    .sec-sd-inclusions .dis_cell,#sec-hd-specs .dis_cell{
         display: block;
         width: 100%;
         border-bottom:solid 3px #E0E0E0;
+    }
+
+    .spec_table .spec_cell{
+        display: block;
+        width: 100%;
     }
     .sec-xd-items .xd-img{
         display: block;
@@ -377,6 +382,10 @@ body {
         padding-top: 0px;
         margin: 30px;
     }
+    .spec_table .spec_cell{
+        display: block;
+        width: 100%;
+    }
 
 
 }
@@ -395,7 +404,11 @@ body {
         padding-top: 0px;
         margin: 30px;
     }
-    .sec-sd-inclusions .dis_cell{
+    .sec-sd-inclusions .dis_cell,#sec-hd-specs .dis_cell{
+        display: table-cell;
+        width: 100%;
+    }
+    .spec_table .spec_cell{
         display: table-cell;
         width: 100%;
     }
@@ -412,13 +425,17 @@ body {
         padding-top: 0px;
         margin: 30px;
     }
-    .sec-sd-inclusions .dis_cell{
+    .sec-sd-inclusions .dis_cell,#sec-hd-specs .dis_cell{
         display: table-cell;
         width: 100%;
     }
     .sec-xd-items .xd-img{
         float: left;
         max-width: 50%;
+    }
+    .spec_table .spec_cell{
+        display: table-cell;
+        width: 100%;
     }
 }
 
@@ -667,18 +684,92 @@ body {
 
 /** Hardware Details **/
 #hd-wrap .row_title{
-    padding: 30px;
-    border: solid thin green;
+    padding: 20px 20px 0 20px;
 }
 
+
+
 #sec-hd-preview{
-    padding: 30px;
-    border: solid thin red;
+    padding: 0 15px;
+
 }
 #sec-hd-preview .col-lg-6{
     padding: 20px;
-    border: solid thin pink;
+
+}
+
+.spec_table{
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+#sec-hd-specs .dis_table{
+    border-right: solid thin #E0E0E0;
+}
+#sec-hd-specs{
+    padding: 20px 20px;
+
+}
+#sec-hd-specs .dis_cell{
+    border: solid thin #E0E0E0;
+    border-right: 0;
+    padding: 10px 20px;
+    vertical-align: top;
+
+}
+.spec_list{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+.spec_list li{
+    padding: 10px 0;
+    margin: 0;
+
+}
+
+.goes-well-cat{
+    padding: 15px 0;
+    margin: 0;
+
+}
+
+.spec_cell{
+    display: table-cell;
+    width: 100%;
+}
+
+.head_specs{
+    font-family: black;
+    color: #616161;
+    text-transform:uppercase;
+    padding: 10px 0;
+
+
+}
+
+#hd-wrap{
+    padding-bottom: 0;
+}
+
+/**END Hardware Details**/
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.icon_table{
+    display: table;
+    width: 100%
+}
+
+.icon_cell{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 
-/** End of Hardware Details **/
+.static-sidebar{
+    position: fixed;
+}

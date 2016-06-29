@@ -7,9 +7,15 @@
             </div>
 
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags">
+                <!-- <label class="btn btn-primary-alt" ng-repeat="tag in tags">
                     <input type="checkbox"/>
                     {{tag.tags}}
+                </label> -->
+
+                <label class="btn btn-primary-alt" ng-repeat="getTag in articlesList">
+                    <input type="checkbox"/>
+                    <p ng-repeat="tag in getTag.tags">{{tag.tags}}</p>
+                    
                 </label>
             </div>
 

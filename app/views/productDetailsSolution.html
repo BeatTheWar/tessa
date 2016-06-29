@@ -80,12 +80,12 @@
                                 HARDWARE
                             </div>
                         </div>
-                        <div class="inc_body" ng-repeat="hardwares in hardware">
+                        <div class="inc_body" ng-repeat="categ in hardwarecategories">
                             <div class="inc_title font_bold grey2">
-                                {{hardwares.brand}}
+                                {{categ.label}}
                             </div>
-                            <a href="" class="inc_text font_light grey2">
-                                {{hardwares.item_name}}
+                            <a href="" class="inc_text font_light grey2" ng-repeat="hard in hardware">
+                                {{hard.item_name}}
                             </a>    
                         </div>
                     </div>

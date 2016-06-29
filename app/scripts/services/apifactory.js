@@ -31,6 +31,22 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
                callback(err, null);
             });
     };
+    apifactory.getProduct = function(callback) {
+        Restangular.all('product').customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+                callback(err, null);
+            });
+    };
+    apifactory.getCategory = function(callback) {
+        Restangular.all('categories').customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+                callback(err, null);
+            });
+    }
 
     return apifactory;
 };

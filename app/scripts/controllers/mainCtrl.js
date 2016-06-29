@@ -1,33 +1,43 @@
 'use strict';
 
 var MainCtrl = function($scope, APIFactory, $location) {
-
     APIFactory.getArticles(function(data) {
-        // $scope.articlesList = [];
+        $scope.tags = [];
         $scope.articlesList = data.response.result;
-        console.log('$scope.articlesList:', $scope.articlesList);
+        console.log('articles', $scope.articlesList);
+
+        for (var i = 0; i < $scope.articlesList.length; i++) {
+            for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
+                $scope.tags.push($scope.articlesList[i].tags[d]);
+            }
+        };
+        console.log('tags', $scope.tags);
+        $scope.myTags = _.uniqBy($scope.tags, function(row){
+            return row.tags;
+        });
+        console.log('myTags', $scope.myTags);
+        
     });
 
     $scope.select = function(selected) {
         $scope.selected = [];
         $scope.selected = selected;
-        console.log('selected:', $scope.selected);
-        console.log('selected id:', $scope.selected.article_id);
+        // console.log('selected:', $scope.selected);
+        // console.log('selected id:', $scope.selected.article_id);
     }
 
     $scope.goToSearch = function() {
         $location.path = '/search';
     }
 
-    // APIFactory.getProductBundle(function(data) {
-    //     $scope.lists = data.response.result;
-    //     console.log('$scope.lists:', $scope.lists);
-    // });
-
-    APIFactory.getAllTags(function(err,data){
-        $scope.tags = data.response.result;
-        console.log('tags', $scope.tags);
+    APIFactory.getProductBundle(function(data) {
+        $scope.lists = data.response.result;
     });
+
+    // APIFactory.getAllTags(function(err, data) {
+    //     $scope.tags = data.response.result;
+    //     console.log('tags', $scope.tags);
+    // });
 
 };
 

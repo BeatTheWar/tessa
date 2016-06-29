@@ -6,28 +6,12 @@
                 Browse by industries
             </div>
 
-            <!-- <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="getTag in articlesList">
-                    <input type="checkbox" checklist-value="getTag" />
-                    <span ng-repeat="tag in getTag.tags">{{tag.tags}}</span> 
+            <div id="browse-industry" class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary-alt" ng-repeat="tag in myTags">
+                    <input type="checkbox"/>
+                    <span>{{tag.tags}}</span>
                 </label>
-            </div> -->
-
-            <p ng-repeat="tag in tags">{{tag.tags}}</p>
-
-            <br>
-
-            <p ng-repeat="getTag in articlesList">
-                <span ng-repeat="tag in getTag.tags" style="color:#000!important;">{{tag.tags}}</span>
-            </p>
-
-            <br>
-
-            <p ng-repeat="getTag in articlesList">
-                <p ng-repeat="tag in getTag.tags"> 
-                    <span style="color:#000!important;">{{tag.tags}} </span>
-                </p>
-            </p>
+            </div> 
         </div>
 
         <div class="row_title xd-success-stories">
@@ -49,7 +33,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -75,49 +58,8 @@
 
                     <div class="sec-xd-items">
                         <div class="xd-img">
-                            <!-- <video src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"></video> -->
-
                             <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1" style="background-image:url({{image.media_path}});">
                             </div>
-                            <!--Carousel-->
-                            <!-- <div id="carousel-example-captions" class="carousel slide">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-captions" data-slide-to="1" class></li>
-                                    <li data-target="#carousel-example-captions" data-slide-to="2" class></li>
-                                </ol>
-                                <div class="carousl-inner">
-                                    <div class="item active">
-                                        <div class="img_holder">
-                                            <img src="images/is4.jpg"/>
-                                        </div>
-
-                                        <div class="carousel-caption">
-                                            <h3>Test1</h3>
-                                            <p>Test article</p>
-                                        </div>
-                                    </div>
-                                    <div class="item ">
-                                        <div class="carousel-caption">
-                                            <h3>Test 2</h3>
-                                            <p>Test article</p>
-                                        </div>
-                                    </div>
-                                    <div class="item ">
-                                        <div class="carousel-caption">
-                                            <h3>Test 3</h3>
-                                            <p>Test article</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
-                                    <i class="fa fa-prev icon-prev"></i>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
-                                    <i class="fa fa-next icon-next"></i>
-                                </a>
-                            </div> -->
-                            <!--End of Carousel-->
                         </div>
                         <div class="xd-content">
                             <div class="font_24 blue1 font_medium">
@@ -153,7 +95,6 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -162,7 +103,6 @@
                         Related experience
                     </div>
                     <div class="row pad20top">
-                        <!--Dummy Related Experience-->
                         <div class="col-lg-4">
                             <div class="panel panel-default box-item">
                                 <a href="#">
@@ -188,7 +128,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>

@@ -2,15 +2,21 @@
 
 var MainCtrl = function($scope, APIFactory, $location) {
     APIFactory.getArticles(function(data) {
-        $scope.articlesList = [];
-        $scope.tagsss = [];
+        $scope.tags = [];
         $scope.articlesList = data.response.result;
-        console.log('artcles', $scope.articlesList);
-        // $scope.myMedia = $scope.articlesList.mediaFiles;
-        $scope.tagsss = _.map($scope.articlesList, function(row) {
-            return row.tags[0];
+        console.log('articles', $scope.articlesList);
+
+        for (var i = 0; i < $scope.articlesList.length; i++) {
+            for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
+                $scope.tags.push($scope.articlesList[i].tags[d]);
+            }
+        };
+        console.log('tags', $scope.tags);
+        $scope.myTags = _.uniqBy($scope.tags, function(row){
+            return row.tags;
         });
-        // console.log('$scope.tagsss:', $scope.tagsss);
+        console.log('myTags', $scope.myTags);
+        
     });
 
     $scope.select = function(selected) {
@@ -23,13 +29,15 @@ var MainCtrl = function($scope, APIFactory, $location) {
     $scope.goToSearch = function() {
         $location.path = '/search';
     }
+
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;
     });
 
-    APIFactory.getAllTags(function(err, data) {
-        $scope.tags = data.response.result;
-    });
+    // APIFactory.getAllTags(function(err, data) {
+    //     $scope.tags = data.response.result;
+    //     console.log('tags', $scope.tags);
+    // });
 
 };
 

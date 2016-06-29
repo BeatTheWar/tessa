@@ -44,6 +44,7 @@
                     $scope.hardware = $filter('filter')($scope.productDetails, { 'productType_id': 17 });
                     $scope.software = $filter('filter')($scope.productDetails, { 'productType_id': 18 });
                     console.log('$scope.hardware:', $scope.hardware);
+                    
                     $scope.hardwares = _.map(_.uniqBy($scope.hardware, 'p_id'), function(row) {
                         return row.p_id;
                     });

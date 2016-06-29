@@ -27,9 +27,8 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
     apifactory.getAllTags = function(callback) {
         Restangular.all('tags').customGET().then(function(results) {
                 callback(null, results);
-            },
-            function(err) {
-                callback(err, null);
+            },function(err) {
+               callback(err, null);
             });
     };
     apifactory.getProduct = function(callback) {

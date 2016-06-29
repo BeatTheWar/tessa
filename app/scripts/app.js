@@ -2,8 +2,9 @@
 
 var Application = Application || {};
 
-Application.Controllers = angular.module('tessaApp.controllers', []);
+Application.Controllers = angular.module('tessaApp.controllers', ['tessaApp.filters']);
 Application.Services = angular.module('tessaApp.services', []);
+Application.Filters = angular.module('tessaApp.filters', []);
 
 angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
 

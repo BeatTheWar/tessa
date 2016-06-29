@@ -51,12 +51,13 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
     })
 
     .state('productDetailsSolution', {
-        url: '/productCatalogue/productDetailsSolution',
-        templateUrl: 'views/productDetailsSolution.html'
+        url: '/productCatalogue/productDetailsSolution/:selected_id',
+        templateUrl: 'views/productDetailsSolution.html',
+        controller: 'detailSolutionCtrl'
     })
 
     .state('productDetailsHardware', {
-        url: '/productDetailsSolution',
+        url: '/productCatalogue/productDetailsHardware',
         templateUrl: 'views/productDetailsHardware.html'
     });
 

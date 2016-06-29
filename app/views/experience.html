@@ -11,30 +11,6 @@
                     <input type="checkbox"/>
                     {{tag.tags}}
                 </label>
-                <!-- <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    QSR
-                </label>
-                <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    Real State
-                </label>
-                <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    Banking
-                </label>
-                <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    Retail
-                </label>
-                <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    Travel
-                </label>
-                <label class="btn btn-primary-alt">
-                    <input type="checkbox"/>
-                    Insurance
-                </label> -->
             </div>
 
         </div>
@@ -51,8 +27,7 @@
             <div class="item_experience" ng-repeat="article in articlesList">
                 <div class="panel panel-default" ng-click="select(article)">
                     <div class="img_holder">
-                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
-                                                                     ng-repeat="image in article.mediafiles | limitTo:1"></a>
+                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#xd-modal" data-toggle="modal">{{article.title}}</a>
@@ -108,7 +83,6 @@
                                     <div class="item active">
                                         <div class="img_holder">
                                             <img src="../images/is4.jpg"/>
-
                                         </div>
 
                                         <div class="carousel-caption">
@@ -117,16 +91,14 @@
                                         </div>
                                     </div>
                                     <div class="item ">
-
                                         <div class="carousel-caption">
-                                            <h3>Test1</h3>
+                                            <h3>Test 2</h3>
                                             <p>Test article</p>
                                         </div>
                                     </div>
                                     <div class="item ">
-
                                         <div class="carousel-caption">
-                                            <h3>Test1</h3>
+                                            <h3>Test 3</h3>
                                             <p>Test article</p>
                                         </div>
                                     </div>

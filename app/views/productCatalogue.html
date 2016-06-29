@@ -148,7 +148,7 @@
 	                <div class="col-lg-3" ng-repeat="item in product">
 	                    <div class="panel panel-default">
 	                        <div class="panel-body">
-	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+	                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})"  class="img_holder">
 	                                <img src="images/img-sample-1.jpg" />
 	                            </a>
 	                            <!--Img Preview-->
@@ -175,12 +175,40 @@
 		</div>
 
 		<div ng-show="prodType == 'Hardware'">
-			<div>
-	            <div class="pc_tabs text14_medium ">
-	                <a class="tab_items" ng-class="{active: apply == 'Screens'}" ng-click="solutionTypes('Screens')">Screens</a>
-	                <a class="tab_items" ng-class="{active: apply == 'MediaPlayer'}" ng-click="solutionTypes('MediaPlayer')">Media Player</a>
-	                <a class="tab_items" ng-class="{active: apply == 'MTI'}" ng-click="solutionTypes('MTI')">MTI</a>
+            <div class="pc_tabs text14_medium ">
+                <a class="tab_items" ng-class="{active: apply == 'Screens'}" ng-click="solutionTypes('Screens')">Screens</a>
+                <a class="tab_items" ng-class="{active: apply == 'MediaPlayer'}" ng-click="solutionTypes('MediaPlayer')">Media Player</a>
+                <a class="tab_items" ng-class="{active: apply == 'MTI'}" ng-click="solutionTypes('MTI')">MTI</a>
+            </div>
+
+            <div class="row sec-pc-items">
+	            <div>
+	                <div class="col-lg-3">
+	                    <div class="panel panel-default">
+	                        <div class="panel-body">
+	                            <a ui-sref="productDetailsHardware" class="img_holder">
+	                                <img src="images/img-sample-1.jpg" />
+	                            </a>
+	                            <!--Img Preview-->
+	                            <div class="item_text">
+	                                <a ui-sref="productDetailsHardware" class=" blue1 font_bold">
+										Hardware Name
+									</a>
+	                                <!--Title-->
+	                                <div class="font_14 grey1 font_light pad20top">
+	                                    <span data-ng-bind-html="item.bundle_description"></span>
+	                                </div>
+	                                <div class="font_14 grey2 font_medium pad20top">
+	                                    For as low as
+	                                </div>
+	                                <div class="box_price font_24 font_black">
+	                                    <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
 	            </div>
-	        </div>
+        	</div>
 		</div>
     </div>

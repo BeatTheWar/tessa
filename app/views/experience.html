@@ -6,22 +6,33 @@
                 Browse by industries
             </div>
 
-            <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags">
-                    <input type="checkbox"/>
-                    {{tag.tags}}
+            <!-- <div id="browse-industry" class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary-alt" ng-repeat="getTag in articlesList">
+                    <input type="checkbox" checklist-value="getTag" />
+                    <span ng-repeat="tag in getTag.tags">{{tag.tags}}</span> 
                 </label>
-            </div>
+            </div> -->
 
+            <p ng-repeat="tag in tags">{{tag.tags}}</p>
+
+            <br>
+
+            <p ng-repeat="getTag in articlesList">
+                <span ng-repeat="tag in getTag.tags" style="color:#000!important;">{{tag.tags}}</span>
+            </p>
+
+            <br>
+
+            <p ng-repeat="getTag in articlesList">
+                <p ng-repeat="tag in getTag.tags"> 
+                    <span style="color:#000!important;">{{tag.tags}} </span>
+                </p>
+            </p>
         </div>
-        <!--end browse by industry section-->
-
-        <!--success stories section-->
 
         <div class="row_title xd-success-stories">
             Success Stories
         </div>
-
 
         <div id="masonry-item">
             <div class="item_experience" ng-repeat="article in articlesList">
@@ -31,9 +42,6 @@
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#xd-modal" data-toggle="modal">{{article.title}}</a>
-                        <!--                         <div id="featured_solution" class="label_light">
-                                                    Summary
-                                                </div> -->
                         <div id="featured_solution" class="label_medium">
                             <p ng-bind-html="article.article"></p>
                         </div>
@@ -44,7 +52,6 @@
 
     </div>
 </div>
-
 
 <!--Modal-->
 <div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
@@ -70,11 +77,10 @@
                         <div class="xd-img">
                             <!-- <video src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"></video> -->
 
-                            <!--<div class="img_holder">
-                                <img src="{{image.media_path}}" ng-repeat="image in selected.mediafiles | limitTo: 1"></a>
-                            </div>-->
+                            <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1" style="background-image:url({{image.media_path}});">
+                            </div>
                             <!--Carousel-->
-                            <div id="carousel-example-captions" class="carousel slide">
+                            <!-- <div id="carousel-example-captions" class="carousel slide">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
                                     <li data-target="#carousel-example-captions" data-slide-to="1" class></li>
@@ -110,7 +116,7 @@
                                 <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
                                     <i class="fa fa-next icon-next"></i>
                                 </a>
-                            </div>
+                            </div> -->
                             <!--End of Carousel-->
                         </div>
                         <div class="xd-content">
@@ -142,7 +148,7 @@
                                         <img src="images/is5.jpg"/>
                                     </div>
                                     <div class="font_bold grey2 cap-box-item">
-                                        {{featured.product_details.item_name}}
+                                        {{featured.bundle_details.bundle_name}}
                                     </div>
                                 </a>
                             </div>

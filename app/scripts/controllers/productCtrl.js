@@ -5,7 +5,7 @@ var solutionTypes = 'EzeImpress';
 var productCtrl = function($scope, APIFactory, $location, $filter, _) {
     $scope.solutionTypes = solutionTypes;
 
-    $scope.apply = 'EzeImpress';
+    $scope.apply = '';
 
     APIFactory.getProductBundle(function(data) {
         $scope.products = data.response.result;
@@ -15,7 +15,7 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
     $scope.solutionTypes = function(status) {
         $scope.apply = status;
-        if (status === 'EzeImpress') {
+        if (status === 'EzeImpress') { 
                 $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeImpress' });
             } else if (status === 'EzeFind') {
                 $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeFind' });
@@ -25,14 +25,16 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
                 $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeWifi' });
             } else if (status == 'EzeComms') {
                 $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeComms' });
-        }};
+    }};
 
     APIFactory.getProduct(function(err, data) {
-        $scope.products = data.response.result;
-        $scope.hardware = _.filter($scope.products, function(item){
+        $scope.allproducts = data.response.result;
+        $scope.hardware = _.filter($scope.allproducts, function(item){
           return item.product_type === 'Hardware';
         });
         console.log('Hardware',$scope.hardware);
+        
+        $scope.hardwareCopy = angular.copy($scope.hardware);
 
         $scope.prodCateg= [];
 
@@ -42,20 +44,34 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
            }
         }
 
-        $scope.categID = _.uniq(_.map($scope.prodCateg, 'category_id'));
-        console.log('IDS', $scope.categID);
+        console.log('qwerty',$scope.prodCateg);
 
-    });
-
-        APIFactory.getCategory(function(err, data){
-            $scope.allCategs = data.response.result;
-            console.log('All Category', $scope.allCategs);
-
-            $scope.allCategID = _.uniq(_.map($scope.allCategs, 'c_id'));
-            console.log('All Category IDS', $scope.allCategID);
+        _.each($scope.hardware, function(e){
+            _.find($scope.prodCateg, function(i){
+                if(e.p_id == i.product_id){
+                    e.category_id = i.category_id;
+                }
+            });
         });
 
+        $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
+        $scope.MediaPlayer = $filter('filter')($scope.hardware, { 'category_id': 83 });
 
+        // $scope.hardwareType = function(status) {
+        //     $scope.apply = status;
+        //     $scope.hardwares = [];
+        //     if (status === 'Screens') { 
+        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 80 });
+        //         } else if (status === 'MediaPlayer') {
+        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 83 });
+        //             console.log('MP');
+        //             console.log($scope.hardwares, 'ha');
+        //         } else {
+        //             $scope.hardwares = $scope.hardwares; 
+        //         }
+        // };
+
+    });
 
 };
 

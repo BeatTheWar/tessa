@@ -16,11 +16,11 @@
 
         <div id="sec-pc-category" class="row_title padding_10">
             <div class="btn-group font_14" data-toggle="buttons">
-                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" >
+                <label id="btn-software" class="btn btn-midnightblue-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
                     <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
                 </label>
 
-                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio" ng-click="prodType = 'Hardware'" ng-init="prodType = 'Hardware'">
+                <label id="btn-hardware" class="btn btn-midnightblue-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
                     <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
 
                 </label>
@@ -36,7 +36,7 @@
                 <a class="tab_items" ng-class="{active: apply == 'EzeComms'}" ng-click="solutionTypes('EzeComms')">Eze Comms</a>
             </div>
 	        <div class="row sec-pc-items">
-	            <div ng-show="apply">
+	            <div ng-show="apply == 'EzeImpress'">
 	                <div class="col-lg-3" ng-repeat="item in product">
 	                    <div class="panel panel-default">
 	                        <div class="panel-body">
@@ -176,14 +176,14 @@
 
 		<div ng-show="prodType == 'Hardware'">
             <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-class="{active: apply == 'Screens'}" ng-click="solutionTypes('Screens')">Screens</a>
+                <a class="tab_items" ng-class="{active: apply == 'Screens'}" ng-click="solutionTypes('Screens')" ng-init="{active: apply == 'Screens'}">Screens</a>
                 <a class="tab_items" ng-class="{active: apply == 'MediaPlayer'}" ng-click="solutionTypes('MediaPlayer')">Media Player</a>
                 <a class="tab_items" ng-class="{active: apply == 'MTI'}" ng-click="solutionTypes('MTI')">MTI</a>
             </div>
 
             <div class="row sec-pc-items">
 	            <div>
-	                <div class="col-lg-3">
+	                <div class="col-lg-3" ng-repeat="item in hardware">
 	                    <div class="panel panel-default">
 	                        <div class="panel-body">
 	                            <a ui-sref="productDetailsHardware" class="img_holder">
@@ -192,9 +192,9 @@
 	                            <!--Img Preview-->
 	                            <div class="item_text">
 	                                <a ui-sref="productDetailsHardware" class=" blue1 font_bold">
-										Hardware Name
+										{{item.item_name}}
 									</a>
-	                                <!--Title-->
+										<p ng-repeat="category in item.product_category">{{category.category_id}}</p>
 	                                <div class="font_14 grey1 font_light pad20top">
 	                                    <span data-ng-bind-html="item.bundle_description"></span>
 	                                </div>

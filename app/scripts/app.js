@@ -8,11 +8,12 @@ Application.Filters = angular.module('tessaApp.filters', []);
 
 angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
 
-.run(['$location', 'APIFactory', function ($location, APIFactory) {
+.run(['$location', 'APIFactory','$rootScope', function ($location, APIFactory, $rootScope) {
     // APIFactory.getArticles();
+    $rootScope._ = window._;
 }])
 
-// .constant('API_URL', 'http://52.64.27.145:5001')
+.constant('_', _)
 .constant('API_URL', 'http://52.64.27.145:5001')
 .constant('API_VERSION', '/api/1.0/')
 

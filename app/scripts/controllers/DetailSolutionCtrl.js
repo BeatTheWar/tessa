@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var detailSolutionCtrl = function($scope, APIFactory, $location, $stateParams, $filter) {
+    var detailSolutionCtrl = function($scope, APIFactory, $location, $stateParams, $filter, _) {
         console.log('detailSolutionCtrl');
         $scope.allproduct = [];
         $scope.hardware_category = [];
@@ -23,8 +23,6 @@
             //         }
             //     });
             // });
-
-
         });
         APIFactory.getCategory(function(err, data) {
             $scope.allcategory = data.response.result;
@@ -35,6 +33,9 @@
             APIFactory.getDetailSolution($stateParams.selected_id, function(err, data) {
                 if (data.statusCode == 200 && data.response.success) {
                     $scope.details = data.response.result;
+
+                    console.log('details', $scope.details);
+
                     $scope.products = $scope.details.products;
                     $scope.productDetails = _.map($scope.products, function(row) {
                         return row.product_detail;
@@ -121,6 +122,6 @@
         }
     };
 
-    Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', detailSolutionCtrl]);
+    Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);
 
 })();

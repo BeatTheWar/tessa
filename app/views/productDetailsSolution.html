@@ -64,7 +64,7 @@
                         </div>
                         <div class="inc_body"  ng-repeat="softwares in software">
                             <div class="inc_title font_bold grey2" >
-                                {{softwares.brand}}
+                                CMS
                             </div>
                             <a href="" class="inc_text font_light grey2">
                                 {{softwares.item_name}}
@@ -80,13 +80,13 @@
                                 HARDWARE
                             </div>
                         </div>
-                        <div class="inc_body" ng-repeat="categ in hardwarecategories">
+                        <div class="inc_body" ng-repeat="categ in hardware">
                             <div class="inc_title font_bold grey2">
-                                {{categ.label}}
+                                {{categ.category_label}}
                             </div>
                             <a href="" class="inc_text font_light grey2" >
-                                {{categ.products.item_name}}
-                                <!-- {{categ.products.sell_price}} -->
+                                {{categ.item_name}}
+                                
                             </a>    
                         </div>
                     </div>
@@ -99,12 +99,9 @@
                                 DEPLOYMENT
                             </div>
                         </div>
-                        <div class="inc_body">
-                            <div class="inc_title font_bold grey2">
-                                CMS
-                            </div>
+                        <div class="inc_body" ng-repeat="deploy in deployment">
                             <a href="" class="inc_text font_light grey2">
-                                Engagis Eze Impress Enhanced CMS
+                                {{deploy.item_name}}
                             </a>
                         </div>
                     </div>
@@ -117,9 +114,9 @@
                                 SUPPORT
                             </div>
                         </div>
-                        <div class="inc_body" ng-repeat="service in services">
+                        <div class="inc_body" ng-repeat="supp in support">
                             <a href="" class="inc_text font_light grey2">
-                                {{service.item_name}}
+                                {{supp.item_name}}
                             </a>
                         </div>
                     </div>

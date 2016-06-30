@@ -1,21 +1,29 @@
 <div class="row">
-    <div class="wrapper">
+    <div id="pd-sol-wrap" class="wrapper">
+        <div class="row_title">
+            <a ui-sref="productCatalogue" class=" btn btn-tessa-back ">
+                <i class="ti ti-angle-left"> </i>
+            </a>
+        </div>
         <div class="parent-sd">
             <div class="sec-sd-psd">
+
                 <div class="row_title">
                     Packaged solutions details
                 </div>
+
+                <!-- Main Article -->
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="img_holder">
-                            <img src="../images/is4.jpg" />
+                            <img src="../images/is4.jpg"/>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="font_24 font_bold blue1 ">
+                        <div class=" font_24 font_bold blue1 ">
                             {{details.bundle_name}}
                         </div>
-                        <div class="font_light grey2 ">
+                        <div class="font_light grey2 pad20top line-24">
                             <span data-ng-bind-html="details.bundle_description"></span>
                         </div>
                         <div class="divider"></div>
@@ -28,6 +36,9 @@
                                 <a class=" box_price ">
                                     <sup>$</sup>{{spPrice}}<span class="font_light"> /mth</span>
                                 </a>
+                                <a class=" box_price">
+                                    <sup>$</sup>20<span class="font_light font_14"> /wk</span>
+                                </a>
                             </div>
                         </div>
                         <div class="sec-option-set pad20top">
@@ -36,26 +47,35 @@
                                 <a class=" box_price">
                                     <sup>$</sup>{{((hwPrice + dPrice + swPrice)*36)/1000}}<span class="font_light"> upfront</span>
                                 </a>
+                                <a class=" box_price">
+                                    <sup>$</sup>20<span class="font_light font_14"> /wk</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- End of: Main Article -->
+
                 <div class="row_title pad20top">
                     inclusions
                 </div>
-                <div class="row dis_table sec-sd-inclusions ">
+
+                <!--Inclusions-->
+                <div class=" dis_table sec-sd-inclusions ">
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/software.png" />
+                                <img src="../images/icons/software.png"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 SOFTWARE
                             </div>
                         </div>
-                        <div class="inc_body"  ng-repeat="softwares in software">
-                            <div class="inc_title font_bold grey2" >
-                                CMS
+
+                        <div class="inc_body" ng-repeat="softwares in software">
+                            <div class="inc_title font_bold grey2">
+                                {{softwares.brand}}
+
                             </div>
                             <a href="" class="inc_text font_light grey2">
                                 {{softwares.item_name}}
@@ -65,7 +85,7 @@
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/hardware.png" />
+                                <img src="../images/icons/hardware.png"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 HARDWARE
@@ -75,16 +95,17 @@
                             <div class="inc_title font_bold grey2">
                                 {{categ.category_label}}
                             </div>
-                            <a href="" class="inc_text font_light grey2" >
-                                {{categ.item_name}}
-                                
-                            </a>    
+
+                            <a href="" class="inc_text font_light grey2" ng-repeat="hard in hardware">
+                                {{hard.item_name}}
+                            </a>
+
                         </div>
                     </div>
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/deployment.png" />
+                                <img src="../images/icons/deployment.png"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 DEPLOYMENT
@@ -112,7 +133,15 @@
                         </div>
                     </div>
                 </div>
+                <!--End: Inclusions-->
+
             </div>
         </div>
     </div>
 </div>
+
+
+<!--Modal-->
+
+
+<!--End of Modal-->

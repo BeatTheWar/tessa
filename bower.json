@@ -13,19 +13,16 @@
     "themify-icons": "^0.1.2",
     "lodash": "^4.13.1",
     "angular-ui-router": "^0.3.1",
-<<<<<<< HEAD
     "enquire": "^2.1.2",
     "restangular": "^1.5.2",
     "angularjs-dropdown-multiselect": "^1.5.2",
     "angular-ui-select": "^0.18.0",
-    "jquery": "^3.0.0"
-=======
+    "jquery": "^3.0.0",
     "restangular": "^1.5.2",
     "angular-bootstrap": "^1.3.3",
     "angular-ui-select": "^0.18.0",
     "enquire": "^2.1.2",
     "angularjs-dropdown-multiselect": "^1.5.2"
->>>>>>> 963ce72b348a2abed5823aa6221f009221e6898c
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

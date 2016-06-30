@@ -27,6 +27,15 @@
                     $scope.services = $filter('filter')($scope.productDetails, { 'productType_id': 20 });
                     $scope.hardware = $filter('filter')($scope.productDetails, { 'productType_id': 17 });
                     $scope.software = $filter('filter')($scope.productDetails, { 'productType_id': 18 });
+
+                    $scope.softwarePrice = _.map($scope.software, function(value){
+                        return value.sell_price
+                    })
+
+                    $scope.swPrice = _.sum($scope.softwarePrice);
+                    console.log('softwarePrice',$scope.swPrice);
+
+
                     $scope.price = [];
                     $scope.sams = [];
                     _.map($scope.hardware, function(row) {
@@ -34,6 +43,7 @@
                             $scope.hardwares.push(row.product_category[0]);
                         }
                     });
+
                     _.each($scope.hardware, function(row) {
                         _.find($scope.hardwares, function(o) {
                             if (row.p_id == o.product_id) {
@@ -41,15 +51,16 @@
                             }
                         });
                     });
-                    // $scope.price = _.map($scope.hardwarecategories, function(value) {
-                    //     return value.products.sell_price;
-                    // })
+                    
+
                     // var sum = $scope.price.reduce(add, 0);
 
                     // function add(a, b) {
                     //     return a + b;
                     // }
                     // $scope.upfront = _.reduce($scope.price);
+
+
                     _.map($scope.services, function(row) {
                         if (row.product_category[0] !== undefined)
                             $scope.service.push(row.product_category[0]);
@@ -61,8 +72,42 @@
                             }
                         });
                     });
+
+                     
+
                     $scope.deployment = $filter('filter')($scope.services, { 'category_id': 87 });
                     $scope.support = $filter('filter')($scope.services, { 'category_id': 90 });
+
+                    console.log('$scope.deployment', $scope.deployment);
+                    console.log('$scope.support', $scope.support);
+
+                    $scope.hardwarePrice = _.map($scope.hardware, function(value) {
+                        return value.sell_price;
+                    })
+
+                    $scope.hwPrice = _.sum($scope.hardwarePrice);
+                    console.log('HardwarePrice', $scope.hwPrice);
+
+                    $scope.deploymentPrice = _.map($scope.deployment, function(value){
+                        return value.sell_price;
+                    })
+
+                    $scope.dPrice = _.sum($scope.deploymentPrice);
+                    console.log('deploymentPrice', $scope.dPrice);
+
+                    $scope.supportPrice = _.map($scope.support, function(value){
+                        return value.sell_price;
+                    })
+                    
+                    $scope.spPrice = _.sum($scope.supportPrice);
+                    console.log('supportPrice', $scope.spPrice);
+
+
+                    // console.log('swPrice', $scope.softwarePrice);
+                    // console.log('hpPrice', $scope.hardwarePrice);
+                    // console.log('dpPrice', $scope.deploymentPrice);
+                    // console.log('supportPrice', $scope.supportPrice);
+
                 }
             });
         }

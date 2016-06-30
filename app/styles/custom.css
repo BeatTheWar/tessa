@@ -5,7 +5,8 @@ body {
 }
 
 .myImage {
-    background-size: cover; width:800px!important; height:250px!important;
+    background-size: cover; width:800px!important; height:280px!important; background-repeat: no-repeat;
+    background-position: center;
 }
 
 .wrapper {

@@ -1,6 +1,5 @@
 <div class="row">
     <div class="wrapper">
-        <!--browse by industry section-->
         <div id="sec-browse-industry">
             <div class="row_title padding_10 ">
                 Browse by industries
@@ -16,8 +15,8 @@
             Success Stories
         </div>
         <div id="masonry-item">
-            <div class="item_experience" ng-repeat="article in articlesList">
-                <div class="panel panel-default" ng-click="select(article)">
+            <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
+                <div class="panel panel-default">
                     <div class="img_holder">
                         <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
@@ -41,7 +40,6 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
-                <!--Modal Body-->
                 <div class="row_title pad20top">
                     <a href="#" class=" btn btn-label btn-social btn-flickr">
                         <i class="padding_10 fa fa-share-square"></i> Share
@@ -100,15 +98,8 @@
                                     </div>
                                     <div class="cap-box-item">
                                         <div class="font_bold blue1">
-                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with
-                                                Essential
-                                                Media Player</a>
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
                                         </div>
-                                        <div class="font_light pad20top">
-                                            Featured Solution
-                                        </div>
-                                        <a href="#" class="font_bold grey2">Eze Impress 55" Wall Mounted Digital Display
-                                            DB55E with Essential Media Player</a>
                                     </div>
                                 </a>
                             </div>

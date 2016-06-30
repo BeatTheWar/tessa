@@ -3,18 +3,15 @@
 var MainCtrl = function($scope, APIFactory, $location) {
     APIFactory.getArticles(function(data) {
         $scope.tags = [];
+        $scope.items = [];
         $scope.articlesList = data.response.result;
-
+        $scope.selectedTag = [];
         for (var i = 0; i < $scope.articlesList.length; i++) {
             for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
                 $scope.tags.push($scope.articlesList[i].tags[d]);
             }
         };
-
-        $scope.myTags = _.uniqBy($scope.tags, function(row) {
-            console.log('tags', $scope.tags);
-        });
-
+        console.log('$scope.tags:', $scope.tags);
     });
 
     $scope.select = function(selected) {
@@ -27,8 +24,25 @@ var MainCtrl = function($scope, APIFactory, $location) {
     $scope.goToSearch = function() {
         $location.path = '/search';
     }
-    $scope.selected = function(item) {
-        console.log('item:', item);
+    $scope.tagsSelected = function(tag) {
+        console.log('tag :', tag);
+        if (tag.selected) {
+            _.each(tag.selected,function(row){
+                $scope.selectedTag.push(tag.selected);
+            });
+            console.log('$scope.selectedTag:', $scope.selectedTag);
+            if (_.isUndefined(result)) {
+                tag.tags_id = tag.tags_id;
+                $scope.selectedTag.push(tags_id);
+            }
+            console.log('$scope.selectedTag:', $scope.selectedTag);
+        }
+        // else {
+        //     $scope.selectedTag = _.filter($scope.selectedTag, function(selectedStore) {
+        //         return selectedStore.tags_id !== tag.tags_id;
+        //     });
+        //     console.log('$scope.selectedTag:', $scope.selectedTag);
+        // }
     };
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;

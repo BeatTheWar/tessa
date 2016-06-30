@@ -31,10 +31,18 @@ module.exports = function(config) {
       'bower_components/themify-icons/ie7/ie7.js',
       'bower_components/lodash/lodash.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
+<<<<<<< HEAD
       'bower_components/enquire/dist/enquire.js',
       'bower_components/restangular/dist/restangular.js',
       'bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
       'bower_components/angular-ui-select/dist/select.js',
+=======
+      'bower_components/restangular/dist/restangular.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-ui-select/dist/select.js',
+      'bower_components/enquire/dist/enquire.js',
+      'bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
+>>>>>>> 963ce72b348a2abed5823aa6221f009221e6898c
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -533,6 +533,9 @@ body {
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
+    #hd-modal .modal-dialog {
+        width: 100%;
+    }
 
 }
 
@@ -596,9 +599,9 @@ body {
 
 @media only screen and (min-width: 1100px) {
     #masonry-item {
-        -moz-column-count: 5;
-        -webkit-column-count: 5;
-        column-count: 5;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count:3;
     }
 
     .wrapper {
@@ -628,7 +631,7 @@ body {
     }
 
     #topnav #toolbar-search .input-group {
-        width: 700px;
+        width: 710px;
     }
 
     #topnav.navbar-default .navbar-brand,
@@ -666,6 +669,10 @@ body {
 
     #sec-srch-filter {
         width: 200px;
+    }
+    #hd-modal .modal-dialog {
+        width: 700px;
+        max-width: 100%;
     }
 
 }
@@ -1050,6 +1057,7 @@ body {
 }
 
 .modal-backdrop {
+    opacity: 0.9;
     background-color: white;
 }
 
@@ -1101,7 +1109,7 @@ body {
 
 #topnav.navbar-default #toolbar-search .input-group-btn button, #topnav.navbar-default #toolbar-search .form-control {
     font-family: regular;
-    font-size: 12px;
+    font-size: 14px;
     background: white;
 }
 
@@ -1143,3 +1151,8 @@ header .dis_cell{
 #trigger-sidebar .navi-icons{
     background: #3B7FF0 ;
 }**/
+
+
+.line-24{
+    line-height: 24px;
+}

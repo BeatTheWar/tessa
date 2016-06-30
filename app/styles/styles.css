@@ -1247,7 +1247,7 @@ abbr[data-original-title] {
 }
 blockquote {
   padding: 10px 20px;
-  margin: 0 0 20px;
+  /**margin: 0 0 20px;**/
   font-size: 17.5px;
   border-left: 5px solid #e0e0e0;
 }
@@ -2791,10 +2791,10 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  background-color: #fafafa !important;
+  background-color: white !important;
   border-color: #fafafa !important;
   color: #616161;
-  background-color: #fafafa;
+  background-color: white;
   border-color: #e0e0e0;
 }
 .btn-default:hover,
@@ -4604,7 +4604,7 @@ button.close {
   filter: alpha(opacity=0);
 }
 .modal-backdrop.in {
-  opacity: 0.5;
+  opacity: 0.8;
   filter: alpha(opacity=50);
 }
 .modal-header {
@@ -19983,10 +19983,10 @@ body.error .error-wrapper h1 {
   color: transparent !important;
   text-shadow: none !important;
   background-color: transparent !important;
-  border: 0 !important;
+  /**border: 0 !important;**/
   background: url("") no-repeat top left;
   height: 56px;
-  width: 165px;
+  /**width: 165px;**/
   padding: 16px 0 !important;
 }
 @media (max-width: 767px) {
@@ -20135,7 +20135,7 @@ body.error .error-wrapper h1 {
   margin: 0;
 }
 #topnav #toolbar-search.active .input-group {
-  padding: 0 8px;
+  padding: 0;
   width: 100%;
 }
 #topnav #toolbar-search .input-group {
@@ -20177,8 +20177,8 @@ body.error .error-wrapper h1 {
 #topnav #toolbar-search .input-group .form-control {
   height: 40px;
   margin: 8px 0;
-  border: none;
-  padding-left: 0;
+  border-right: solid thin #E0E0E0;
+
 }
 #topnav #toolbar-search .input-group .form-control:focus,
 #topnav #toolbar-search .input-group .form-control:hover {
@@ -20616,9 +20616,9 @@ body.sidebar-collapsed .sidebar nav.widget-body > ul.acc-menu li.hasChild:hover 
 }
 .navbar {
   position: relative;
-  min-height: 55px;
+  /*height: auto;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 1px solid transparent;*/
 }
 @media (min-width: 768px) {
   .navbar {

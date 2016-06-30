@@ -18,7 +18,8 @@
             <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
                 <div class="panel panel-default">
                     <div class="img_holder">
-                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
+                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
+                                                                     ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#xd-modal" data-toggle="modal">{{article.title}}</a>
@@ -48,7 +49,14 @@
                 <div id="sec-xd-article">
                     <div class="sec-xd-items">
                         <div class="xd-img">
-                            <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1" style="background-image:url({{image.media_path}});">
+                            <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1"
+                                 style="background-image:url({{image.media_path}});">
+                            </div>
+                            <div class="panel-body">
+                                <blockquote>
+                                    <p ng-bind-html="selected.article">""</p>
+                                </blockquote>
+
                             </div>
                         </div>
                         <div class="xd-content">
@@ -57,16 +65,14 @@
                             </div>
                             <div class="article-primary">
                                 <p ng-bind-html="selected.description"></p>
-                                <div class="panel-body">
-                                    <blockquote>
-                                        <p ng-bind-html="selected.article">""</p>
-                                    </blockquote>
-                                </div>
+
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div id="sec-xd-fs">
+
                     <div class="row_title" ng-hide="selected.article_features.length == 0">
                         FEATURED SOLUTION
                     </div>
@@ -86,7 +92,7 @@
                     </div>
                 </div>
                 <div id="sec-xd-rx">
-                    <div class="row_title">
+                    <div class="row_title pad20top">
                         Related experience
                     </div>
                     <div class="row pad20top">

@@ -19983,10 +19983,10 @@ body.error .error-wrapper h1 {
   color: transparent !important;
   text-shadow: none !important;
   background-color: transparent !important;
-  border: 0 !important;
+  /**border: 0 !important;**/
   background: url("") no-repeat top left;
   height: 56px;
-  width: 165px;
+  /**width: 165px;**/
   padding: 16px 0 !important;
 }
 @media (max-width: 767px) {
@@ -20177,8 +20177,8 @@ body.error .error-wrapper h1 {
 #topnav #toolbar-search .input-group .form-control {
   height: 40px;
   margin: 8px 0;
-  border: none;
-  padding-left: 0;
+  border-right: solid thin #E0E0E0;
+
 }
 #topnav #toolbar-search .input-group .form-control:focus,
 #topnav #toolbar-search .input-group .form-control:hover {

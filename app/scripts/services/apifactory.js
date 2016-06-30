@@ -27,11 +27,26 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
     apifactory.getAllTags = function(callback) {
         Restangular.all('tags').customGET().then(function(results) {
                 callback(null, results);
-            },
-            function(err) {
+            },function(err) {
                callback(err, null);
             });
     };
+    apifactory.getProduct = function(callback) {
+        Restangular.all('product').customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+                callback(err, null);
+            });
+    };
+    apifactory.getCategory = function(callback) {
+        Restangular.all('categories').customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+                callback(err, null);
+            });
+    }
 
     return apifactory;
 };

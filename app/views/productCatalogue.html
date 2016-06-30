@@ -16,7 +16,7 @@
 
 		<div ng-show="prodType == 'Solution'">
             <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="hello(item.category_label)" ng-class="me == item.category_label ? 'active' : 'inactive'">{{item.category_label}}</a>
+                <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="activateTab(item.category_label)" ng-class="me == item.category_label ? 'active' : 'inactive'">{{item.category_label}}</a>
             </div>
 	        <div class="row sec-pc-items">
 				<div>

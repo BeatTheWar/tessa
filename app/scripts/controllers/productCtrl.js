@@ -31,27 +31,8 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
     });
 
-    $scope.solutionTypes = function(status) {
-        $scope.apply = status;
-        if (status === 'EzeImpress') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeImpress' });
-        } else if (status === 'EzeFind') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeFind' });
-        } else if (status == 'EzeOrda') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeOrda' });
-        } else if (status == 'EzeWifi') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeWifi' });
-        } else if (status == 'EzeComms') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeComms' });
-        }
-    };
         $scope.me = 'all';
-
-        $scope.hello = function(name){
-            // if (name === 'Eze Impress') {
-            //         $scope.product = $filter('filter')($scope.products, { 'category_label' : name });
-            // }
-            console.log('name', name);
+        $scope.activateTab = function(name){
             $scope.me = name;
         }
 
@@ -59,14 +40,12 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
             console.log($scope.me);
             if($scope.me == 'all'){
                 return true;
-            }else if( $scope.me == q.category_label){
+            }else if($scope.me == q.category_label){
                 return true;
             }else {
                 return false;
             }
         }
-
-
 
     APIFactory.getProduct(function(err, data) {
         $scope.allproducts = data.response.result;
@@ -74,8 +53,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
             return item.product_type === 'Hardware';
         });
         console.log('Hardware', $scope.hardware);
-
-        $scope.hardwareCopy = angular.copy($scope.hardware);
 
         $scope.prodCateg = [];
 
@@ -97,23 +74,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
         $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
         $scope.MediaPlayer = $filter('filter')($scope.hardware, { 'category_id': 83 });
-        // $scope.Wifi = $filter('filter')($scope.products, { 'category_label': 'Eze Wifi' });
-        // $scope.Impress = $filter('filter')($scope.products, { 'category_label': 'Eze Impress' });
-
-        // $scope.hardwareType = function(status) {
-        //     $scope.apply = status;
-        //     $scope.hardwares = [];
-        //     if (status === 'Screens') { 
-        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 80 });
-        //         } else if (status === 'MediaPlayer') {
-        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 83 });
-        //             console.log('MP');
-        //             console.log($scope.hardwares, 'ha');
-        //         } else {
-        //             $scope.hardwares = $scope.hardwares; 
-        //         }
-        // };
-
     });
 
 };

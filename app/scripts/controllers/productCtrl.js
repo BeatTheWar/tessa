@@ -10,7 +10,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
     APIFactory.getProductBundle(function(data) {
         $scope.products = data.response.result;
         console.log('Product Bundle:', $scope.products);
-        // $scope.myMedia = $scope.articlesList.mediaFiles;
     });
 
     $scope.solutionTypes = function(status) {
@@ -44,7 +43,7 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
            }
         }
 
-        console.log('qwerty',$scope.prodCateg);
+        // console.log('prodCateg',$scope.prodCateg);
 
         _.each($scope.hardware, function(e){
             _.find($scope.prodCateg, function(i){

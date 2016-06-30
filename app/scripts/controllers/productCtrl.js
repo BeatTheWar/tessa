@@ -9,12 +9,13 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
     $scope.bundles = [];
     APIFactory.getProductBundle(function(data) {
         $scope.products = data.response.result;
-        console.log('Product Bundle:', $scope.products);
         var result = _.map($scope.products, function(row) {
             if (row.product_bundle_category[0] != undefined) {
                 $scope.bundles.push(row.product_bundle_category[0]);
             };
         });
+        console.log('Products:', $scope.products);
+
         $scope.bundle = _.uniqBy($scope.bundles, function(row) {
             return row.category_label;
         });
@@ -22,28 +23,29 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
         _.each($scope.products, function(row) {
             _.find($scope.bundles, function(row1) {
                 if (row.pb_id == row1.bundle_id) {
-                    row.category_name = row1.category_name;
+                    row.category_label = row1.category_label;
                 }
             });
         });
         console.log('$scope.products:', $scope.products);
-        // $scope.myMedia = $scope.articlesList.mediaFiles;
+
     });
 
-    $scope.solutionTypes = function(status) {
-        $scope.apply = status;
-        if (status === 'EzeImpress') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeImpress' });
-        } else if (status === 'EzeFind') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeFind' });
-        } else if (status == 'EzeOrda') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeOrda' });
-        } else if (status == 'EzeWifi') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeWifi' });
-        } else if (status == 'EzeComms') {
-            $scope.product = $filter('filter')($scope.products, { 'bundle_code': 'EzeComms' });
+        $scope.me = 'all';
+        $scope.activateTab = function(name){
+            $scope.me = name;
         }
-    };
+
+        $scope.isCateg = function(q){
+            console.log($scope.me);
+            if($scope.me == 'all'){
+                return true;
+            }else if($scope.me == q.category_label){
+                return true;
+            }else {
+                return false;
+            }
+        }
 
     APIFactory.getProduct(function(err, data) {
         $scope.allproducts = data.response.result;
@@ -51,8 +53,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
             return item.product_type === 'Hardware';
         });
         console.log('Hardware', $scope.hardware);
-
-        $scope.hardwareCopy = angular.copy($scope.hardware);
 
         $scope.prodCateg = [];
 
@@ -74,21 +74,6 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
         $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
         $scope.MediaPlayer = $filter('filter')($scope.hardware, { 'category_id': 83 });
-
-        // $scope.hardwareType = function(status) {
-        //     $scope.apply = status;
-        //     $scope.hardwares = [];
-        //     if (status === 'Screens') { 
-        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 80 });
-        //         } else if (status === 'MediaPlayer') {
-        //             $scope.hardwares = $filter('filter')($scope.hardwareCopy, { 'category_id': 83 });
-        //             console.log('MP');
-        //             console.log($scope.hardwares, 'ha');
-        //         } else {
-        //             $scope.hardwares = $scope.hardwares; 
-        //         }
-        // };
-
     });
 
 };

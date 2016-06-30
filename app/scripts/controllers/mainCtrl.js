@@ -10,8 +10,9 @@ var MainCtrl = function($scope, APIFactory, $location) {
                 $scope.tags.push($scope.articlesList[i].tags[d]);
             }
         };
-        $scope.myTags = _.uniqBy($scope.tags, function(row){
-            return row.tags;
+
+        $scope.myTags = _.uniqBy($scope.tags, function(row) {
+            console.log('tags', $scope.tags);
         });
 
     });
@@ -19,14 +20,16 @@ var MainCtrl = function($scope, APIFactory, $location) {
     $scope.select = function(selected) {
         $scope.selected = [];
         $scope.selected = selected;
-        // console.log('selected:', $scope.selected);
+        console.log('selected:', $scope.selected);
         // console.log('selected id:', $scope.selected.article_id);
     }
 
     $scope.goToSearch = function() {
         $location.path = '/search';
     }
-
+    $scope.selected = function(item) {
+        console.log('item:', item);
+    };
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;
     });
@@ -35,7 +38,6 @@ var MainCtrl = function($scope, APIFactory, $location) {
     //     $scope.tags = data.response.result;
     //     console.log('tags', $scope.tags);
     // });
-
 };
 
 Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);

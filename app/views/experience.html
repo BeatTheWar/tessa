@@ -1,26 +1,22 @@
 <div class="row">
     <div class="wrapper">
-        <!--browse by industry section-->
         <div id="sec-browse-industry">
             <div class="row_title padding_10 ">
                 Browse by industries
             </div>
-
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary-alt" ng-repeat="tag in myTags">
-                    <input type="checkbox"/>
+                    <input type="checkbox" / ng-model="tag.selected" ng-change="selected(tag)">
                     <span>{{tag.tags}} </span>
                 </label>
             </div>
         </div>
-
         <div class="row_title xd-success-stories">
             Success Stories
         </div>
-
         <div id="masonry-item">
-            <div class="item_experience" ng-repeat="article in articlesList">
-                <div class="panel panel-default" ng-click="select(article)">
+            <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
+                <div class="panel panel-default">
                     <div class="img_holder">
                         <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
                                                                      ng-repeat="image in article.mediafiles | limitTo:1"></a>
@@ -36,27 +32,21 @@
         </div>
     </div>
 </div>
-
 <!--Modal-->
-<div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-     style="display: none;">
+<div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-backdrop fade in" style="height: 100vh; position: fixed;" data-dismiss="modal"></div>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-
             <div class="modal-body">
-                <!--Modal Body-->
                 <div class="row_title pad20top">
                     <a href="#" class=" btn btn-label btn-social btn-flickr">
                         <i class="padding_10 fa fa-share-square"></i> Share
                     </a>
                 </div>
-
                 <div id="sec-xd-article">
-
                     <div class="sec-xd-items">
                         <div class="xd-img">
                             <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1"
@@ -81,8 +71,6 @@
                     </div>
 
                 </div>
-
-
                 <div id="sec-xd-fs">
 
                     <div class="row_title" ng-hide="selected.article_features.length == 0">
@@ -93,7 +81,7 @@
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="images/is5.jpg"/>
+                                        <img src="images/is5.jpg" />
                                     </div>
                                     <div class="font_bold grey2 cap-box-item">
                                         {{featured.bundle_details.bundle_name}}
@@ -103,7 +91,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="sec-xd-rx">
                     <div class="row_title pad20top">
                         Related experience
@@ -113,24 +100,16 @@
                             <div class="panel panel-default box-item">
                                 <a href="#">
                                     <div class="img_holder">
-                                        <img src="images/is4.jpg"/>
+                                        <img src="images/is4.jpg" />
                                     </div>
                                     <div class="cap-box-item">
                                         <div class="font_bold blue1">
-                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with
-                                                Essential
-                                                Media Player</a>
+                                            <a href="#">Eze Impress 55" Wall Mounted Digital Display DB55E with Essential Media Player</a>
                                         </div>
-                                        <div class="font_light pad20top">
-                                            Featured Solution
-                                        </div>
-                                        <a href="#" class="font_bold grey2">Eze Impress 55" Wall Mounted Digital Display
-                                            DB55E with Essential Media Player</a>
                                     </div>
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

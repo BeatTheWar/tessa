@@ -5,9 +5,14 @@ body {
 }
 
 .myImage {
+<<<<<<< HEAD
     background-size: cover;
     width: 800px !important;
     height: 250px !important;
+=======
+    background-size: cover; width:800px!important; height:280px!important; background-repeat: no-repeat;
+    background-position: center;
+>>>>>>> 5e40b900401b948ab2938d6bfb59e44140b7816f
 }
 
 .wrapper {
@@ -534,7 +539,8 @@ body {
         padding: 0 15px 10px 15px;
     }
     #hd-modal .modal-dialog {
-        width: 100%;
+        width: 700px;
+        max-width: 100%;
     }
 
 }
@@ -593,6 +599,11 @@ body {
     #hd-modal #xd-modal .modal-dialog {
         margin: 0;
         float: right;
+    }
+
+    #hd-modal .modal-dialog {
+        width: 700px;
+        max-width: 100%;
     }
 
 }
@@ -674,6 +685,7 @@ body {
         width: 700px;
         max-width: 100%;
     }
+
 
 }
 

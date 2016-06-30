@@ -6,6 +6,7 @@
     <title>TESSA</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <!-- build:css css/main.min.css -->
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/custom.css">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="styles/custom.css">
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css">
     <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- endbuild -->
 </head>
 
 <body class="animated-content" ng-controller="MainCtrl">
@@ -27,6 +29,7 @@
             </span>
             </a>
             </span>
+
         <a class="navbar-brand" ui-sref="experience">Tessa</a>
         <a class="tes-icon " ui-sref="experience">
                 <span class="icon-bg">
@@ -199,6 +202,7 @@
    ga('send', 'pageview');
 </script>
 -->
+<<<<<<< HEAD
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -231,6 +235,38 @@
 <script src="scripts/services/auth.js"></script>
 
 
+=======
+    <!-- bower:js -->
+    <!-- build:js js/main.min.js -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/enquire/dist/enquire.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="scripts/application.js"></script>
+    <script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
+    <!-- <script src="scripts/underscore/underscore.js"></script> -->
+    <!-- endbuild -->
+    <!-- build:js1 js/app.min.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/mainCtrl.js"></script>
+    <script src="scripts/controllers/productCtrl.js"></script>
+    <script src="scripts/controllers/DetailSolutionCtrl.js"></script>
+    <script src="scripts/services/apifactory.js"></script>
+    <script src="scripts/filters/filter.js"></script>
+    <script src="scripts/services/auth.js"></script>
+    <!-- endbuild -->
+>>>>>>> 5e40b900401b948ab2938d6bfb59e44140b7816f
 </body>
 
 </html>

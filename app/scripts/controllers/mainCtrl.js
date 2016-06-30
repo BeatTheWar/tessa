@@ -10,6 +10,7 @@ var MainCtrl = function($scope, APIFactory, $location) {
                 $scope.tags.push($scope.articlesList[i].tags[d]);
             }
         };
+        
         console.log('tags', $scope.tags);
         $scope.myTags = _.uniqBy($scope.tags, function(row){
             return row.tags;
@@ -20,7 +21,7 @@ var MainCtrl = function($scope, APIFactory, $location) {
     $scope.select = function(selected) {
         $scope.selected = [];
         $scope.selected = selected;
-        // console.log('selected:', $scope.selected);
+        console.log('selected:', $scope.selected);
         // console.log('selected id:', $scope.selected.article_id);
     }
 

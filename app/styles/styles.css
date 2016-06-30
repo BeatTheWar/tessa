@@ -1247,7 +1247,7 @@ abbr[data-original-title] {
 }
 blockquote {
   padding: 10px 20px;
-  margin: 0 0 20px;
+  /**margin: 0 0 20px;**/
   font-size: 17.5px;
   border-left: 5px solid #e0e0e0;
 }
@@ -2791,10 +2791,10 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  background-color: #fafafa !important;
+  background-color: white !important;
   border-color: #fafafa !important;
   color: #616161;
-  background-color: #fafafa;
+  background-color: white;
   border-color: #e0e0e0;
 }
 .btn-default:hover,
@@ -20135,7 +20135,7 @@ body.error .error-wrapper h1 {
   margin: 0;
 }
 #topnav #toolbar-search.active .input-group {
-  padding: 0 8px;
+  padding: 0;
   width: 100%;
 }
 #topnav #toolbar-search .input-group {
@@ -20616,9 +20616,9 @@ body.sidebar-collapsed .sidebar nav.widget-body > ul.acc-menu li.hasChild:hover 
 }
 .navbar {
   position: relative;
-  min-height: 55px;
+  /*height: auto;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  border: 1px solid transparent;*/
 }
 @media (min-width: 768px) {
   .navbar {

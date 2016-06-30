@@ -4,7 +4,6 @@ var MainCtrl = function($scope, APIFactory, $location) {
     APIFactory.getArticles(function(data) {
         $scope.tags = [];
         $scope.articlesList = data.response.result;
-        console.log('articles', $scope.articlesList);
 
         for (var i = 0; i < $scope.articlesList.length; i++) {
             for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
@@ -15,8 +14,7 @@ var MainCtrl = function($scope, APIFactory, $location) {
         $scope.myTags = _.uniqBy($scope.tags, function(row){
             return row.tags;
         });
-        console.log('myTags', $scope.myTags);
-        
+
     });
 
     $scope.select = function(selected) {

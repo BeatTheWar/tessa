@@ -39,6 +39,13 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
                 callback(err, null);
             });
     };
+
+    apifactory.getHardware = function(id, callback){
+        Restangular.all('product').customGET().then(function(results) {
+                callback(_.filter(results), {productType_id : id});
+            });
+    }
+
     apifactory.getCategory = function(callback) {
         Restangular.all('categories').customGET().then(function(results) {
                 callback(null, results);
@@ -51,10 +58,15 @@ var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
     return apifactory;
 };
 
-
 var underscore = function() {
     return window._;
 };
 
+// var LodashFactory = function($window) {  
+//     return $window._;
+// }
+
+
 Application.Services.factory('_', [underscore]);
+// Application.Services.factory('_', [LodashFactory]);
 Application.Services.factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]);

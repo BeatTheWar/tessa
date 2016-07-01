@@ -9,6 +9,11 @@ body {
     background-position: center;
 }
 
+.myImage2 {
+    background-size: contain; width:800px!important; height:430px!important; background-repeat: no-repeat;
+    background-position: center;
+}
+
 .wrapper {
     /*border: solid thin #E0E0E0;*/
     box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);

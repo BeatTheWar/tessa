@@ -62,7 +62,7 @@ angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.rou
     .state('productDetailsHardware', {
         url: '/productCatalogue/productDetailsHardware/:selected_hardwareId',
         templateUrl: 'views/productDetailsHardware.html',
-        controller: 'detailSolutionCtrl'
+        controller: 'hardwareDetailsCtrl'
     });
 
     $urlRouterProvider.otherwise('/experience');

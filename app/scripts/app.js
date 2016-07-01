@@ -7,7 +7,7 @@ Application.Services = angular.module('tessaApp.services', []);
 Application.Filters = angular.module('tessaApp.filters', []);
 
 
-angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
+angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select', 'checklist-model'])
 
 .run(['$location', 'APIFactory','$rootScope', function ($location, APIFactory, $rootScope) {
     // APIFactory.getArticles();

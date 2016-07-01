@@ -5,17 +5,23 @@
                 Browse by industries
             </div>
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags | duplicates: 'tags'" ng-click="tagsSelected(tag)">
+                <!-- <label  ng-repeat="tag in tags | duplicates: 'tags'">
                     <input type="checkbox" checklist-model="tagselected.selected_tags" checklist-value="tag">
                     <span>{{tag.tags}} </span>
+                </label> -->
+                <label class="btn btn-primary-alt"  ng-repeat="tag in tags | duplicates: 'tags'" ng-click="toggleSelectedTag(tag)" ng-class="isTagSelected(tag) ? 'active' : ''">
+                    <span>{{tag.tags}} </span>
                 </label>
+                <!-- <pre>
+                {{tagselected | json}}
+            </pre> -->
             </div>
         </div>
         <div class="row_title xd-success-stories">
             Success Stories
         </div>
         <div id="masonry-item">
-            <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
+            <div class="item_experience" ng-repeat="article in articlesList | filter:isOnSelectedTag()" ng-click="select(article)">
                 <div class="panel panel-default">
                     <div class="img_holder">
                         <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
@@ -28,6 +34,10 @@
                         </div>
                     </div>
                 </div>
+                
+            <!-- <pre>
+                {{article | json}}
+            </pre> -->
             </div>
         </div>
     </div>

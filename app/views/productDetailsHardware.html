@@ -8,70 +8,30 @@
 
         <div id="sec-hd-preview">
         <div class="row_title">
-            product details
+            Product details
         </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <!--Carousel-->
-                    <div id="carousel-example-captions" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-captions" data-slide-to="1" class></li>
-                            <li data-target="#carousel-example-captions" data-slide-to="2" class></li>
-                        </ol>
-                        <div class="carousl-inner">
-                            <div class="item active">
-                                <div class="img_holder">
-                                    <img src="../images/is4.jpg"/>
-
-                                </div>
-
-                                <div class="carousel-caption">
-                                    <h3>Test1</h3>
-                                    <p>Test article</p>
-                                </div>
-                            </div>
-                            <div class="item ">
-
-                                <div class="carousel-caption">
-                                    <h3>Test1</h3>
-                                    <p>Test article</p>
-                                </div>
-                            </div>
-                            <div class="item ">
-
-                                <div class="carousel-caption">
-                                    <h3>Test1</h3>
-                                    <p>Test article</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
-                            <i class="fa fa-prev icon-prev"></i>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
-                            <i class="fa fa-next icon-next"></i>
-                        </a>
+                    <div class="img_holder >
+                        <img src="{{productDetails.img_default}}"/>
                     </div>
-                    <!--End of Carousel-->
                 </div>
+
                 <div class="col-lg-6">
                     <div class="font_24 blue1 font_bold">
-                        NEC 55" LED-Backlit Ultra-Narrow Professional-Grade
+                        {{productDetails.item_name}}
                     </div>
                     <div class="font_light grey1 line-24">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.
+                        <p ng-bind-html="productDetails.item_description"></p>
                     </div>
 
                     <div class="sec-option-set pad20top">
                         <div class="font_bold grey3">PRICE</div>
-                        <div class="font_24 font_bold">
-                            <a class=" box_price">
-                                <sup>$</sup>500
+                        <div class="font_24 font_light">
+                            <a class="box_price">
+                                <sup>$</sup>{{productDetails.sell_price}}
                             </a>
                         </div>
                     </div>

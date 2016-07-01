@@ -1,6 +1,6 @@
 'use strict';
 
-var MainCtrl = function($scope, APIFactory, $location) {
+var MainCtrl = function($scope, APIFactory, $location, _) {
     APIFactory.getArticles(function(data) {
         $scope.tags = [];
         $scope.items = [];
@@ -8,45 +8,92 @@ var MainCtrl = function($scope, APIFactory, $location) {
         $scope.selectedTag = [];
         for (var i = 0; i < $scope.articlesList.length; i++) {
             for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
-                $scope.tags.push($scope.articlesList[i].tags[d]);
+                if($scope.articlesList[i].tags[d]){
+                    $scope.tags.push($scope.articlesList[i].tags[d]);
+                }
             }
         };
         console.log('$scope.tags:', $scope.tags);
     });
 
-    $scope.select = function(selected) {
+    $scope.select = function(selected, index) {
         $scope.selected = [];
         $scope.selected = selected;
+        $scope.selectedindex = index;
         console.log('selected:', $scope.selected);
         // console.log('selected id:', $scope.selected.article_id);
     }
 
-    $scope.goToSearch = function() {
-        $location.path = '/search';
-    }
-    $scope.tagsSelected = function(tag) {
-        console.log('tag :', tag);
-        if (tag.selected) {
-            _.each(tag.selected,function(row){
-                $scope.selectedTag.push(tag.selected);
-            });
-            console.log('$scope.selectedTag:', $scope.selectedTag);
-            if (_.isUndefined(result)) {
-                tag.tags_id = tag.tags_id;
-                $scope.selectedTag.push(tags_id);
-            }
-            console.log('$scope.selectedTag:', $scope.selectedTag);
+    $scope.tagselected = [];
+    $scope.toggleSelectedTag = function(tag){
+        if($scope.tagselected.indexOf(tag) == -1){
+            $scope.tagselected.push(tag);
+        } 
+        else {
+            $scope.tagselected = _.pull($scope.tagselected, tag);
         }
-        // else {
-        //     $scope.selectedTag = _.filter($scope.selectedTag, function(selectedStore) {
-        //         return selectedStore.tags_id !== tag.tags_id;
-        //     });
-        //     console.log('$scope.selectedTag:', $scope.selectedTag);
-        // }
     };
+    $scope.isTagSelected = function(tag){
+        return $scope.tagselected.indexOf(tag) !== -1;
+    };
+    $scope.isOnSelectedTag = function(){
+        return function(item){
+            if($scope.tagselected.length == 0){
+                return true;
+            }
+
+            var flag = false;
+            var tagselectedIDs = _.map($scope.tagselected, 'tags_id');
+            console.log(item.title);
+            _.forEach(item.tags, function(tag){
+                if(tagselectedIDs.indexOf(tag.tags_id) !== -1){
+                    flag = true;
+                }
+            });
+            return flag;
+        };
+    };
+    // $scope.tagsSelected = function(tag) {
+    //     console.log('tag :', tag);
+    //     if (tag.selected) {
+    //         _.each(tag.selected,function(row){
+    //             $scope.selectedTag.push(tag.selected);
+    //         });
+    //         console.log('$scope.selectedTag:', $scope.selectedTag);
+    //         if (_.isUndefined(result)) {
+    //             tag.tags_id = tag.tags_id;
+    //             $scope.selectedTag.push(tags_id);
+    //         }
+    //         console.log('$scope.selectedTag:', $scope.selectedTag);
+    //     }
+    //     // else {
+    //     //     $scope.selectedTag = _.filter($scope.selectedTag, function(selectedStore) {
+    //     //         return selectedStore.tags_id !== tag.tags_id;
+    //     //     });
+    //     //     console.log('$scope.selectedTag:', $scope.selectedTag);
+    //     // }
+    // };
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;
     });
+
+    $scope.articlesListFiltered = {};
+    $scope.previousArticle = function(){
+        if($scope.selectedindex == 0){
+            $scope.selectedindex = $scope.articlesListFiltered.length - 1;
+        } else {
+            --$scope.selectedindex;
+        }
+        $scope.selected = $scope.articlesListFiltered[$scope.selectedindex];
+    };
+    $scope.nextArticle = function(){
+        if($scope.selectedindex == $scope.articlesListFiltered.length - 1){
+            $scope.selectedindex = 0;
+        } else {
+            ++$scope.selectedindex;
+        }
+        $scope.selected = $scope.articlesListFiltered[$scope.selectedindex];
+    };
 
     // APIFactory.getAllTags(function(err, data) {
     //     $scope.tags = data.response.result;
@@ -54,4 +101,4 @@ var MainCtrl = function($scope, APIFactory, $location) {
     // });
 };
 
-Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);
+Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location','_', MainCtrl]);

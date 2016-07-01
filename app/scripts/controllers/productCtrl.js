@@ -32,21 +32,21 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
     });
 
-        $scope.me = 'all';
-        $scope.activateTab = function(name){
-            $scope.me = name;
-        }
+    $scope.me = 'all';
+    $scope.activateTab = function(name){
+        $scope.me = name;
+    }
 
-        $scope.isCateg = function(q){
-            console.log($scope.me);
-            if($scope.me == 'all'){
-                return true;
-            }else if($scope.me == q.category_label){
-                return true;
-            }else {
-                return false;
-            }
+    $scope.isCateg = function(q){
+        console.log($scope.me);
+        if($scope.me == 'all'){
+            return true;
+        }else if($scope.me == q.category_label){
+            return true;
+        }else {
+            return false;
         }
+    }
 
     APIFactory.getProduct(function(err, data) {
         $scope.allproducts = data.response.result;
@@ -75,6 +75,9 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
 
         $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
         $scope.MediaPlayer = $filter('filter')($scope.hardware, { 'category_id': 83 });
+
+        console.log('$scope.Screens', $scope.Screens);
+
     });
 
 };

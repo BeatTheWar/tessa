@@ -5,14 +5,19 @@ body {
 }
 
 .myImage {
-<<<<<<< HEAD
     background-size: cover;
     width: 800px !important;
-    height: 250px !important;
-=======
-    background-size: cover; width:800px!important; height:280px!important; background-repeat: no-repeat;
+    height: 280px !important;
+    background-repeat: no-repeat;
     background-position: center;
->>>>>>> 5e40b900401b948ab2938d6bfb59e44140b7816f
+}
+
+.myImage2 {
+    background-size: contain;
+    width: 800px !important;
+    height: 430px !important;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .wrapper {
@@ -488,8 +493,6 @@ body {
     }**/
     .rotate {
 
-
-
         transform: rotate(90deg);
         margin: 20px 0;
     }
@@ -505,6 +508,8 @@ body {
         width: 100%;
         table-layout: auto;
     }
+
+
 
     .sec-filter, .sec-pc {
         vertical-align: top;
@@ -532,13 +537,14 @@ body {
     }
 
     .tes-icon img {
+
         max-height: 25px;
     }
+
 
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
-
 
 }
 
@@ -587,17 +593,12 @@ body {
 
     #topnav .logo-area {
         width: 750px;
-        
+
     }
 
     #topnav #toolbar-search .input-group {
         width: 460px;
     }
-
-
-
-
-
 
 }
 
@@ -605,7 +606,7 @@ body {
     #masonry-item {
         -moz-column-count: 4;
         -webkit-column-count: 4;
-        column-count:4;
+        column-count: 4;
 
     }
 
@@ -675,6 +676,7 @@ body {
     #sec-srch-filter {
         width: 200px;
     }
+
     #hd-modal #xd-modal .modal-dialog {
         margin: 0;
         float: right;
@@ -682,7 +684,6 @@ body {
         max-width: 100%;
 
     }
-
 
 }
 
@@ -763,9 +764,21 @@ body {
 /**End of PC Tabs**/
 
 /**Product Catalog**/
-#hide{
+.item_content{
+    border: solid thick black;
+    min-height: 90px;
+}
+
+.item_title{
+    min-height: 60px;
+    border: solid thin black;
+}
+#hide {
     cursor: pointer;
 }
+
+
+
 #pc-wrap {
     margin: 30px;
 }
@@ -781,7 +794,9 @@ body {
 
 .sec-pc-items .panel-body {
     padding: 0;
+
 }
+
 
 .sec-pc-items .col-lg-3 {
     padding: 0 10px;
@@ -1163,7 +1178,25 @@ header .dis_cell{
     background: #3B7FF0 ;
 }**/
 
-
-.line-24{
+.line-24 {
     line-height: 24px;
+}
+
+/* CUSTOM STYLES NI ERNST */
+.previousModalButton {
+    position: fixed;
+    left: 50%;
+    margin-left: -600px;
+    top: 350px
+}
+
+.nextModalButton {
+    position: fixed;
+    right: 50%;
+    margin-right: -600px;
+    top: 350px
+}
+
+.fa-3 {
+    font-size: 4em;
 }

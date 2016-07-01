@@ -5,29 +5,39 @@
                 Browse by industries
             </div>
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags | duplicates: 'tags'" ng-click="tagsSelected(tag)">
+                <!-- <label  ng-repeat="tag in tags | duplicates: 'tags'">
                     <input type="checkbox" checklist-model="tagselected.selected_tags" checklist-value="tag">
                     <span>{{tag.tags}} </span>
+                </label> -->
+                <label class="btn btn-primary-alt"  ng-repeat="tag in tags | duplicates: 'tags'" ng-click="toggleSelectedTag(tag)" ng-class="isTagSelected(tag) ? 'active' : ''">
+                    <span>{{tag.tags}} </span>
                 </label>
+                <!-- <pre>
+                {{tagselected | json}}
+            </pre> -->
             </div>
         </div>
         <div class="row_title xd-success-stories">
             Success Stories
         </div>
         <div id="masonry-item">
-            <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
+            <div href="#xd-modal" data-toggle="modal" class="item_experience" ng-repeat="article in articlesListFiltered = ( articlesList | filter:isOnSelectedTag())" ng-click="select(article, $index)">
                 <div class="panel panel-default">
                     <div class="img_holder">
-                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
-                                                                     ng-repeat="image in article.mediafiles | limitTo:1"></a>
+                        <!-- <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a> -->
+                        <a><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
-                        <a href="#xd-modal" data-toggle="modal">{{article.title}}</a>
+                        <a>{{article.title}}</a>
                         <div id="featured_solution" class="label_medium">
                             <p ng-bind-html="article.article"></p>
                         </div>
                     </div>
                 </div>
+                
+            <!-- <pre>
+                {{article | json}}
+            </pre> -->
             </div>
         </div>
     </div>
@@ -35,6 +45,10 @@
 <!--Modal-->
 <div class="modal fade" id="xd-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-backdrop fade in" style="height: 100vh; position: fixed;" data-dismiss="modal"></div>
+
+    <div class="previousModalButton" ng-click="previousArticle()"><i class="fa fa-chevron-left fa-3"></i></div>
+    <div class="nextModalButton" ng-click="nextArticle()"><i class="fa fa-chevron-right fa-3"></i></div>
+
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,8 +63,7 @@
                 <div id="sec-xd-article">
                     <div class="sec-xd-items">
                         <div class="xd-img">
-                            <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1"
-                                 style="background-image:url({{image.media_path}});">
+                            <div class="img_holder myImage" ng-repeat="image in selected.mediafiles | limitTo: 1" style="background-image:url({{image.media_path}});">
                             </div>
                             <div class="panel-body">
                                 <blockquote>

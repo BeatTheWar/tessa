@@ -1,26 +1,31 @@
 @import "fonts-config.css";
 
 html {
-  touch-action: manipulation;
-}   
+    touch-action: manipulation;
+}
 
 body {
     font-family: Roboto, sans-serif;
 }
 
 .myImage {
-    background-size: cover; width:800px!important; height:280px!important; background-repeat: no-repeat;
+    background-size: cover;
+    width: 800px !important;
+    height: 280px !important;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
 .myImage2 {
-    background-size: contain; width: 700px!important;
-    height: 320px!important; background-repeat: no-repeat;
+    background-size: contain;
+    width: 700px !important;
+    height: 320px !important;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
 .bg-image {
-    width:100%!important;
+    width: 100% !important;
 }
 
 .wrapper {
@@ -258,7 +263,6 @@ body {
 
 #sec-xd-article .img_holder img {
     max-width: 100%;
-    max
 }
 
 #xd-modal .modal-footer {
@@ -458,6 +462,7 @@ body {
 
     }
 
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -496,8 +501,6 @@ body {
     }**/
     .rotate {
 
-
-
         transform: rotate(90deg);
         margin: 20px 0;
     }
@@ -525,7 +528,7 @@ body {
     }
 
     #srch-filter-panel, #sec-srch-filter {
-        height: 100vh;
+        height: 100%;
         border-right: solid thin #E0E0E0;
     }
 
@@ -540,16 +543,14 @@ body {
     }
 
     .tes-icon img {
-        max-height: 15px;
+
+        max-height: 25px;
     }
 
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
-    #hd-modal #xd-modal .modal-dialog {
-        width: 940px;
 
-    }
 
 }
 
@@ -598,22 +599,13 @@ body {
 
     #topnav .logo-area {
         width: 750px;
+
     }
+
 
     #topnav #toolbar-search .input-group {
         width: 460px;
     }
-
-    #hd-modal #xd-modal .modal-dialog {
-        margin: 0;
-        float: right;
-        width: 850px;
-        max-width: 100%;
-
-    }
-
-
-
 
 }
 
@@ -621,7 +613,8 @@ body {
     #masonry-item {
         -moz-column-count: 4;
         -webkit-column-count: 4;
-        column-count:4;
+        column-count: 4;
+
     }
 
     .wrapper {
@@ -691,8 +684,16 @@ body {
         width: 200px;
     }
 
+    #hd-modal #xd-modal .modal-dialog {
+        margin: 0;
+        float: right;
+        width: 665px;
+        max-width: 100%;
+
+    }
 
 }
+
 
 /**End : View Ports for masonry**/
 
@@ -771,9 +772,20 @@ body {
 /**End of PC Tabs**/
 
 /**Product Catalog**/
-#hide{
+.item_content {
+
+    min-height: 90px;
+}
+
+.item_title {
+    min-height: 60px;
+
+}
+
+#hide {
     cursor: pointer;
 }
+
 #pc-wrap {
     margin: 30px;
 }
@@ -789,6 +801,7 @@ body {
 
 .sec-pc-items .panel-body {
     padding: 0;
+
 }
 
 .sec-pc-items .col-lg-3 {
@@ -928,9 +941,7 @@ body {
     padding: 40px 40px 20px 40px;
 }
 
-.sec-sd-psd .row_title {
-    padding-bottom: 20px;
-}
+
 
 .sec-option-set a {
     margin-right: 10px;
@@ -1127,9 +1138,10 @@ body {
 }
 
 #topnav.navbar-default #toolbar-search .input-group-btn button, #topnav.navbar-default #toolbar-search .form-control {
-    font-family: regular;
+    font-family: light;
     font-size: 14px;
     background: white;
+    padding-top: 15px;
 }
 
 #toolbar-search .btn-default {
@@ -1171,8 +1183,7 @@ header .dis_cell{
     background: #3B7FF0 ;
 }**/
 
-
-.line-24{
+.line-24 {
     line-height: 24px;
 }
 
@@ -1183,12 +1194,14 @@ header .dis_cell{
     margin-left: -600px;
     top: 350px
 }
+
 .nextModalButton {
     position: fixed;
     right: 50%;
     margin-right: -600px;
     top: 350px
 }
+
 .fa-3 {
     font-size: 4em;
 }

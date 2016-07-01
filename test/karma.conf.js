@@ -33,16 +33,11 @@ module.exports = function(config) {
       'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/bower_components/enquire/dist/enquire.js',
       'app/bower_components/restangular/dist/restangular.js',
-<<<<<<< HEAD
-      'app/bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
-      'app/bower_components/angular-ui-select/dist/select.js',
-      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-=======
       'app/bower_components/angular-ui-select/dist/select.js',
       'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
->>>>>>> 27694e276626787ce2faf366762fe1dab8f071e2
       'app/bower_components/checklist-model/checklist-model.js',
+      'app/bower_components/angular-touch/angular-touch.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -157,12 +157,16 @@
                                     <img src="images/img-sample-1.jpg" />
                                 </a>
                                 <div class="item_text">
-                                    <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-                                        {{item.bundle_name}}
-                                        {{item.category_label}}
-                                    </a>
-                                    <div class="font_14 grey1 font_light pad20top">
+                                    <div class="item_title">
+                                        <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+                                            {{item.bundle_name}}
+                                            {{item.category_label}}
+                                        </a>
+                                    </div>
+
+                                    <div class="item_content font_14 grey1 font_light pad20top">
                                         <span data-ng-bind-html="item.bundle_description"></span>
+
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
@@ -189,6 +193,7 @@
                     <div class="col-lg-3" ng-repeat="item in Screens">
                         <div class="panel panel-default">
                             <div class="panel-body">
+
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="images/is8.jpg" />
                                 </a>
@@ -198,6 +203,7 @@
                                     </a>
                                         {{item.p_id}}
                                     <div class="font_14 grey1 font_light pad20top">
+
                                         <span data-ng-bind-html="item.bundle_description"></span>
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
@@ -223,6 +229,7 @@
                                 <div class="item_text">
                                     <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
                                         {{item.item_name}}
+
                                     </a>
                                     <div class="font_14 grey1 font_light pad20top">
                                         <span data-ng-bind-html="item.bundle_description"></span>

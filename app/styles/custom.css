@@ -39,6 +39,13 @@ body {
     height: 200px!important;
 }
 
+.myImage5 {
+    border: none;
+    display: block;
+    margin: 0 auto;
+    height: 230px!important;
+}
+
 .bg-image {
     width: 100% !important;
 }

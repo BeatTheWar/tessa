@@ -1,14 +1,14 @@
 <style>
-    .container-fluid {
-        padding: 0;
-    }
-    .static-content {
-        margin: 0;
-    }
-</style>
+.container-fluid {
+    padding: 0;
+}
 
+.static-content {
+    margin: 0;
+}
+</style>
 <div id="product-catalogue" class="dis_table">
-<!--     <div class="sec-filter">
+    <!--     <div class="sec-filter">
         <div id="sec-srch-filter">
             <div id="hide" class="row_title pad20all">
                 <a >
@@ -121,7 +121,6 @@
         </div>
     </div>
  -->
-
     <!--sec-pc-->
     <div class="sec-pc">
         <div id="pc-wrap" class="wrapper">
@@ -130,44 +129,40 @@
                     <label id="btn-software" class="btn btn-primary-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
                         <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
                     </label>
-
                     <label id="btn-hardware" class="btn btn-primary-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
                         <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
-
                     </label>
                 </div>
             </div>
-
-        <div ng-show="prodType == 'Solution'">
-            <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="activateTab(item.category_label)" ng-class="me == item.category_label ? 'active' : 'inactive'">{{item.category_label}}</a>
-            </div>
-            <div class="row sec-pc-items">
-                <div>
-                    <div class="col-lg-3" ng-repeat="item in products" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                    <img ng-src="{{myImage.image_path}}" ng-repeat="myImage in item.product_images | limitTo: 1" class="myImage4"/>
-                                    <!-- <div style="background-image:url({{myImage.image_path}});" ng-repeat="myImage in item.product_images | limitTo: 1" class="img_holder myImage3"></div> -->
-                                </a>
-                                <div class="item_text">
-                                    <div class="item_title">
-                                        <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+            <div ng-show="prodType == 'Solution'">
+                <div class="pc_tabs text14_medium ">
+                    <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="activateTab(item.category_label)" ng-class="me == item.category_label ? 'active' : 'inactive'">{{item.category_label}}</a>
+                </div>
+                <div class="row sec-pc-items">
+                    <div>
+                        <div class="col-lg-3" ng-repeat="item in products" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
+                                        <img ng-src="{{myImage.image_path}}" ng-repeat="myImage in item.product_images | limitTo: 1" class="myImage4" />
+                                        <!-- <div style="background-image:url({{myImage.image_path}});" ng-repeat="myImage in item.product_images | limitTo: 1" class="img_holder myImage3"></div> -->
+                                    </a>
+                                    <div class="item_text">
+                                        <div class="item_title">
+                                            <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
                                             {{item.bundle_name}}
                                             {{item.category_label}}
                                         </a>
-                                    </div>
-
-                                    <div class="item_content font_14 grey1 font_light">
-                                        <span data-ng-bind-html="item.bundle_description"></span>
-
-                                    </div>
-                                    <div class="font_14 grey2 font_medium pad20top">
-                                        For as low as
-                                    </div>
-                                    <div class="box_price font_24 font_light">
-                                        <sup class="">$</sup>{{((item.sell_price)*12)/52 | number : 2}}<span class="font_light font_14">/wk</span>
+                                        </div>
+                                        <div class="item_content font_14 grey1 font_light">
+                                            <span data-ng-bind-html="item.bundle_description"></span>
+                                        </div>
+                                        <div class="font_14 grey2 font_medium pad20top">
+                                            For as low as
+                                        </div>
+                                        <div class="box_price font_24 font_light">
+                                            <sup class="">$</sup>{{((item.sell_price)*12)/52 | number : 2}}<span class="font_light font_14">/wk</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -175,31 +170,29 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div ng-show="prodType == 'Hardware'">
-            <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-class="{active: hardwareType == 'Screens'}" ng-click="hardwareType = 'Screens'" ng-init="hardwareType = 'Screens'">Screens</a>
-                <a class="tab_items" ng-class="{active: hardwareType == 'MediaPlayer'}" ng-click="hardwareType = 'MediaPlayer'">Media Player</a>
-            </div>
-
-            <div class="row sec-pc-items">
-                <div ng-show="hardwareType == 'Screens'">
-                    <div class="col-lg-3" ng-repeat="item in Screens" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
+            <div ng-show="prodType == 'Hardware'">
+                <div class="pc_tabs text14_medium ">
+                    <a class="tab_items" ng-class="{active: hardwareType == 'Screens'}" ng-click="hardwareType = 'Screens'" ng-init="hardwareType = 'Screens'">Screens</a>
+                    <a class="tab_items" ng-class="{active: hardwareType == 'MediaPlayer'}" ng-click="hardwareType = 'MediaPlayer'">Media Player</a>
+                </div>
+                <div class="row sec-pc-items">
+                    <div ng-show="hardwareType == 'Screens'">
+                        <div class="col-lg-3" ng-repeat="item in Screens" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
+                            <div class="panel panel-default">
+                                <!-- <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="{{item.img_default}}" />
                                 </a>
-                                <!-- <div style="background-image:url({{item.img_default}});" class="myImage3"></div> -->
                                 <div class="item_text">
-                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
+                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="blue1 font_bold">
                                         {{item.item_name}}
                                     </a>
-                                    <div class="font_14 grey1 font_light pad20top">
 
-                                        <span data-ng-bind-html="item.bundle_description"></span>
+                                    <div class="font_14 grey1 font_light pad20top">
+                                        <span data-ng-bind-html="item.bundle_description">  </span>
                                     </div>
+
+
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
                                     </div>
@@ -207,14 +200,31 @@
                                         <sup class="">$</sup>{{item.sell_price | number : 2}}
                                     </div>
                                 </div>
+                            </div> -->
+                                <div class="panel-body">
+                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
+                                        <img ng-src="{{item.img_default}}" class="myImage5" />
+                                    </a>
+                                    <div class="item_text">
+                                        <div class="item_title">
+                                            <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
+                                            {{item.item_name}}
+                                        </a>
+                                        </div>
+                                        <div class="font_14 grey2 font_medium pad20top">
+                                            For as low as
+                                        </div>
+                                        <div class="box_price font_24 font_light">
+                                            <sup class="">$</sup>{{item.sell_price | number:2}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div ng-show="hardwareType == 'MediaPlayer'">
-                    <div class="col-lg-3" ng-repeat="item in MediaPlayer" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1"> 
-                        <div class="panel panel-default">
+                    <div ng-show="hardwareType == 'MediaPlayer'">
+                        <div class="col-lg-3" ng-repeat="item in MediaPlayer" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
+                            <!--  <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="{{item.img_default}}" />
@@ -236,29 +246,46 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
+                                        <img ng-src="{{item.img_default}}" class="myImage5" />
+                                    </a>
+                                    <div class="item_text">
+                                        <div class="item_title">
+                                            <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
+                                            {{item.item_name}}
+                                        </a>
+                                        </div>
+                                        <div class="font_14 grey2 font_medium pad20top">
+                                            For as low as
+                                        </div>
+                                        <div class="box_price font_24 font_light">
+                                            <sup class="">$</sup>{{item.sell_price | number:2}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- End of wrapper -->
         </div>
-        <!-- End of wrapper -->
+        <!--End: sec-pc-->
     </div>
-    <!--End: sec-pc-->
-
 </div>
-</div>
-
-
 <!-- Hide Show Advance Search Filter Panel-->
 <script>
-    $("#hide").click(function () {
-        $("#sec-srch-filter").hide();
-        $("#srch-filter-panel").show();
-    });
+$("#hide").click(function() {
+    $("#sec-srch-filter").hide();
+    $("#srch-filter-panel").show();
+});
 
-    $("#srch-filter-panel").click(function () {
-        $("#sec-srch-filter").show();
-        $("#srch-filter-panel").hide();
-    });
+$("#srch-filter-panel").click(function() {
+    $("#sec-srch-filter").show();
+    $("#srch-filter-panel").hide();
+});
 </script>
 <!-- End Hide Show Advance Search Filter Panel-->

@@ -22,8 +22,7 @@
                 $stateProvider
                     .state('experience', {
                         url: '/experience',
-                        templateUrl: 'views/experience.html',
-                        controller: 'MainCtrl'
+                        templateUrl: 'views/experience.html'
                     })
 
                 .state('builder', {
@@ -55,8 +54,9 @@
                 })
 
                 .state('productDetailsHardware', {
-                    url: '/productCatalogue/productDetailsHardware/:selectedHardwareId',
+                    url: '/productCatalogue/productDetailsHardware/:selected_id',
                     templateUrl: 'views/productDetailsHardware.html',
+                    controller: 'hardwareDetailsCtrl'
                 });
 
                 $urlRouterProvider.otherwise('/experience');

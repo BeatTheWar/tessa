@@ -8,7 +8,6 @@
 </style>
 
 <div id="product-catalogue" class="dis_table">
-
     <!--sec-filter-->
     <div class="sec-filter">
         <!--Collapsed Filter-->
@@ -195,18 +194,16 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
 
-                                <a ui-sref="productDetailsHardware({selected_hardwareId: item.p_id})" class="img_holder">
-
+                                <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="images/is8.jpg" />
                                 </a>
                                 <div class="item_text">
-                                    <div class="item_title">
-                                        <a ui-sref="productDetailsHardware" class=" blue1 font_bold">
-                                            {{item.item_name}}
-                                        </a>
-                                    </div>
+                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
+                                        {{item.item_name}}
+                                    </a>
+                                        {{item.p_id}}
+                                    <div class="font_14 grey1 font_light pad20top">
 
-                                    <div class="item_content font_14 grey1 font_light pad20top">
                                         <span data-ng-bind-html="item.bundle_description"></span>
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
@@ -225,12 +222,12 @@
                     <div class="col-lg-3" ng-repeat="item in MediaPlayer">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <a ui-sref="productDetailsHardware" class="img_holder">
+                                <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="images/is7.jpg" />
                                 </a>
                                 
                                 <div class="item_text">
-                                    <a ui-sref="productDetailsHardware" class=" blue1 font_bold">
+                                    <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
                                         {{item.item_name}}
 
                                     </a>
@@ -254,6 +251,7 @@
     </div>
     <!--End: sec-pc-->
 
+</div>
 </div>
 
 

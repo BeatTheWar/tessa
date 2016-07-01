@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="img_holder">
-                            <img src="{{details.img_default}}" class="bg-image"/>
+                            <img src="{{img.image_path}}" class="bg-image" ng-repeat="img in details.product_images |limitTo:1"/>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -33,37 +33,37 @@
                         <div class="sec-option-set pad20top">
                             <div class="font_regular grey2">Capex/Opex</div>
                             <div class="font_24 font_bold">
-                                <a class=" box_price">
-                                    <sup>$</sup>{{hwPrice + dPrice + swPrice | number:2}}<span class="font_light font_14"> upfront</span>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{hwPrice + dPrice + swPrice | number:2}}<span class=" font_14"> upfront</span>
                                 </a>
-                                <a class=" box_price ">
-                                    <sup>$</sup>{{spPrice}}<span class="font_light font_14"> /mth</span>
+                                <a class=" font_light box_price ">
+                                    <sup>$</sup>{{spPrice}}<span class=" font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
                         <div class="sec-option-set pad20top">
                             <div class="font_regular grey2">Opex</div>
-                            <div class="font_24 font_bold">
+                            <div class="font_24 font_light font_bold">
                                 <a class=" box_price">
-                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
+                                    <sup>$</sup>0<span class=" font_14"> upfront</span>
                                 </a>
-                                <a class=" box_price">
-                                    <sup>$</sup>{{(((hwPrice + dPrice + swPrice)*36)/1000) | number:2}}<span class="font_light font_14"> /mth</span>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{(((hwPrice + dPrice + swPrice)*36)/1000) | number:2}}<span class=" font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="grey2 font_light pad20top">
+                        <div class="grey2 font_light ">
                             or
                         </div>
 
-                        <div class="sec-option-set pad20top">
-                            <div class="font_24 font_bold">
+                        <div class="sec-option-set ">
+                            <div class="font_light font_24 font_bold">
                                 <a class=" box_price">
-                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
+                                    <sup>$</sup>0<span class=" font_14"> upfront</span>
                                 </a>
-                                <a class=" box_price">
-                                    <sup>$</sup>{{(((((hwPrice + dPrice + swPrice)*36)/1000))*12) / 52 | number:2}}<span class="font_light font_14"> /wk</span>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{(((((hwPrice + dPrice + swPrice)*36)/1000))*12) / 52 | number:2}}<span class=" font_14"> /wk</span>
                                 </a>
                             </div>
                         </div>

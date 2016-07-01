@@ -54,15 +54,6 @@
                         });
                     });
                     
-
-                    // var sum = $scope.price.reduce(add, 0);
-
-                    // function add(a, b) {
-                    //     return a + b;
-                    // }
-                    // $scope.upfront = _.reduce($scope.price);
-
-
                     _.map($scope.services, function(row) {
                         if (row.product_category[0] !== undefined)
                             $scope.service.push(row.product_category[0]);
@@ -74,8 +65,6 @@
                             }
                         });
                     });
-
-                     
 
                     $scope.deployment = $filter('filter')($scope.services, { 'category_id': 87 });
                     $scope.support = $filter('filter')($scope.services, { 'category_id': 90 });
@@ -113,6 +102,8 @@
                 }
             });
         }
+
+
     };
 
     Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);

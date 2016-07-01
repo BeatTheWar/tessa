@@ -1,47 +1,56 @@
 <style>
-.container-fluid {
-    padding: 0;
-}
-
-.static-content {
-    margin: 0;
-}
+    .container-fluid {
+        padding: 0;
+    }
+    .static-content {
+        margin: 0;
+    }
 </style>
 
 <div id="product-catalogue" class="dis_table">
+
+    <!--sec-filter-->
     <div class="sec-filter">
+        <!--Collapsed Filter-->
         <div id="sec-srch-filter">
-            <div class="row_title pad20all">
-                <a id="hide">
+            <div id="hide" class="row_title pad20all">
+                <a >
                     HIDE FILTER
                     <i class="ti ti-filter pull-right"></i>
                 </a>
             </div>
-            <hr class="border-grey" />
+
+            <hr class="border-grey"/>
+
             <div class="sec-srch-category">
                 <div class="row_title padding_10">
                     Category
                 </div>
                 <div class="srch-flr-items padding_10 btn-group-vertical" data-toggle="buttons">
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Eze Impress
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Eze Impress
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Eze FInd
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Eze FInd
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Eze Orda
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Eze Orda
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Eze Wi-fi
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Eze Wi-fi
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Eze Comms
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Eze Comms
                     </label>
                 </div>
             </div>
@@ -51,49 +60,60 @@
                 </div>
                 <div class="srch-flr-items padding_10 btn-group-vertical" data-toggle="buttons">
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Indoor
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Indoor
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Outdoor
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Outdoor
                     </label>
                 </div>
             </div>
-            <hr class="border-grey" />
+            <hr class="border-grey"/>
             <div class="sec-srch-category">
                 <div class="row_title padding_10">
                     Mounting Options
                 </div>
                 <div class="srch-flr-items padding_10 btn-group-vertical" data-toggle="buttons">
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Wall
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Wall
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Ceiling
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Ceiling
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Floor
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Floor
                     </label>
                     <label class="btn srch-check">
-                        <input type="checkbox" />
-                        <i class="ti ti-check"></i> Desk
+                        <input type="checkbox"/>
+                        <i class="ti ti-check"></i>
+                        Desk
                     </label>
                 </div>
             </div>
         </div>
+        <!--End: Collapsed Filter-->
+
+        <!--Expanded Advance Search Filter-->
         <div id="srch-filter-panel">
             <div class="row_title">
                 <ul class="min-filter">
+
                     <li>
                         <div>
                             <a id="show">
                                 <i class="ti ti-filter"></i>
                             </a>
                         </div>
+
                     </li>
                     <li id="rotate-filter">
                         <div class="rotate">
@@ -102,29 +122,34 @@
                     </li>
                 </ul>
             </div>
+
         </div>
+        <!--End of Expanded Advance Search Filter-->
     </div>
-</div>
+    <!--End of sec-filter-->
 
 
-<div class="row">
-    <div id="pc-wrap" class="wrapper">
+    <!--sec-pc-->
+    <div class="sec-pc">
+        <div id="pc-wrap" class="wrapper">
+            <div id="sec-pc-category" class="row_title padding_10">
+                <div class="btn-group font_14" data-toggle="buttons">
+                    <label id="btn-software" class="btn btn-primary-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
+                        <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
+                    </label>
 
-        <div id="sec-pc-category" class="row_title padding_10">
-            <div class="btn-group font_14" data-toggle="buttons">
-                <label id="btn-software" class="btn btn-primary-alt btn-pc-radio" ng-class="{active: prodType == 'Solution'}" ng-click="prodType = 'Solution'" ng-init="prodType = 'Solution'">
-                    <input type="radio" name="catalogue_selector" id="option1" /> SOLUTION
-                </label>
+                    <label id="btn-hardware" class="btn btn-primary-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
+                        <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
 
-                <label id="btn-hardware" class="btn btn-primary-alt btn-pc-radio" ng-click="prodType = 'Hardware'">
-                    <input type="radio" name="catalogue_selector" id="option2" /> HARDWARE
-                </label>
+                    </label>
+                </div>
             </div>
-        </div>
+
+           
 
         <div ng-show="prodType == 'Solution'">
             <div class="pc_tabs text14_medium ">
-                <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="activateTab(item.category_label)" ng-class="me == item.category_label ? 'active' : ''">{{item.category_label}}</a>
+                <a class="tab_items" ng-repeat="item in products | duplicates: 'category_label'" ng-click="activateTab(item.category_label)" ng-class="me == item.category_label ? 'active' : 'inactive'">{{item.category_label}}</a>
             </div>
             <div class="row sec-pc-items">
                 <div>
@@ -145,8 +170,8 @@
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
                                     </div>
-                                    <div class="box_price font_24 font_black">
-                                        <sup class="">$</sup>{{item.sell_price}}<span class="font_light">/wk</span>
+                                    <div class="box_price font_24 font_light">
+                                        <sup class="">$</sup>{{((item.sell_price)*12)/52 | number : 2}}<span class="font_light font_14">/wk</span>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +193,7 @@
                     <div class="col-lg-3" ng-repeat="item in Screens">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <a ui-sref="productDetailsHardware" class="img_holder">
+                                <a ui-sref="productDetailsHardware({selected_hardwareId: item.p_id})" class="img_holder">
                                     <img src="images/is8.jpg" />
                                 </a>
                                 <div class="item_text">
@@ -181,8 +206,8 @@
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
                                     </div>
-                                    <div class="box_price font_24 font_black">
-                                        <sup class="">$</sup>{{item.sell_price}}
+                                    <div class="box_price font_24 font_light">
+                                        <sup class="">$</sup>{{item.sell_price | number : 2}}
                                     </div>
                                 </div>
                             </div>
@@ -208,8 +233,8 @@
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
                                     </div>
-                                    <div class="box_price font_24 font_black">
-                                        <sup class="">$</sup>{{item.sell_price}}
+                                    <div class="box_price font_24 font_light">
+                                        <sup class="">$</sup>{{item.sell_price | number: 2}}
                                     </div>
                                 </div>
                             </div>
@@ -218,18 +243,23 @@
                 </div>
             </div>
         </div>
+        <!-- End of wrapper -->
     </div>
+    <!--End: sec-pc-->
+
+</div>
 
 
+<!-- Hide Show Advance Search Filter Panel-->
 <script>
-$("#hide").click(function() {
-    $("#sec-srch-filter").hide();
-    $("#srch-filter-panel").show();
-});
+    $("#hide").click(function () {
+        $("#sec-srch-filter").hide();
+        $("#srch-filter-panel").show();
+    });
 
-$("#srch-filter-panel").click(function() {
-    $("#sec-srch-filter").show();
-    $("#srch-filter-panel").hide();
-});
+    $("#srch-filter-panel").click(function () {
+        $("#sec-srch-filter").show();
+        $("#srch-filter-panel").hide();
+    });
 </script>
 <!-- End Hide Show Advance Search Filter Panel-->

@@ -46,13 +46,8 @@
                         <ui-select-match placeholder="Search...">
                             {{$select.selected.name}}
                         </ui-select-match>
-<<<<<<< HEAD
-                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search | filter : list.is_published = 0">
-=======
-                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" in-form="true" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search">
->>>>>>> 69c7e6b929ad3e3bafba2f16d35c12b9ea2972dc
+                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" in-form="true" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search | filter : list.is_published = 0">
                             {{list.name}}
-
                         </ui-select-choices>
                         <ui-select-no-choice>
                             No Result Found

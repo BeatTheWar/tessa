@@ -185,12 +185,13 @@
 
             <div class="row sec-pc-items">
                 <div ng-show="hardwareType == 'Screens'">
-                    <div class="col-lg-3" ng-repeat="item in Screens">
+                    <div class="col-lg-3" ng-repeat="item in Screens" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
                                     <img src="{{item.img_default}}" />
                                 </a>
+                                <!-- <div style="background-image:url({{item.img_default}});" class="myImage3"></div> -->
                                 <div class="item_text">
                                     <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
                                         {{item.item_name}}
@@ -212,7 +213,7 @@
                 </div>
 
                 <div ng-show="hardwareType == 'MediaPlayer'">
-                    <div class="col-lg-3" ng-repeat="item in MediaPlayer">
+                    <div class="col-lg-3" ng-repeat="item in MediaPlayer" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1"> 
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">

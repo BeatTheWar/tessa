@@ -24,6 +24,14 @@ body {
     background-position: center;
 }
 
+.myImage3 {
+    background-size: contain;
+    width: 503px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .myImage4 {
     border: none;
     display: block;

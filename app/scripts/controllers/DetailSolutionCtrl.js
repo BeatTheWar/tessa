@@ -28,6 +28,8 @@
                     $scope.hardware = $filter('filter')($scope.productDetails, { 'productType_id': 17 });
                     $scope.software = $filter('filter')($scope.productDetails, { 'productType_id': 18 });
 
+                    console.log('software', $scope.software)
+
                     $scope.softwarePrice = _.map($scope.software, function(value){
                         return value.sell_price
                     })

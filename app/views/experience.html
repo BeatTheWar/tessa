@@ -18,8 +18,7 @@
             <div class="item_experience" ng-repeat="article in articlesList" ng-click="select(article)">
                 <div class="panel panel-default">
                     <div class="img_holder">
-                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}"
-                                                                     ng-repeat="image in article.mediafiles | limitTo:1"></a>
+                        <a href="#xd-modal" data-toggle="modal"><img src="{{image.media_path}}" ng-repeat="image in article.mediafiles | limitTo:1"></a>
                     </div>
                     <div id="masonry_body" class="padding_10 blue1 font_14 font_bold">
                         <a href="#xd-modal" data-toggle="modal">{{article.title}}</a>

@@ -20,24 +20,24 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class=" font_24 font_bold blue1 ">
+                        <div class=" font_24 font_bold blue1">
                             {{details.bundle_name}}
                         </div>
                         <div class="font_light grey2 pad20top line-24">
                             <span data-ng-bind-html="details.bundle_description"></span>
                         </div>
                         <div class="divider"></div>
+                    
+                        <p>Payment Term</p>
+
                         <div class="sec-option-set pad20top">
                             <div class="font_bold grey3">Capex/Opex</div>
                             <div class="font_24 font_bold">
                                 <a class=" box_price">
-                                    <sup>$</sup>{{hwPrice + dPrice + swPrice}}<span class="font_light"> upfront</span>
+                                    <sup>$</sup>{{hwPrice + dPrice + swPrice | number:2}}<span class="font_light font_14"> upfront</span>
                                 </a>
                                 <a class=" box_price ">
-                                    <sup>$</sup>{{spPrice}}<span class="font_light"> /mth</span>
-                                </a>
-                                <a class=" box_price">
-                                    <sup>$</sup>20<span class="font_light font_14"> /wk</span>
+                                    <sup>$</sup>{{spPrice}}<span class="font_light font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
@@ -45,13 +45,29 @@
                             <div class="font_bold grey3">Opex</div>
                             <div class="font_24 font_bold">
                                 <a class=" box_price">
-                                    <sup>$</sup>{{((hwPrice + dPrice + swPrice)*36)/1000}}<span class="font_light"> upfront</span>
+                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
                                 </a>
                                 <a class=" box_price">
-                                    <sup>$</sup>20<span class="font_light font_14"> /wk</span>
+                                    <sup>$</sup>{{(((hwPrice + dPrice + swPrice)*36)/1000) | number:2}}<span class="font_light font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
+
+                        <p class="">Or</p>
+
+                        <div class="sec-option-set pad20top">
+                            <div class="font_24 font_bold">
+                                <a class=" box_price">
+                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
+                                </a>
+                                <a class=" box_price">
+                                    <sup>$</sup>{{(((((hwPrice + dPrice + swPrice)*36)/1000))*12) / 52 | number:2}}<span class="font_light font_14"> /wk</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="">Based on a 3-year contract payment term</p>
+
                     </div>
                 </div>
                 <!-- End of: Main Article -->
@@ -74,8 +90,7 @@
 
                         <div class="inc_body" ng-repeat="softwares in software">
                             <div class="inc_title font_bold grey2">
-                                {{softwares.brand}}
-
+                                CMS
                             </div>
                             <a href="" class="inc_text font_light grey2">
                                 {{softwares.item_name}}
@@ -96,8 +111,8 @@
                                 {{categ.category_label}}
                             </div>
 
-                            <a href="" class="inc_text font_light grey2" ng-repeat="hard in hardware">
-                                {{hard.item_name}}
+                            <a href="" class="inc_text font_light grey2">
+                                {{categ.item_name}}
                             </a>
 
                         </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-var MainCtrl = function($scope, APIFactory, $location) {
+var MainCtrl = function($scope, APIFactory, $location, _) {
     APIFactory.getArticles(function(data) {
         $scope.tags = [];
         $scope.items = [];
@@ -8,7 +8,9 @@ var MainCtrl = function($scope, APIFactory, $location) {
         $scope.selectedTag = [];
         for (var i = 0; i < $scope.articlesList.length; i++) {
             for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
-                $scope.tags.push($scope.articlesList[i].tags[d]);
+                if($scope.articlesList[i].tags[d]){
+                    $scope.tags.push($scope.articlesList[i].tags[d]);
+                }
             }
         };
         console.log('$scope.tags:', $scope.tags);
@@ -54,4 +56,4 @@ var MainCtrl = function($scope, APIFactory, $location) {
     // });
 };
 
-Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);
+Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location','_', MainCtrl]);

@@ -17,25 +17,21 @@
             });
         };
 
-        apifactory.getDetailSolution = function(id, callback) {
-            Restangular.all('product-bundle/' + id).customGET().then(function(results) {
-                callback(results);
-            });
-        };
-
-        apifactory.getProduct = function(callback) {
-            Restangular.all('product').customGET().then(function(results) {
-                callback(null, results);
-            }, function(err) {
-                callback(err, null);
-            });
-        };
 
         apifactory.getAllTags = function(callback) {
             Restangular.all('tags').customGET().then(function(results) {
                     callback(results);
             });
 
+        };
+
+        apifactory.getDetailSolution = function(id, callback) {
+            Restangular.all('product-bundle/' + id).customGET().then(function(results) {
+                callback(null, results);
+            },
+            function(err) {
+                    callback(err, null);
+            });
         };
 
         apifactory.getProductDetail = function(id, callback) {
@@ -47,13 +43,7 @@
                 });
         };
 
-        apifactory.getCategory = function(callback) {
-            Restangular.all('categories').customGET().then(function(results) {
-                callback(null, results);
-            }, function(err) {
-                callback(err, null);
-            });
-        };
+
         apifactory.getProduct = function(callback) {
             Restangular.all('product').customGET().then(function(results) {
                     callback(null, results);
@@ -81,15 +71,7 @@
         return apifactory;
     };
 
-    var underscore = function() {
-        return window._;
-    };
-
-    // var LodashFactory = function($window) {  
-    //     return $window._;
-    // }
 
     angular.module('tessaApp')
-        .factory('_', [underscore])
         .factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]);
 })();

@@ -538,9 +538,9 @@ body {
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
+    #hd-modal #xd-modal .modal-dialog {
+        width: 940px;
+
     }
 
 }
@@ -599,20 +599,21 @@ body {
     #hd-modal #xd-modal .modal-dialog {
         margin: 0;
         float: right;
+        width: 850px;
+        max-width: 100%;
+
     }
 
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
-    }
+
+
 
 }
 
 @media only screen and (min-width: 1100px) {
     #masonry-item {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count:3;
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count:4;
     }
 
     .wrapper {
@@ -680,10 +681,6 @@ body {
 
     #sec-srch-filter {
         width: 200px;
-    }
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
     }
 
 
@@ -766,7 +763,9 @@ body {
 /**End of PC Tabs**/
 
 /**Product Catalog**/
-
+#hide{
+    cursor: pointer;
+}
 #pc-wrap {
     margin: 30px;
 }

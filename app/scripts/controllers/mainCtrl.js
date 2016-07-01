@@ -17,9 +17,10 @@ var MainCtrl = function($scope, APIFactory, $location) {
         console.log('$scope.tags:', $scope.tags);
     });
 
-    $scope.select = function(selected) {
+    $scope.select = function(selected, index) {
         $scope.selected = [];
         $scope.selected = selected;
+        $scope.selectedindex = index;
         console.log('selected:', $scope.selected);
         // console.log('selected id:', $scope.selected.article_id);
     }
@@ -50,13 +51,10 @@ var MainCtrl = function($scope, APIFactory, $location) {
             var tagselectedIDs = _.map($scope.tagselected, 'tags_id');
             console.log(item.title);
             _.forEach(item.tags, function(tag){
-                console.log(tagselectedIDs, tag.tags_id, tagselectedIDs.indexOf(tag.tags_id));
                 if(tagselectedIDs.indexOf(tag.tags_id) !== -1){
                     flag = true;
                 }
             });
-
-            console.log("------------------------------" + flag);
             return flag;
         };
     };
@@ -83,6 +81,24 @@ var MainCtrl = function($scope, APIFactory, $location) {
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;
     });
+
+    $scope.articlesListFiltered = {};
+    $scope.previousArticle = function(){
+        if($scope.selectedindex == 0){
+            $scope.selectedindex = $scope.articlesListFiltered.length - 1;
+        } else {
+            --$scope.selectedindex;
+        }
+        $scope.selected = $scope.articlesListFiltered[$scope.selectedindex];
+    };
+    $scope.nextArticle = function(){
+        if($scope.selectedindex == $scope.articlesListFiltered.length - 1){
+            $scope.selectedindex = 0;
+        } else {
+            ++$scope.selectedindex;
+        }
+        $scope.selected = $scope.articlesListFiltered[$scope.selectedindex];
+    };
 
     // APIFactory.getAllTags(function(err, data) {
     //     $scope.tags = data.response.result;

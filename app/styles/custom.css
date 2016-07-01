@@ -532,16 +532,13 @@ body {
     }
 
     .tes-icon img {
-        max-height: 30px;
+        max-height: 25px;
     }
 
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
-    #hd-modal #xd-modal .modal-dialog {
-        width: 940px;
 
-    }
 
 }
 
@@ -590,19 +587,14 @@ body {
 
     #topnav .logo-area {
         width: 750px;
+        
     }
 
     #topnav #toolbar-search .input-group {
         width: 460px;
     }
 
-    #hd-modal #xd-modal .modal-dialog {
-        margin: 0;
-        float: right;
-        width: 850px;
-        max-width: 100%;
 
-    }
 
 
 
@@ -614,6 +606,7 @@ body {
         -moz-column-count: 4;
         -webkit-column-count: 4;
         column-count:4;
+
     }
 
     .wrapper {
@@ -681,6 +674,13 @@ body {
 
     #sec-srch-filter {
         width: 200px;
+    }
+    #hd-modal #xd-modal .modal-dialog {
+        margin: 0;
+        float: right;
+        width: 600px;
+        max-width: 100%;
+
     }
 
 

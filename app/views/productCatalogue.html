@@ -176,6 +176,7 @@
                                         <a ui-sref="productDetailsSolution({selected_id: item.pb_id})"
                                            class=" blue1 font_bold">
                                             {{item.bundle_name}}
+                                            {{item.category_label}}
                                         </a>
                                         <!--Title-->
                                         <div class="font_14 grey1 font_light pad20top">
@@ -308,7 +309,6 @@
 
 
             </div>
-
             <div ng-show="prodType == 'Hardware'">
                 <div class="pc_tabs text14_medium ">
                     <a class="tab_items" ng-class="{active: apply == 'Screens'}"

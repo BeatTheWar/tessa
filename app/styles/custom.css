@@ -1166,3 +1166,20 @@ header .dis_cell{
 .line-24{
     line-height: 24px;
 }
+
+/* CUSTOM STYLES NI ERNST */
+.previousModalButton {
+    position: fixed;
+    left: 50%;
+    margin-left: -600px;
+    top: 350px
+}
+.nextModalButton {
+    position: fixed;
+    right: 50%;
+    margin-right: -600px;
+    top: 350px
+}
+.fa-3 {
+    font-size: 4em;
+}

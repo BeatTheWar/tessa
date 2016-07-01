@@ -19,7 +19,9 @@
 
         apifactory.getDetailSolution = function(id, callback) {
             Restangular.all('product-bundle/' + id).customGET().then(function(results) {
-                callback(results);
+                callback(null, results);
+            }, function(err) {
+                callback(err, null)
             });
         };
 
@@ -33,7 +35,7 @@
 
         apifactory.getAllTags = function(callback) {
             Restangular.all('tags').customGET().then(function(results) {
-                    callback(results);
+                callback(results);
             });
 
         };
@@ -67,10 +69,18 @@
             Restangular.all('product').customGET().then(function(results) {
                 callback(_.filter(results), { productType_id: id });
             });
-        }
+        };
 
         apifactory.getCategory = function(callback) {
             Restangular.all('categories').customGET().then(function(results) {
+                    callback(null, results);
+                },
+                function(err) {
+                    callback(err, null);
+                });
+        };
+        apifactory.getProductType = function(callback) {
+            Restangular.all('producttype').customGET().then(function(results) {
                     callback(null, results);
                 },
                 function(err) {

@@ -22,8 +22,7 @@
                 $stateProvider
                     .state('experience', {
                         url: '/experience',
-                        templateUrl: 'views/experience.html',
-                        controller: 'MainCtrl'
+                        templateUrl: 'views/experience.html'
                     })
 
                 .state('builder', {

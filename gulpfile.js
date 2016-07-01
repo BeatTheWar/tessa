@@ -18,7 +18,7 @@ var paths = {
     images: 'app/images/**/*.*',
     font: 'app/fonts/**/*.*',
     templates: 'app/views/*.html',
-    index: 'index.html'
+    index: 'app/index.html'
 };
 
 

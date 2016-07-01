@@ -19,6 +19,7 @@ var productCtrl = function($scope, APIFactory, $location, $filter, _) {
         $scope.bundle = _.uniqBy($scope.bundles, function(row) {
             return row.category_label;
         });
+        
         console.log('$scope.bundle:', $scope.bundle);
         _.each($scope.products, function(row) {
             _.find($scope.bundles, function(row1) {

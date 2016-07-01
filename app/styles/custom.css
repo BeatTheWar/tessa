@@ -538,9 +538,9 @@ body {
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
+    #hd-modal #xd-modal .modal-dialog {
+        width: 940px;
+
     }
 
 }
@@ -599,12 +599,13 @@ body {
     #hd-modal #xd-modal .modal-dialog {
         margin: 0;
         float: right;
+        width: 850px;
+        max-width: 100%;
+
     }
 
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
-    }
+
+
 
 }
 
@@ -680,10 +681,6 @@ body {
 
     #sec-srch-filter {
         width: 200px;
-    }
-    #hd-modal .modal-dialog {
-        width: 700px;
-        max-width: 100%;
     }
 
 

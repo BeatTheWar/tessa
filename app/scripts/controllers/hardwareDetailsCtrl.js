@@ -1,5 +1,7 @@
 (function() {
-'use strict';
+
+    'use strict';
+
 
     var hardwareDetailsCtrl = function($scope, APIFactory, $location, $stateParams, $filter, _) {
     	console.log('hardwareDetailsCtrl');
@@ -13,4 +15,7 @@
 
     angular.module('tessaApp')
         .controller('hardwareDetailsCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', hardwareDetailsCtrl]);
+
+
 })();
+

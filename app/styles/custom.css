@@ -1,5 +1,9 @@
 @import "fonts-config.css";
 
+html {
+    touch-action: manipulation;
+}
+
 body {
     font-family: Roboto, sans-serif;
 }
@@ -14,10 +18,14 @@ body {
 
 .myImage2 {
     background-size: contain;
-    width: 800px !important;
-    height: 430px !important;
+    width: 700px !important;
+    height: 320px !important;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.bg-image {
+    width: 100% !important;
 }
 
 .wrapper {
@@ -255,7 +263,6 @@ body {
 
 #sec-xd-article .img_holder img {
     max-width: 100%;
-    max
 }
 
 #xd-modal .modal-footer {
@@ -455,6 +462,7 @@ body {
 
     }
 
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -509,8 +517,6 @@ body {
         table-layout: auto;
     }
 
-
-
     .sec-filter, .sec-pc {
         vertical-align: top;
         display: table-cell;
@@ -522,7 +528,7 @@ body {
     }
 
     #srch-filter-panel, #sec-srch-filter {
-        height: 100vh;
+        height: 100%;
         border-right: solid thin #E0E0E0;
     }
 
@@ -541,10 +547,10 @@ body {
         max-height: 25px;
     }
 
-
     .tes-icon {
         padding: 0 15px 10px 15px;
     }
+
 
 }
 
@@ -595,6 +601,7 @@ body {
         width: 750px;
 
     }
+
 
     #topnav #toolbar-search .input-group {
         width: 460px;
@@ -680,12 +687,13 @@ body {
     #hd-modal #xd-modal .modal-dialog {
         margin: 0;
         float: right;
-        width: 600px;
+        width: 665px;
         max-width: 100%;
 
     }
 
 }
+
 
 /**End : View Ports for masonry**/
 
@@ -764,20 +772,19 @@ body {
 /**End of PC Tabs**/
 
 /**Product Catalog**/
-.item_content{
+.item_content {
 
     min-height: 90px;
 }
 
-.item_title{
+.item_title {
     min-height: 60px;
 
 }
+
 #hide {
     cursor: pointer;
 }
-
-
 
 #pc-wrap {
     margin: 30px;
@@ -796,7 +803,6 @@ body {
     padding: 0;
 
 }
-
 
 .sec-pc-items .col-lg-3 {
     padding: 0 10px;
@@ -935,9 +941,7 @@ body {
     padding: 40px 40px 20px 40px;
 }
 
-.sec-sd-psd .row_title {
-    padding-bottom: 20px;
-}
+
 
 .sec-option-set a {
     margin-right: 10px;
@@ -1134,9 +1138,10 @@ body {
 }
 
 #topnav.navbar-default #toolbar-search .input-group-btn button, #topnav.navbar-default #toolbar-search .form-control {
-    font-family: regular;
+    font-family: light;
     font-size: 14px;
     background: white;
+    padding-top: 15px;
 }
 
 #toolbar-search .btn-default {

@@ -53,26 +53,7 @@ var MainCtrl = function($scope, APIFactory, $location, _) {
             return flag;
         };
     };
-    // $scope.tagsSelected = function(tag) {
-    //     console.log('tag :', tag);
-    //     if (tag.selected) {
-    //         _.each(tag.selected,function(row){
-    //             $scope.selectedTag.push(tag.selected);
-    //         });
-    //         console.log('$scope.selectedTag:', $scope.selectedTag);
-    //         if (_.isUndefined(result)) {
-    //             tag.tags_id = tag.tags_id;
-    //             $scope.selectedTag.push(tags_id);
-    //         }
-    //         console.log('$scope.selectedTag:', $scope.selectedTag);
-    //     }
-    //     // else {
-    //     //     $scope.selectedTag = _.filter($scope.selectedTag, function(selectedStore) {
-    //     //         return selectedStore.tags_id !== tag.tags_id;
-    //     //     });
-    //     //     console.log('$scope.selectedTag:', $scope.selectedTag);
-    //     // }
-    // };
+
     APIFactory.getProductBundle(function(data) {
         $scope.lists = data.response.result;
     });
@@ -102,5 +83,5 @@ var MainCtrl = function($scope, APIFactory, $location, _) {
 };
 
     angular.module('tessaApp')
-        .controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);
+        .controller('MainCtrl', ['$scope', 'APIFactory', '$location','_', MainCtrl]);
 })();

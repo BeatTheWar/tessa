@@ -17,26 +17,30 @@
             });
         };
 
+
         apifactory.getDetailSolution = function (id, callback) {
-            Restangular.all('product-bundle/' + id).customGET().then(function (err, results) {
+            Restangular.all('product-bundle/' + id).customGET().then(function (results) {
+                callback(results);
+            });
+        };
+
+        apifactory.getProduct = function (callback) {
+            Restangular.all('product').customGET().then(function (results) {
+
                 callback(null, results);
             }, function (err) {
                 callback(err, null)
             });
         };
 
-        apifactory.getProduct = function (callback) {
-            Restangular.all('product').customGET().then(function (results) {
-                callback(null, results);
-            }, function (err) {
-                callback(err, null);
-            });
-        };
+
         apifactory.getAllTags = function (callback) {
             Restangular.all('tags').customGET().then(function (results) {
                 callback(results);
             });
+
         };
+
         apifactory.getProductDetail = function (id, callback) {
             Restangular.all('product/' + id).customGET().then(function (results) {
                     callback(null, results);
@@ -48,6 +52,7 @@
 
         apifactory.getCategory = function (callback) {
             Restangular.all('categories').customGET().then(function (results) {
+
                 callback(null, results);
             }, function (err) {
                 callback(err, null);

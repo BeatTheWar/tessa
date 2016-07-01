@@ -37,6 +37,7 @@ module.exports = function(config) {
       'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
       'app/bower_components/checklist-model/checklist-model.js',
+      'app/bower_components/angular-touch/angular-touch.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

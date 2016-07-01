@@ -26,17 +26,9 @@
                         row.category_label = row1.category_label;
                     }
                 });
-                console.log('$scope.bundle:', $scope.bundle);
-                _.each($scope.products, function(row) {
-                    _.find($scope.bundles, function(row1) {
-                        if (row.pb_id == row1.bundle_id) {
-                            row.category_label = row1.category_label;
-                        }
-                    });
-                });
-                console.log('$scope.products:', $scope.products);
-
             });
+            console.log('$scope.products:', $scope.products);
+
             $scope.me = 'all';
             $scope.activateTab = function(name) {
                 $scope.me = name;
@@ -68,7 +60,7 @@
                     }
                 }
 
-                console.log('qwerty', $scope.prodCateg);
+                console.log('$scope.prodCateg', $scope.prodCateg);
 
                 _.each($scope.hardware, function(e) {
                     _.find($scope.prodCateg, function(i) {
@@ -79,8 +71,16 @@
                 });
             });
 
-            $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
+            // $scope.Screens = $filter('filter')($scope.hardware, { 'category_id': 80 });
+
+            $scope.Screens = _.filter($scope.hardware, function(q){
+                return q.category_id === 80;
+            })
             $scope.MediaPlayer = $filter('filter')($scope.hardware, { 'category_id': 83 });
+
+            console.log('Screens', $scope.Screens);
+            console.log('MediaPlayer', $scope.MediaPlayer);
+
         });
 
     };

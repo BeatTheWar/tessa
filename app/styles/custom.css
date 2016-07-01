@@ -1,5 +1,9 @@
 @import "fonts-config.css";
 
+html {
+  touch-action: manipulation;
+}   
+
 body {
     font-family: Roboto, sans-serif;
 }

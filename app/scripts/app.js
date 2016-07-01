@@ -7,7 +7,8 @@
             'restangular',
             'ngSanitize',
             'ui.bootstrap',
-            'ui.select'
+            'ui.select',
+            'ngTouch'
         ])
         .constant('API_URL', 'http://52.64.27.145:5001')
         .constant('API_VERSION', '/api/1.0/')
@@ -64,7 +65,6 @@
             }
         ])
         .run(['$location', 'APIFactory', '$rootScope', function($location, APIFactory, $rootScope) {
-            // APIFactory.getArticles();
             $rootScope._ = window._;
         }])
         .factory('_', ['$window', function($window) {

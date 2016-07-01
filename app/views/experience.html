@@ -9,7 +9,7 @@
                     <input type="checkbox" checklist-model="tagselected.selected_tags" checklist-value="tag">
                     <span>{{tag.tags}} </span>
                 </label> -->
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags | duplicates: 'tags'" ng-click="toggleSelectedTag(tag)" ng-class="isTagSelected(tag) ? 'active' : ''">
+                <label class="btn btn-primary-alt" ng-repeat="tag in tags | duplicates: 'tags'" ng-click="toggleSelectedTag(tag)" ng-class="isTagSelected(tag) ? 'active' : 'inactive'">
                     <span>{{tag.tags}} </span>
                 </label>
                 <!-- <pre>

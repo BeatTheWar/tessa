@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="img_holder">
-                            <img src="{{details.img_default}}" class="bg-image"/>
+                            <img src="{{img.image_path}}" class="bg-image" ng-repeat="img in details.product_images |limitTo:1"/>
                         </div>
                     </div>
                     <div class="col-lg-6">

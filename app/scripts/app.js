@@ -42,7 +42,7 @@
                 })
 
                 .state('search', {
-                    url: '/search',
+                    url: '/search?value',
                     templateUrl: 'views/search.html',
                     controller: 'searchCtrl'
                 })

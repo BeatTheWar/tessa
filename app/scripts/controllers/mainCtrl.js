@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var MainCtrl = function($scope, APIFactory, $location, _) {
+    var MainCtrl = function($scope, APIFactory, $location, _, $state) {
         console.log('MainCtrl: ');
 
 
@@ -127,6 +127,17 @@
             });
         };
 
+        $scope.seachValue = function(value) {
+            if (value.type == 'Solutions') {
+                $state.go('productDetailsSolution', {selected_id: value.pb_id }, { reload: true });
+            } else if (value.type == 'Hardware') {
+                $state.go('productDetailsHardware', {selected_id: value.p_id }, { reload: true });
+            } else if (value.type == 'Experience') {
+                $state.go('search', { value: value.p_id }, { reload: true });
+            }
+
+        };
+
         $scope.articlesListFiltered = {};
         $scope.previousArticle = function() {
             if ($scope.selectedindex == 0) {
@@ -152,5 +163,5 @@
     };
 
     angular.module('tessaApp')
-        .controller('MainCtrl', ['$scope', 'APIFactory', '$location', '_', MainCtrl]);
+        .controller('MainCtrl', ['$scope', 'APIFactory', '$location', '_', '$state', MainCtrl]);
 })();

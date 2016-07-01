@@ -42,13 +42,17 @@
                         <img src="images/icons/consolidated_search.png">
                         </a>
                     </span>
-                    <ui-select ng-model="lists.name">
+                    <ui-select ng-model="lists.name" on-select="seachValue($select.selected)" theme="bootstrap">
                         <ui-select-match placeholder="Search...">
                             {{$select.selected.name}}
                         </ui-select-match>
-                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search">
+                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" in-form="true" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search">
                             {{list.name}}
+
                         </ui-select-choices>
+                        <ui-select-no-choice>
+                            No Result Found
+                        </ui-select-no-choice>
                     </ui-select>
                     <span class="input-group-btn"><button class="btn" type="button"><i
                         class="ti ti-close"></i></button></span>
@@ -219,6 +223,7 @@
     <!-- build:js1 js/app.min.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/mainCtrl.js"></script>
+    <script src="scripts/controllers/searchCtrl.js"></script>
     <script src="scripts/controllers/productCtrl.js"></script>
     <script src="scripts/controllers/DetailSolutionCtrl.js"></script>
     <script src="scripts/controllers/hardwareDetailsCtrl.js"></script>

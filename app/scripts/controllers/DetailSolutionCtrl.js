@@ -107,6 +107,8 @@
                         return value.sell_price;
                     })
 
+                    console.log('Supoort PRICE REAL', $scope.supportPrice);
+
                     $scope.spPrice = _.sum($scope.supportPrice);
                     console.log('supportPrice', $scope.spPrice);
 

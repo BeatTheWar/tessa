@@ -5,7 +5,7 @@
     var productCtrl = function($scope, APIFactory, $location, $filter, _) {
         $scope.solutionTypes = 'EzeImpress';
 
-        $scope.myURL = 'http://52.64.27.145:5001/';
+        // $scope.myURL = 'http://52.64.27.145:5001';
 
         $scope.apply = '';
         $scope.bundles = [];

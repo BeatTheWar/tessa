@@ -26,46 +26,50 @@
                         </div>
                         <div class="divider"></div>
                     
-                        <p>Payment Term</p>
+                        <div class="row_title">
+                            Payment Term
+                        </div>
 
                         <div class="sec-option-set pad20top">
-                            <div class="font_bold grey3">Capex/Opex</div>
+                            <div class="font_regular grey2">Capex/Opex</div>
                             <div class="font_24 font_bold">
-                                <a class=" box_price">
-                                    <sup>$</sup>{{hwPrice + dPrice + swPrice | number:2}}<span class="font_light font_14"> upfront</span>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{hwPrice + dPrice + swPrice | number:2}}<span class=" font_14"> upfront</span>
                                 </a>
-                                <a class=" box_price ">
-                                    <sup>$</sup>{{spPrice}}<span class="font_light font_14"> /mth</span>
+                                <a class=" font_light box_price ">
+                                    <sup>$</sup>{{spPrice | number: 2}}<span class=" font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
                         <div class="sec-option-set pad20top">
-                            <div class="font_bold grey3">Opex</div>
-                            <div class="font_24 font_bold">
+                            <div class="font_regular grey2">Opex</div>
+                            <div class="font_24 font_light font_bold">
                                 <a class=" box_price">
-                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
+                                    <sup>$</sup>0<span class=" font_14"> upfront</span>
                                 </a>
-                                <a class=" box_price">
-                                    <sup>$</sup>{{(((hwPrice + dPrice + swPrice)*36)/1000) | number:2}}<span class="font_light font_14"> /mth</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="">Or</p>
-
-                        <div class="sec-option-set pad20top">
-                            <div class="font_24 font_bold">
-                                <a class=" box_price">
-                                    <sup>$</sup>0<span class="font_light font_14"> upfront</span>
-                                </a>
-                                <a class=" box_price">
-                                    <sup>$</sup>{{(((((hwPrice + dPrice + swPrice)*36)/1000))*12) / 52 | number:2}}<span class="font_light font_14"> /wk</span>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{(((hwPrice + dPrice + swPrice)*36)/1000) | number:2}}<span class=" font_14"> /mth</span>
                                 </a>
                             </div>
                         </div>
 
-                        <p class="">Based on a 3-year contract term</p>
+                        <div class="grey2 font_light ">
+                            or
+                        </div>
 
+                        <div class="sec-option-set ">
+                            <div class="font_light font_24 font_bold">
+                                <a class=" box_price">
+                                    <sup>$</sup>0<span class=" font_14"> upfront</span>
+                                </a>
+                                <a class="font_light box_price">
+                                    <sup>$</sup>{{(((((hwPrice + dPrice + swPrice)*36)/1000))*12) / 52 | number:2}}<span class=" font_14"> /wk</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="pad20top grey2 font_medium font_12">
+                            Based on a 3-year contract payment term
+                        </div>
                     </div>
                 </div>
                 <!-- End of: Main Article -->
@@ -79,7 +83,7 @@
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/software.png"/>
+                                <img src="../images/icons/software.png" class="dtIcons"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 SOFTWARE
@@ -98,7 +102,7 @@
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/hardware.png"/>
+                                <img src="../images/icons/hardware.png" class="dtIcons"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 HARDWARE
@@ -118,7 +122,7 @@
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/deployment.png"/>
+                                <img src="../images/icons/deployment.png" class="dtIcons"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 DEPLOYMENT
@@ -133,7 +137,7 @@
                     <div class="dis_cell">
                         <div class="inc_head">
                             <div class="img_holder">
-                                <img src="../images/icons/support.png"/>
+                                <img src="../images/icons/support.png" class="dtIcons"/>
                             </div>
                             <div class="font_14 font_bold grey2">
                                 SUPPORT

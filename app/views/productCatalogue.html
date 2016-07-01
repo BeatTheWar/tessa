@@ -144,25 +144,24 @@
             </div>
             <div class="row sec-pc-items">
                 <div>
-                    <div class="col-lg-3" ng-repeat="item in products" ng-if="item.is_published == 1 && isCateg(item)">
+                    <div class="col-lg-3" ng-repeat="item in products" ng-if="item.is_published == 1 && isCateg(item)" ng-show="!item.is_archived == 1">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                    <!-- <img ng-src="{{myURL + myImage.image_path}}" ng-repeat="myImage in item.product_images | limitTo: 1"/> -->
-                                    <div style="background-image:url({{myURL + myImage.image_path}});" ng-repeat="myImage in item.product_images | limitTo: 1"></div>
-
+                                    <img ng-src="{{myImage.image_path}}" ng-repeat="myImage in item.product_images | limitTo: 1" class="myImage4"/>
+                                    <!-- <div style="background-image:url({{myImage.image_path}});" ng-repeat="myImage in item.product_images | limitTo: 1" class="img_holder myImage3"></div> -->
                                 </a>
-                                <div style="background">
-                                    
-                                </div>
-
                                 <div class="item_text">
-                                    <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
-                                        {{item.bundle_name}}
-                                        {{item.category_label}}
-                                    </a>
-                                    <div class="font_14 grey1 font_light pad20top">
-                                        <!-- <span data-ng-bind-html="item.bundle_description"></span> -->
+                                    <div class="item_title">
+                                        <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
+                                            {{item.bundle_name}}
+                                            {{item.category_label}}
+                                        </a>
+                                    </div>
+
+                                    <div class="item_content font_14 grey1 font_light">
+                                        <span data-ng-bind-html="item.bundle_description"></span>
+
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as
@@ -190,14 +189,14 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
-                                    <img src="images/is8.jpg" />
+                                    <img src="{{item.img_default}}" />
                                 </a>
                                 <div class="item_text">
                                     <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
                                         {{item.item_name}}
                                     </a>
-                                        {{item.p_id}}
                                     <div class="font_14 grey1 font_light pad20top">
+
                                         <span data-ng-bind-html="item.bundle_description"></span>
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
@@ -217,12 +216,13 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class="img_holder">
-                                    <img src="images/is7.jpg" />
+                                    <img src="{{item.img_default}}" />
                                 </a>
                                 
                                 <div class="item_text">
                                     <a ui-sref="productDetailsHardware({selected_id: item.p_id})" class=" blue1 font_bold">
                                         {{item.item_name}}
+
                                     </a>
                                     <div class="font_14 grey1 font_light pad20top">
                                         <span data-ng-bind-html="item.bundle_description"></span>

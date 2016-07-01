@@ -10,8 +10,8 @@
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/custom.css">
-    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css"/>
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css" />
     <!-- <link rel="stylesheet" href="bower_components/nanoscroller/bin/css/nanoscroller.css"/> -->
     <link rel="stylesheet" href="styles/custom.css">
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css">
@@ -20,8 +20,8 @@
 </head>
 
 <body class="animated-content" ng-controller="MainCtrl">
-<header id="topnav" class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="logo-area">
+    <header id="topnav" class="navbar navbar-default navbar-fixed-top" role="banner">
+        <div class="logo-area">
             <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
           <a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
             <span class="icon-bg">
@@ -29,170 +29,163 @@
             </span>
             </a>
             </span>
-
-        <a class="navbar-brand" ui-sref="experience">Tessa</a>
-        <a class="tes-icon " ui-sref="experience">
+            <a class="navbar-brand" ui-sref="experience">Tessa</a>
+            <a class="tes-icon " ui-sref="experience">
                 <span class="icon-bg">
                     <img src="images/icons/consolidated_home.png"/>
                 </span>
-        </a>
-        <div class="toolbar-icon-bg hidden-xs" id="toolbar-search">
-            <div class="input-group">
+            </a>
+            <div class="toolbar-icon-bg hidden-xs" id="toolbar-search">
+                <div class="input-group">
                     <span class="input-group-btn">
                         <a class="tes-icon dropdown-toggle" data-toggle='dropdown'>
                         <img src="images/icons/consolidated_search.png">
                         </a>
                     </span>
-
-                <ui-select ng-model="lists.bundle_name">
-                    <ui-select-match placeholder="Search...">
-                        {{$select.selected.bundle_name}}
-                    </ui-select-match>
-                    <ui-select-choices infinite-scroll="addMoreItems()" infinite-scroll-distance="2"
-                                       repeat="list in (lists | filter: $select.search) track by list.pb_id">
-                        {{list.bundle_name}}
-                    </ui-select-choices>
-
-                </ui-select>
-                <span class="input-group-btn"><button class="btn" type="button"><i
+                    <ui-select ng-model="lists.bundle_name">
+                        <ui-select-match placeholder="Search...">
+                            {{$select.selected.bundle_name}}
+                        </ui-select-match>
+                        <ui-select-header>Top of the list!</ui-select-header>
+                        <ui-select-choices infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in (lists | filter: $select.search) track by list.pb_id">
+                            {{list.bundle_name}}
+                        </ui-select-choices>
+                        <ui-select-footer>Bottom of the list.</ui-select-footer>
+                    </ui-select>
+                    <span class="input-group-btn"><button class="btn" type="button"><i
                         class="ti ti-close"></i></button></span>
-
+                </div>
             </div>
         </div>
-
-    </div>
-    <!-- logo-area -->
-    <ul id="nav-right" class="nav navbar-nav toolbar pull-right">
-        <li class=" visible-xs-block" id="trigger-toolbar-search">
-            <a class="tes-icon dropdown-toggle" data-toggle='dropdown'>
-                <img src="images/icons/consolidated_search.png"/>
-            </a>
-        </li>
-        <li>
-            <!--<a class="tes-icon dropdown-toggle" data-toggle='dropdown'>
+        <!-- logo-area -->
+        <ul id="nav-right" class="nav navbar-nav toolbar pull-right">
+            <li class=" visible-xs-block" id="trigger-toolbar-search">
+                <a class="tes-icon dropdown-toggle" data-toggle='dropdown'>
+                    <img src="images/icons/consolidated_search.png" />
+                </a>
+            </li>
+            <li>
+                <!--<a class="tes-icon dropdown-toggle" data-toggle='dropdown'>
                 <img src="images/icons/consolidated_cart.png" />
                 <span class="badge badge-deeporange">2</span>
             </a>-->
-            <div class="dropdown-menu notifications arrow">
-                <div class="topnav-dropdown-header">
-                    <span>Notifications</span>
+                <div class="dropdown-menu notifications arrow">
+                    <div class="topnav-dropdown-header">
+                        <span>Notifications</span>
+                    </div>
+                    <div class="scroll-pane">
+                        <ul class="media-list scroll-content">
+                            <li class="media notification-success">
+                                <a href="#">
+                                    <div class="media-left">
+                                        <span class="notification-icon"><i class="ti ti-check"></i></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="notification-heading">Update 1.0.4 successfully pushed</h4>
+                                        <span class="notification-time">8 mins ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media notification-info">
+                                <a href="#">
+                                    <div class="media-left">
+                                        <span class="notification-icon"><i class="ti ti-check"></i></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="notification-heading">Update 1.0.3 successfully pushed</h4>
+                                        <span class="notification-time">24 mins ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media notification-teal">
+                                <a href="#">
+                                    <div class="media-left">
+                                        <span class="notification-icon"><i class="ti ti-check"></i></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="notification-heading">Update 1.0.2 successfully pushed</h4>
+                                        <span class="notification-time">16 hours ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media notification-indigo">
+                                <a href="#">
+                                    <div class="media-left">
+                                        <span class="notification-icon"><i class="ti ti-check"></i></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="notification-heading">Update 1.0.1 successfully pushed</h4>
+                                        <span class="notification-time">2 days ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media notification-danger">
+                                <a href="#">
+                                    <div class="media-left">
+                                        <span class="notification-icon"><i class="ti ti-arrow-up"></i></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="notification-heading">Initial Release 1.0</h4>
+                                        <span class="notification-time">4 days ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="topnav-dropdown-footer">
+                        <a href="#">See all notifications</a>
+                    </div>
                 </div>
-                <div class="scroll-pane">
-                    <ul class="media-list scroll-content">
-                        <li class="media notification-success">
-                            <a href="#">
-                                <div class="media-left">
-                                    <span class="notification-icon"><i class="ti ti-check"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="notification-heading">Update 1.0.4 successfully pushed</h4>
-                                    <span class="notification-time">8 mins ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media notification-info">
-                            <a href="#">
-                                <div class="media-left">
-                                    <span class="notification-icon"><i class="ti ti-check"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="notification-heading">Update 1.0.3 successfully pushed</h4>
-                                    <span class="notification-time">24 mins ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media notification-teal">
-                            <a href="#">
-                                <div class="media-left">
-                                    <span class="notification-icon"><i class="ti ti-check"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="notification-heading">Update 1.0.2 successfully pushed</h4>
-                                    <span class="notification-time">16 hours ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media notification-indigo">
-                            <a href="#">
-                                <div class="media-left">
-                                    <span class="notification-icon"><i class="ti ti-check"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="notification-heading">Update 1.0.1 successfully pushed</h4>
-                                    <span class="notification-time">2 days ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="media notification-danger">
-                            <a href="#">
-                                <div class="media-left">
-                                    <span class="notification-icon"><i class="ti ti-arrow-up"></i></span>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="notification-heading">Initial Release 1.0</h4>
-                                    <span class="notification-time">4 days ago</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="topnav-dropdown-footer">
-                    <a href="#">See all notifications</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <a href="#" class="tes-icon dropdown-toggle " data-toggle="dropdown">
-                <img src="images/icons/dp.png"/>
-            </a>
-            <ul class="dropdown-menu userinfo arrow">
-                <li><a href="#/"><i class="ti ti-user"></i><span>Profile</span><span
+            </li>
+            <li>
+                <a href="#" class="tes-icon dropdown-toggle " data-toggle="dropdown">
+                    <img src="images/icons/dp.png" />
+                </a>
+                <ul class="dropdown-menu userinfo arrow">
+                    <li><a href="#/"><i class="ti ti-user"></i><span>Profile</span><span
                         class="badge badge-info pull-right">80%</span></a></li>
-                <li><a href="#/"><i class="ti ti-panel"></i><span>Account</span></a></li>
-                <li><a href="#/"><i class="ti ti-settings"></i><span>Settings</span></a></li>
-                <li class="divider"></li>
-                <li class="divider"></li>
-                <li><a href="#/"><i class="ti ti-shift-right"></i><span>Sign Out</span></a></li>
-            </ul>
-        </li>
-    </ul>
-
-</header>
-
-
-<div id="wrapper">
-    <div id="layout-static">
-        <div class="static-sidebar-wrapper sidebar-midnightblue">
-            <div class="static-sidebar">
-                <div class="sidebar">
-                    <div class="widget stay-on-collapse" id="widget-sidebar">
-                        <nav role="navigation" class="widget-body">
-                            <ul class="acc-menu">
-                                <li><a ui-sref="experience"><i class="fa fa-comment"></i><span>Experience</span></a>
-                                </li>
-                                <!-- <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a> -->
-                                </li>
-                                <!-- <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li> -->
-                                <li><a ui-sref="productCatalogue"><i
+                    <li><a href="#/"><i class="ti ti-panel"></i><span>Account</span></a></li>
+                    <li><a href="#/"><i class="ti ti-settings"></i><span>Settings</span></a></li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                    <li><a href="#/"><i class="ti ti-shift-right"></i><span>Sign Out</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <div id="wrapper">
+        <div id="layout-static">
+            <div class="static-sidebar-wrapper sidebar-midnightblue">
+                <div class="static-sidebar">
+                    <div class="sidebar">
+                        <div class="widget stay-on-collapse" id="widget-sidebar">
+                            <nav role="navigation" class="widget-body">
+                                <ul class="acc-menu">
+                                    <li><a ui-sref="experience"><i class="fa fa-comment"></i><span>Experience</span></a>
+                                    </li>
+                                    <!-- <li><a ui-sref="builder"><i class="fa fa-list-ul"></i><span>Solution Builder</span></a> -->
+                                    </li>
+                                    <!-- <li><a href="#/priceBook"><i class="fa fa-dollar"></i><span>Price Book</span></a></li> -->
+                                    <li><a ui-sref="productCatalogue"><i
                                         class="fa fa-desktop"></i><span>Product Catalogue</span></a></li>
-                            </ul>
-                        </nav>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="static-content-wrapper">
-            <div class="static-content">
-                <div class="page-content">
-                    <div class="container-fluid">
-                        <div ui-view></div>
+            <div class="static-content-wrapper">
+                <div class="static-content">
+                    <div class="page-content">
+                        <div class="container-fluid">
+                            <div ui-view></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--     <script>
+    <!--     <script>
    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -202,40 +195,6 @@
    ga('send', 'pageview');
 </script>
 -->
-<<<<<<< HEAD
-<!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-
-<script src="bower_components/lodash/dist/lodash.min.js"></script>
-
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/enquire/dist/enquire.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/restangular/dist/restangular.js"></script>
-<script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
-<script src="bower_components/angular-ui-select/dist/select.js"></script>
-<script src="scripts/application.js"></script>
-<script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
-<!-- <script src="scripts/underscore/underscore.js"></script> -->
-<script src="scripts/app.js"></script>
-
-<script src="scripts/controllers/mainCtrl.js"></script>
-<script src="scripts/controllers/productCtrl.js"></script>
-<script src="scripts/controllers/DetailSolutionCtrl.js"></script>
-<script src="scripts/services/apifactory.js"></script>
-<script src="scripts/filters/filter.js"></script>
-<script src="scripts/services/auth.js"></script>
-
-
-=======
     <!-- bower:js -->
     <!-- build:js js/main.min.js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -253,7 +212,6 @@
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
     <script src="bower_components/angular-ui-select/dist/select.js"></script>
-    
     <script src="scripts/application.js"></script>
     <script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
     <!-- <script src="scripts/underscore/underscore.js"></script> -->
@@ -267,7 +225,6 @@
     <script src="scripts/filters/filter.js"></script>
     <script src="scripts/services/auth.js"></script>
     <!-- endbuild -->
->>>>>>> 5e40b900401b948ab2938d6bfb59e44140b7816f
 </body>
 
 </html>

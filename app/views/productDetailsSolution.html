@@ -77,7 +77,7 @@
 
                         <div class="inc_body" ng-repeat="softwares in software">
                             <div class="inc_title font_bold grey2">
-                                {{softwares.brand}}
+                                {{softwares.category_label}}
 
                             </div>
                             <a href="" class="inc_text font_light grey2">
@@ -99,8 +99,8 @@
                                 {{categ.category_label}}
                             </div>
 
-                            <a href="" class="inc_text font_light grey2" ng-repeat="hard in hardware">
-                                {{hard.item_name}}
+                            <a href="" class="inc_text font_light grey2">
+                                {{categ.item_name}}
                             </a>
 
                         </div>

@@ -10,6 +10,7 @@
         $scope.servicecategories = [];
         $scope.service = [];
         $scope.hardwares = [];
+        $scope.softwares = [];
         APIFactory.getProduct(function(err, data) {
             $scope.allproduct = data.response.result;
         });
@@ -29,11 +30,26 @@
                     $scope.software = $filter('filter')($scope.productDetails, { 'productType_id': 18 });
                     $scope.price = [];
                     $scope.sams = [];
+                    _.map($scope.software, function(row) {
+                        if (row.product_category[0] != undefined) {
+                            $scope.softwares.push(row.product_category[0]);
+                        }
+                    });
+                    _.each($scope.software, function(row) {
+                        _.find($scope.softwares, function(o) {
+                            if (row.p_id == o.product_id) {
+                                row.category_label = o.category_label;
+                            }
+                        });
+                    });
+
+                    console.log('$scope.software:', $scope.software);
                     _.map($scope.hardware, function(row) {
                         if (row.product_category[0] != undefined) {
                             $scope.hardwares.push(row.product_category[0]);
                         }
                     });
+                    console.log('$scope.hardwares:', $scope.hardwares);
                     _.each($scope.hardware, function(row) {
                         _.find($scope.hardwares, function(o) {
                             if (row.p_id == o.product_id) {
@@ -68,6 +84,7 @@
         }
     };
 
-    Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);
+    angular.module('tessaApp')
+        .controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);
 
 })();

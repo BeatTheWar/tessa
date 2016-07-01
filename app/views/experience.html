@@ -5,7 +5,7 @@
                 Browse by industries
             </div>
             <div id="browse-industry" class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary-alt" ng-repeat="tag in tags | duplicates: 'tags'" ng-click="tagsSelected(tag)">
+                <label class="btn btn-primary-alt" ng-repeat="tag in tags" ng-click="tagsSelected(tag)">
                     <input type="checkbox" checklist-model="tagselected.selected_tags" checklist-value="tag">
                     <span>{{tag.tags}} </span>
                 </label>

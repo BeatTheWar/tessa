@@ -1,72 +1,73 @@
-'use strict';
+(function() {
+    'use strict';
 
-var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
-    var apifactory = {};
-    apifactory.articleItems = [];
+    var APIFactory = function($http, _, API_URL, API_VERSION, Restangular) {
+        var apifactory = {};
+        apifactory.articleItems = [];
 
-    apifactory.getArticles = function(callback) {
-        Restangular.all('articleinfo').customGET().then(function(results) {
-            callback(results);
-        });
-    };
-
-    apifactory.getProductBundle = function(callback) {
-        Restangular.all('product-bundle').customGET().then(function(results) {
-            callback(results);
-        });
-    };
-
-    apifactory.getDetailSolution = function(id, callback) {
-        Restangular.all('product-bundle/' + id).customGET().then(function(results) {
-            callback(null, results);
-        }, function(err) {
-            callback(err, null);
-        });
-    };
-
-    apifactory.getAllTags = function(callback) {
-        Restangular.all('tags').customGET().then(function(results) {
-                callback(null, results);
-            },function(err) {
-               callback(err, null);
+        apifactory.getArticles = function(callback) {
+            Restangular.all('articleinfo').customGET().then(function(results) {
+                callback(results);
             });
-    };
-    apifactory.getProduct = function(callback) {
-        Restangular.all('product').customGET().then(function(results) {
+        };
+
+        apifactory.getProductBundle = function(callback) {
+            Restangular.all('product-bundle').customGET().then(function(results) {
+                callback(results);
+            });
+        };
+
+        apifactory.getDetailSolution = function(id, callback) {
+            Restangular.all('product-bundle/' + id).customGET().then(function(results) {
                 callback(null, results);
-            },
-            function(err) {
+            }, function(err) {
                 callback(err, null);
             });
-    };
+        };
 
-    apifactory.getHardware = function(id, callback){
-        Restangular.all('product').customGET().then(function(results) {
-                callback(_.filter(results), {productType_id : id});
-            });
-    }
-
-    apifactory.getCategory = function(callback) {
-        Restangular.all('categories').customGET().then(function(results) {
+        apifactory.getAllTags = function(callback) {
+            Restangular.all('tags').customGET().then(function(results) {
                 callback(null, results);
-            },
-            function(err) {
+            }, function(err) {
                 callback(err, null);
             });
-    }
+        };
+        apifactory.getProduct = function(callback) {
+            Restangular.all('product').customGET().then(function(results) {
+                    callback(null, results);
+                },
+                function(err) {
+                    callback(err, null);
+                });
+        };
 
-    return apifactory;
-};
+        apifactory.getHardware = function(id, callback) {
+            Restangular.all('product').customGET().then(function(results) {
+                callback(_.filter(results), { productType_id: id });
+            });
+        }
 
-var underscore = function() {
-    return window._;
-};
+        apifactory.getCategory = function(callback) {
+            Restangular.all('categories').customGET().then(function(results) {
+                    callback(null, results);
+                },
+                function(err) {
+                    callback(err, null);
+                });
+        }
 
-// var LodashFactory = function($window) {  
-//     return $window._;
-// }
+        return apifactory;
+    };
 
+    var underscore = function() {
+        return window._;
+    };
 
-Application.Services.factory('_', [underscore]);
-// Application.Services.factory('_', [LodashFactory]);
-Application.Services.factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]);
+    // var LodashFactory = function($window) {  
+    //     return $window._;
+    // }
+
+    angular.module('tessaApp')
+        .factory('_', [underscore])
+        .factory('APIFactory', ['$http', '_', 'API_URL', 'API_VERSION', 'Restangular', APIFactory]);
+})();

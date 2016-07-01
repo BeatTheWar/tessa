@@ -20,6 +20,8 @@
             APIFactory.getDetailSolution($stateParams.selected_id, function(err, data) {
                 if (data.statusCode == 200 && data.response.success) {
                     $scope.details = data.response.result;
+                    console.log('$scope.details', $scope.details);
+
                     $scope.products = $scope.details.products;
                     $scope.productDetails = _.map($scope.products, function(row) {
                         return row.product_detail;

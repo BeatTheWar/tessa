@@ -8,9 +8,7 @@
 </style>
 
 <div id="product-catalogue" class="dis_table">
-    <!--sec-filter-->
-    <div class="sec-filter">
-        <!--Collapsed Filter-->
+<!--     <div class="sec-filter">
         <div id="sec-srch-filter">
             <div id="hide" class="row_title pad20all">
                 <a >
@@ -99,9 +97,7 @@
                 </div>
             </div>
         </div>
-        <!--End: Collapsed Filter-->
 
-        <!--Expanded Advance Search Filter-->
         <div id="srch-filter-panel">
             <div class="row_title">
                 <ul class="min-filter">
@@ -123,10 +119,8 @@
             </div>
 
         </div>
-        <!--End of Expanded Advance Search Filter-->
     </div>
-    <!--End of sec-filter-->
-
+ -->
 
     <!--sec-pc-->
     <div class="sec-pc">
@@ -154,15 +148,21 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class="img_holder">
-                                    <img src="images/img-sample-1.jpg" />
+                                    <!-- <img ng-src="{{myURL + myImage.image_path}}" ng-repeat="myImage in item.product_images | limitTo: 1"/> -->
+                                    <div style="background-image:url({{myURL + myImage.image_path}});" ng-repeat="myImage in item.product_images | limitTo: 1"></div>
+
                                 </a>
+                                <div style="background">
+                                    
+                                </div>
+
                                 <div class="item_text">
                                     <a ui-sref="productDetailsSolution({selected_id: item.pb_id})" class=" blue1 font_bold">
                                         {{item.bundle_name}}
                                         {{item.category_label}}
                                     </a>
                                     <div class="font_14 grey1 font_light pad20top">
-                                        <span data-ng-bind-html="item.bundle_description"></span>
+                                        <!-- <span data-ng-bind-html="item.bundle_description"></span> -->
                                     </div>
                                     <div class="font_14 grey2 font_medium pad20top">
                                         For as low as

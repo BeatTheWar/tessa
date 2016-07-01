@@ -5,6 +5,8 @@
     var productCtrl = function($scope, APIFactory, $location, $filter, _) {
         $scope.solutionTypes = 'EzeImpress';
 
+        $scope.myURL = 'http://52.64.27.145:5001/';
+
         $scope.apply = '';
         $scope.bundles = [];
         APIFactory.getProductBundle(function(data) {
@@ -35,7 +37,7 @@
             }
 
             $scope.isCateg = function(q) {
-                console.log($scope.me);
+                // console.log($scope.me);
                 if ($scope.me == 'all') {
                     return true;
                 } else if ($scope.me == q.category_label) {
@@ -59,8 +61,6 @@
                         $scope.prodCateg.push($scope.hardware[i].product_category[j]);
                     }
                 }
-
-                console.log('qwerty', $scope.prodCateg);
 
                 _.each($scope.hardware, function(e) {
                     _.find($scope.prodCateg, function(i) {

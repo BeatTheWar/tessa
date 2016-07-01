@@ -1,5 +1,5 @@
-'use strict';
-
+(function() {
+    'use strict';
 var MainCtrl = function($scope, APIFactory, $location, _) {
     APIFactory.getArticles(function(data) {
         $scope.tags = [];
@@ -101,4 +101,6 @@ var MainCtrl = function($scope, APIFactory, $location, _) {
     // });
 };
 
-Application.Controllers.controller('MainCtrl', ['$scope', 'APIFactory', '$location','_', MainCtrl]);
+    angular.module('tessaApp')
+        .controller('MainCtrl', ['$scope', 'APIFactory', '$location', MainCtrl]);
+})();

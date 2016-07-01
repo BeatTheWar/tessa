@@ -10,6 +10,7 @@
         $scope.servicecategories = [];
         $scope.service = [];
         $scope.hardwares = [];
+        $scope.softwares = [];
         APIFactory.getProduct(function(err, data) {
             $scope.allproduct = data.response.result;
         });
@@ -30,22 +31,36 @@
 
                     console.log('software', $scope.software)
 
-                    $scope.softwarePrice = _.map($scope.software, function(value){
+                    $scope.softwarePrice = _.map($scope.software, function(value) {
                         return value.sell_price
                     })
 
                     $scope.swPrice = _.sum($scope.softwarePrice);
-                    console.log('softwarePrice',$scope.swPrice);
+                    console.log('softwarePrice', $scope.swPrice);
 
 
                     $scope.price = [];
                     $scope.sams = [];
+                    _.map($scope.software, function(row) {
+                        if (row.product_category[0] != undefined) {
+                            $scope.softwares.push(row.product_category[0]);
+                        }
+                    });
+                    _.each($scope.software, function(row) {
+                        _.find($scope.softwares, function(o) {
+                            if (row.p_id == o.product_id) {
+                                row.category_label = o.category_label;
+                            }
+                        });
+                    });
+
+                    console.log('$scope.software:', $scope.software);
                     _.map($scope.hardware, function(row) {
                         if (row.product_category[0] != undefined) {
                             $scope.hardwares.push(row.product_category[0]);
                         }
                     });
-
+                    console.log('$scope.hardwares:', $scope.hardwares);
                     _.each($scope.hardware, function(row) {
                         _.find($scope.hardwares, function(o) {
                             if (row.p_id == o.product_id) {
@@ -53,7 +68,7 @@
                             }
                         });
                     });
-                    
+
                     _.map($scope.services, function(row) {
                         if (row.product_category[0] !== undefined)
                             $scope.service.push(row.product_category[0]);
@@ -79,17 +94,17 @@
                     $scope.hwPrice = _.sum($scope.hardwarePrice);
                     console.log('HardwarePrice', $scope.hwPrice);
 
-                    $scope.deploymentPrice = _.map($scope.deployment, function(value){
+                    $scope.deploymentPrice = _.map($scope.deployment, function(value) {
                         return value.sell_price;
                     })
 
                     $scope.dPrice = _.sum($scope.deploymentPrice);
                     console.log('deploymentPrice', $scope.dPrice);
 
-                    $scope.supportPrice = _.map($scope.support, function(value){
+                    $scope.supportPrice = _.map($scope.support, function(value) {
                         return value.sell_price;
                     })
-                    
+
                     $scope.spPrice = _.sum($scope.supportPrice);
                     console.log('supportPrice', $scope.spPrice);
 
@@ -106,6 +121,7 @@
 
     };
 
-    Application.Controllers.controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);
+    angular.module('tessaApp')
+        .controller('detailSolutionCtrl', ['$scope', 'APIFactory', '$location', '$stateParams', '$filter', '_', detailSolutionCtrl]);
 
 })();

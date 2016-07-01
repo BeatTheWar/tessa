@@ -765,13 +765,13 @@ body {
 
 /**Product Catalog**/
 .item_content{
-    border: solid thick black;
+
     min-height: 90px;
 }
 
 .item_title{
     min-height: 60px;
-    border: solid thin black;
+
 }
 #hide {
     cursor: pointer;

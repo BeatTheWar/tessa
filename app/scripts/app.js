@@ -1,71 +1,73 @@
-'use strict';
-
-var Application = Application || {};
-
-Application.Controllers = angular.module('tessaApp.controllers', ['tessaApp.filters']);
-Application.Services = angular.module('tessaApp.services', []);
-Application.Filters = angular.module('tessaApp.filters', []);
+(function() {
+    'use strict';
 
 
-angular.module('tessaApp', [ 'tessaApp.controllers', 'tessaApp.services','ui.router', 'restangular', 'ngSanitize','ui.bootstrap','ui.select'])
+    angular.module('tessaApp', [
+            'ui.router',
+            'restangular',
+            'ngSanitize',
+            'ui.bootstrap',
+            'ui.select'
+        ])
+        .constant('API_URL', 'http://52.64.27.145:5001')
+        .constant('API_VERSION', '/api/1.0/')
+        .config(['$stateProvider', '$httpProvider', 'RestangularProvider', '$urlRouterProvider', 'API_URL', 'API_VERSION', '$provide',
+            function($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {
+                $httpProvider.interceptors.push('authInterceptor');
 
-.run(['$location', 'APIFactory','$rootScope', function ($location, APIFactory, $rootScope) {
-    // APIFactory.getArticles();
-    $rootScope._ = window._;
-}])
+                $provide.value('baseURL', API_URL);
+                RestangularProvider.setBaseUrl(API_URL + API_VERSION);
 
-.constant('_', _)
-.constant('API_URL', 'http://52.64.27.145:5001')
-.constant('API_VERSION', '/api/1.0/')
+                $stateProvider
+                    .state('experience', {
+                        url: '/experience',
+                        templateUrl: 'views/experience.html',
+                        controller: 'MainCtrl'
+                    })
 
-.config(function($stateProvider, $httpProvider, RestangularProvider, $urlRouterProvider, API_URL, API_VERSION, $provide) {
-    $httpProvider.interceptors.push('authInterceptor');
+                .state('builder', {
+                    url: '/builder',
+                    templateUrl: 'views/builder.html'
+                })
 
-    $provide.value('baseURL', API_URL);
-    RestangularProvider.setBaseUrl(API_URL + API_VERSION);
+                .state('priceBook', {
+                    url: '/priceBook',
+                    templateUrl: 'views/priceBook.html'
+                })
 
-    $stateProvider
-    .state('experience', {
-        url: '/experience',
-        templateUrl: 'views/experience.html',
-        controller: 'MainCtrl'
-    })
+                .state('productCatalogue', {
+                    url: '/productCatalogue',
+                    templateUrl: 'views/productCatalogue.html',
+                    controller: 'productCtrl'
+                })
 
-    .state('builder', {
-        url: '/builder',
-        templateUrl: 'views/builder.html'
-    })
+                .state('search', {
+                    url: '/search',
+                    templateUrl: 'views/search.html',
+                    controller: 'searchCtrl'
+                })
 
-    .state('priceBook', {
-        url: '/priceBook',
-        templateUrl: 'views/priceBook.html'
-    })
+                .state('productDetailsSolution', {
+                    url: '/productCatalogue/productDetailsSolution/:selected_id',
+                    templateUrl: 'views/productDetailsSolution.html',
+                    controller: 'detailSolutionCtrl'
+                })
 
-    .state('productCatalogue', {
-        url: '/productCatalogue',
-        templateUrl: 'views/productCatalogue.html',
-        controller: 'productCtrl'
-    })
+                .state('productDetailsHardware', {
+                    url: '/productCatalogue/productDetailsHardware/:selectedHardwareId',
+                    templateUrl: 'views/productDetailsHardware.html',
+                });
 
-    .state('search', {
-        url: '/search',
-        templateUrl: 'views/search.html',
-        controller: 'searchCtrl'
-    })
-
-    .state('productDetailsSolution', {
-        url: '/productCatalogue/productDetailsSolution/:selected_id',
-        templateUrl: 'views/productDetailsSolution.html',
-        controller: 'detailSolutionCtrl'
-    })
-
-    .state('productDetailsHardware', {
-        url: '/productCatalogue/productDetailsHardware/:selected_hardwareId',
-        templateUrl: 'views/productDetailsHardware.html',
-        controller: 'hardwareDetailsCtrl'
-    });
-
-    $urlRouterProvider.otherwise('/experience');
+                $urlRouterProvider.otherwise('/experience');
 
 
-    });
+            }
+        ])
+        .run(['$location', 'APIFactory', '$rootScope', function($location, APIFactory, $rootScope) {
+            // APIFactory.getArticles();
+            $rootScope._ = window._;
+        }])
+        .factory('_', ['$window', function($window) {
+            return $window._;
+        }]);
+})();

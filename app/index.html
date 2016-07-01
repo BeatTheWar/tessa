@@ -6,7 +6,6 @@
     <title>TESSA</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-
     <!-- build:css css/main.min.css -->
     <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -43,15 +42,13 @@
                         <img src="images/icons/consolidated_search.png">
                         </a>
                     </span>
-                    <ui-select ng-model="lists.bundle_name">
+                    <ui-select ng-model="lists.name">
                         <ui-select-match placeholder="Search...">
-                            {{$select.selected.bundle_name}}
+                            {{$select.selected.name}}
                         </ui-select-match>
-                        <ui-select-header>Top of the list!</ui-select-header>
-                        <ui-select-choices group-by="'product_type'" infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in (lists | filter: $select.search) track by list.pb_id">
-                            {{list.bundle_name}}
+                        <ui-select-choices group-by="'type'" infinite-scroll="addMoreItems()" infinite-scroll-distance="2" repeat="list in allSearch | filter: $select.search">
+                            {{list.name}}
                         </ui-select-choices>
-                        <ui-select-footer>Bottom of the list.</ui-select-footer>
                     </ui-select>
                     <span class="input-group-btn"><button class="btn" type="button"><i
                         class="ti ti-close"></i></button></span>
@@ -196,40 +193,38 @@
    ga('send', 'pageview');
 </script>
 -->
-
-<!-- build:js js/main.min.js -->
-
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/lodash/dist/lodash.min.js"></script>
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/enquire/dist/enquire.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/restangular/dist/restangular.js"></script>
-<script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
-<script src="bower_components/angular-ui-select/dist/select.js"></script>
-<script src="scripts/application.js"></script>
-<script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
-<!-- <script src="scripts/underscore/underscore.js"></script> -->
-<!-- endbuild -->
-<!-- build:js1 js/app.min.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/mainCtrl.js"></script>
-<script src="scripts/controllers/productCtrl.js"></script>
-<script src="scripts/controllers/DetailSolutionCtrl.js"></script>
-<script src="scripts/controllers/hardwareDetailsCtrl.js"></script>
-<script src="scripts/services/apifactory.js"></script>
-<script src="scripts/filters/filter.js"></script>
-<script src="scripts/services/auth.js"></script>
-<!-- endbuild -->
-
+    <!-- build:js js/main.min.js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/async/dist/async.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/enquire/dist/enquire.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="scripts/application.js"></script>
+    <script src="scripts/nanoScroller/js/jquery.nanoscroller.js"></script>
+    <!-- <script src="scripts/underscore/underscore.js"></script> -->
+    <!-- endbuild -->
+    <!-- build:js1 js/app.min.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/mainCtrl.js"></script>
+    <script src="scripts/controllers/productCtrl.js"></script>
+    <script src="scripts/controllers/DetailSolutionCtrl.js"></script>
+    <script src="scripts/controllers/hardwareDetailsCtrl.js"></script>
+    <script src="scripts/services/apifactory.js"></script>
+    <script src="scripts/filters/filter.js"></script>
+    <script src="scripts/services/auth.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

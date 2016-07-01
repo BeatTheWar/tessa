@@ -2,20 +2,84 @@
     'use strict';
     var MainCtrl = function($scope, APIFactory, $location, _) {
         console.log('MainCtrl: ');
-        $scope.articlesList = [];
-        APIFactory.getArticles(function(data) {
-            $scope.tags = [];
-            $scope.items = [];
-            $scope.articlesList = data.response.result;
-            $scope.selectedTag = [];
-            for (var i = 0; i < $scope.articlesList.length; i++) {
-                for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
-                    if ($scope.articlesList[i].tags[d]) {
-                        $scope.tags.push($scope.articlesList[i].tags[d]);
-                    }
-                }
-            };
-        });
+
+
+        async.waterfall([
+            function(callback) {
+                APIFactory.getArticles(function(data) {
+                    $scope.articlesList = [];
+                    $scope.tags = [];
+                    $scope.items = [];
+                    $scope.lists = [];
+
+                    $scope.articlesList = data.response.result;
+                    _.each(data.response.result, function(row) {
+                        row.type = 'Experience';
+                    });
+                    _.each(data.response.result, function(row) {
+                        row.name = row.title;
+                    });
+                    callback(null, data.response.result);
+                    $scope.selectedTag = [];
+                    for (var i = 0; i < $scope.articlesList.length; i++) {
+                        for (var d = 0; d < $scope.articlesList[d].tags.length; d++) {
+                            if ($scope.articlesList[i].tags[d]) {
+                                $scope.tags.push($scope.articlesList[i].tags[d]);
+                            }
+                        }
+                    };
+                });
+
+            },
+            function(articles, callback) {
+                APIFactory.getProductBundle(function(data) {
+                    $scope.lists = data.response.result;
+                    _.each(data.response.result, function(row) {
+                        row.type = 'Solutions';
+                    });
+                    _.each(data.response.result, function(row) {
+                        row.name = row.bundle_name;
+                    });
+                    callback(null, data.response.result, articles);
+                    // _.each($scope.lists, function(row) {
+                    //     row.articlesList = $scope.articlesList;
+                    // });
+
+                });
+            },
+            function(bundle, articles, callback) {
+                $scope.products = [];
+
+                console.log('bundle:', bundle);
+                console.log('articles:', articles);
+                APIFactory.getProduct(function(err, data) {
+                    $scope.products = data.response.result;
+                    _.each(data.response.result, function(row) {
+                        row.type = 'Hardware';
+                    });
+                    _.each(data.response.result, function(row) {
+                        row.name = row.item_name;
+                    });
+                    callback(null, data.response.result, bundle, articles)
+                });
+            },
+            function(products, bundle, articles, callback) {
+                console.log('products:', products);
+                console.log('bundle:', bundle);
+                console.log('articles:', articles);
+                $scope.allSearch = [];
+                _.each(products, function(row) {
+                    $scope.allSearch.push(row);
+                });
+                _.each(bundle, function(row) {
+                    $scope.allSearch.push(row);
+                });
+                _.each(articles, function(row) {
+                    $scope.allSearch.push(row);
+                });
+                console.log('$scope.allSearch:', $scope.allSearch);
+            }
+        ]);
         $scope.select = function(selected, index) {
             $scope.selected = [];
             $scope.selected = selected;
@@ -53,9 +117,6 @@
                 return flag;
             };
         };
-        APIFactory.getProductBundle(function(data) {
-            $scope.lists = data.response.result;
-        });
 
         $scope.someGroupFn = function(item) {
             _.each($scope.productType, function(row) {
